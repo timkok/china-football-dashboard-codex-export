@@ -1,0 +1,44 @@
+{
+  "league": "csl",
+  "leagueName": "中超",
+  "season": 2026,
+  "type": "attendance_history",
+  "source": "Transfermarkt",
+  "sourceUrl": "https://www.transfermarkt.com/chinese-super-league/besucherzahlenentwicklung/wettbewerb/CSL",
+  "isOfficial": false,
+  "mode": "third_party",
+  "fetchedAt": "2026-05-18T22:10:26.950Z",
+  "schemaVersion": 1,
+  "data": [
+    {
+      "season": "23/24",
+      "seasonEndYear": 2024,
+      "matches": 240,
+      "totalAttendance": 4663407,
+      "averageAttendance": 19594,
+      "highestAverageTeam": "Beijing Guoan",
+      "highestAverageAttendance": 46444,
+      "yoyGrowth": null
+    },
+    {
+      "season": "24/25",
+      "seasonEndYear": 2025,
+      "matches": 240,
+      "totalAttendance": 6180990,
+      "averageAttendance": 25754,
+      "highestAverageTeam": "Dalian Yingbo",
+      "highestAverageAttendance": 58268,
+      "yoyGrowth": 0.31438195365928345
+    },
+    {
+      "season": "25/26",
+      "seasonEndYear": 2026,
+      "matches": 96,
+      "totalAttendance": 2970770,
+      "averageAttendance": 30946,
+      "highestAverageTeam": "Dalian Yingbo",
+      "highestAverageAttendance": 60739,
+      "yoyGrowth": 0.2015997514949134
+    }
+  ]
+}

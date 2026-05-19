@@ -1,0 +1,623 @@
+{
+  "league": "cl1",
+  "leagueName": "中甲",
+  "season": 2026,
+  "type": "standings",
+  "sourceId": "mock-fallback",
+  "mode": "mock",
+  "source": "mock fallback",
+  "sourceUrl": "",
+  "isOfficial": false,
+  "fetchedAt": "2026-05-18T22:10:19.247Z",
+  "schemaVersion": 1,
+  "data": [
+    {
+      "id": "cl1-team-02",
+      "rank": 1,
+      "name": "大连英博",
+      "shortName": "英博",
+      "city": "大连",
+      "played": 14,
+      "wins": 8,
+      "draws": 3,
+      "losses": 3,
+      "goalsFor": 28,
+      "goalsAgainst": 10,
+      "goalDiff": 18,
+      "points": 27,
+      "form": [
+        "W",
+        "D",
+        "W",
+        "W",
+        "D"
+      ],
+      "homeRecord": {
+        "wins": 4,
+        "draws": 1,
+        "losses": 1,
+        "points": 13
+      },
+      "awayRecord": {
+        "wins": 4,
+        "draws": 2,
+        "losses": 2,
+        "points": 14
+      },
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "updatedAt": "2026-05-18T22:10:19.247Z"
+    },
+    {
+      "id": "cl1-team-01",
+      "rank": 2,
+      "name": "云南玉昆",
+      "shortName": "玉昆",
+      "city": "玉溪",
+      "played": 13,
+      "wins": 8,
+      "draws": 2,
+      "losses": 3,
+      "goalsFor": 28,
+      "goalsAgainst": 8,
+      "goalDiff": 20,
+      "points": 26,
+      "form": [
+        "W",
+        "W",
+        "D",
+        "W",
+        "W"
+      ],
+      "homeRecord": {
+        "wins": 4,
+        "draws": 1,
+        "losses": 1,
+        "points": 13
+      },
+      "awayRecord": {
+        "wins": 4,
+        "draws": 1,
+        "losses": 2,
+        "points": 13
+      },
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "updatedAt": "2026-05-18T22:10:19.247Z"
+    },
+    {
+      "id": "cl1-team-03",
+      "rank": 3,
+      "name": "重庆铜梁龙",
+      "shortName": "铜梁龙",
+      "city": "重庆",
+      "played": 15,
+      "wins": 7,
+      "draws": 4,
+      "losses": 4,
+      "goalsFor": 28,
+      "goalsAgainst": 12,
+      "goalDiff": 16,
+      "points": 25,
+      "form": [
+        "L",
+        "W",
+        "W",
+        "D",
+        "W"
+      ],
+      "homeRecord": {
+        "wins": 3,
+        "draws": 2,
+        "losses": 2,
+        "points": 11
+      },
+      "awayRecord": {
+        "wins": 4,
+        "draws": 2,
+        "losses": 2,
+        "points": 14
+      },
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "updatedAt": "2026-05-18T22:10:19.247Z"
+    },
+    {
+      "id": "cl1-team-04",
+      "rank": 4,
+      "name": "广州队",
+      "shortName": "广州",
+      "city": "广州",
+      "played": 16,
+      "wins": 7,
+      "draws": 1,
+      "losses": 8,
+      "goalsFor": 28,
+      "goalsAgainst": 14,
+      "goalDiff": 14,
+      "points": 22,
+      "form": [
+        "D",
+        "W",
+        "D",
+        "W",
+        "L"
+      ],
+      "homeRecord": {
+        "wins": 3,
+        "draws": 0,
+        "losses": 4,
+        "points": 9
+      },
+      "awayRecord": {
+        "wins": 4,
+        "draws": 1,
+        "losses": 4,
+        "points": 13
+      },
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "updatedAt": "2026-05-18T22:10:19.247Z"
+    },
+    {
+      "id": "cl1-team-06",
+      "rank": 5,
+      "name": "苏州东吴",
+      "shortName": "东吴",
+      "city": "苏州",
+      "played": 14,
+      "wins": 6,
+      "draws": 2,
+      "losses": 6,
+      "goalsFor": 24,
+      "goalsAgainst": 13,
+      "goalDiff": 11,
+      "points": 20,
+      "form": [
+        "D",
+        "D",
+        "L",
+        "W",
+        "D"
+      ],
+      "homeRecord": {
+        "wins": 3,
+        "draws": 1,
+        "losses": 3,
+        "points": 10
+      },
+      "awayRecord": {
+        "wins": 3,
+        "draws": 1,
+        "losses": 3,
+        "points": 10
+      },
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "updatedAt": "2026-05-18T22:10:19.247Z"
+    },
+    {
+      "id": "cl1-team-05",
+      "rank": 6,
+      "name": "南京城市",
+      "shortName": "南京",
+      "city": "南京",
+      "played": 13,
+      "wins": 6,
+      "draws": 1,
+      "losses": 6,
+      "goalsFor": 24,
+      "goalsAgainst": 16,
+      "goalDiff": 8,
+      "points": 19,
+      "form": [
+        "W",
+        "L",
+        "W",
+        "D",
+        "W"
+      ],
+      "homeRecord": {
+        "wins": 3,
+        "draws": 0,
+        "losses": 3,
+        "points": 9
+      },
+      "awayRecord": {
+        "wins": 3,
+        "draws": 1,
+        "losses": 3,
+        "points": 10
+      },
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "updatedAt": "2026-05-18T22:10:19.247Z"
+    },
+    {
+      "id": "cl1-team-08",
+      "rank": 7,
+      "name": "石家庄功夫",
+      "shortName": "功夫",
+      "city": "石家庄",
+      "played": 16,
+      "wins": 5,
+      "draws": 4,
+      "losses": 7,
+      "goalsFor": 24,
+      "goalsAgainst": 17,
+      "goalDiff": 7,
+      "points": 19,
+      "form": [
+        "L",
+        "L",
+        "D",
+        "L",
+        "D"
+      ],
+      "homeRecord": {
+        "wins": 2,
+        "draws": 2,
+        "losses": 3,
+        "points": 8
+      },
+      "awayRecord": {
+        "wins": 3,
+        "draws": 2,
+        "losses": 4,
+        "points": 11
+      },
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "updatedAt": "2026-05-18T22:10:19.247Z"
+    },
+    {
+      "id": "cl1-team-07",
+      "rank": 8,
+      "name": "广西平果哈嘹",
+      "shortName": "平果",
+      "city": "平果",
+      "played": 15,
+      "wins": 5,
+      "draws": 3,
+      "losses": 7,
+      "goalsFor": 24,
+      "goalsAgainst": 15,
+      "goalDiff": 9,
+      "points": 18,
+      "form": [
+        "L",
+        "D",
+        "L",
+        "D",
+        "L"
+      ],
+      "homeRecord": {
+        "wins": 2,
+        "draws": 1,
+        "losses": 3,
+        "points": 7
+      },
+      "awayRecord": {
+        "wins": 3,
+        "draws": 2,
+        "losses": 4,
+        "points": 11
+      },
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "updatedAt": "2026-05-18T22:10:19.247Z"
+    },
+    {
+      "id": "cl1-team-09",
+      "rank": 9,
+      "name": "辽宁铁人",
+      "shortName": "铁人",
+      "city": "沈阳",
+      "played": 13,
+      "wins": 4,
+      "draws": 1,
+      "losses": 8,
+      "goalsFor": 20,
+      "goalsAgainst": 19,
+      "goalDiff": 1,
+      "points": 13,
+      "form": [
+        "W",
+        "W",
+        "D",
+        "W",
+        "W"
+      ],
+      "homeRecord": {
+        "wins": 2,
+        "draws": 0,
+        "losses": 4,
+        "points": 6
+      },
+      "awayRecord": {
+        "wins": 2,
+        "draws": 1,
+        "losses": 4,
+        "points": 7
+      },
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "updatedAt": "2026-05-18T22:10:19.247Z"
+    },
+    {
+      "id": "cl1-team-10",
+      "rank": 10,
+      "name": "佛山南狮",
+      "shortName": "南狮",
+      "city": "佛山",
+      "played": 14,
+      "wins": 4,
+      "draws": 1,
+      "losses": 9,
+      "goalsFor": 20,
+      "goalsAgainst": 21,
+      "goalDiff": -1,
+      "points": 13,
+      "form": [
+        "W",
+        "D",
+        "W",
+        "W",
+        "D"
+      ],
+      "homeRecord": {
+        "wins": 2,
+        "draws": 0,
+        "losses": 4,
+        "points": 6
+      },
+      "awayRecord": {
+        "wins": 2,
+        "draws": 1,
+        "losses": 5,
+        "points": 7
+      },
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "updatedAt": "2026-05-18T22:10:19.247Z"
+    },
+    {
+      "id": "cl1-team-12",
+      "rank": 11,
+      "name": "延边龙鼎",
+      "shortName": "延边",
+      "city": "延吉",
+      "played": 16,
+      "wins": 3,
+      "draws": 3,
+      "losses": 10,
+      "goalsFor": 20,
+      "goalsAgainst": 20,
+      "goalDiff": 0,
+      "points": 12,
+      "form": [
+        "D",
+        "W",
+        "D",
+        "W",
+        "L"
+      ],
+      "homeRecord": {
+        "wins": 1,
+        "draws": 1,
+        "losses": 5,
+        "points": 4
+      },
+      "awayRecord": {
+        "wins": 2,
+        "draws": 2,
+        "losses": 5,
+        "points": 8
+      },
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "updatedAt": "2026-05-18T22:10:19.247Z"
+    },
+    {
+      "id": "cl1-team-11",
+      "rank": 12,
+      "name": "上海嘉定汇龙",
+      "shortName": "嘉定",
+      "city": "上海",
+      "played": 15,
+      "wins": 3,
+      "draws": 2,
+      "losses": 10,
+      "goalsFor": 20,
+      "goalsAgainst": 18,
+      "goalDiff": 2,
+      "points": 11,
+      "form": [
+        "L",
+        "W",
+        "W",
+        "D",
+        "W"
+      ],
+      "homeRecord": {
+        "wins": 1,
+        "draws": 1,
+        "losses": 5,
+        "points": 4
+      },
+      "awayRecord": {
+        "wins": 2,
+        "draws": 1,
+        "losses": 5,
+        "points": 7
+      },
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "updatedAt": "2026-05-18T22:10:19.247Z"
+    },
+    {
+      "id": "cl1-team-13",
+      "rank": 13,
+      "name": "黑龙江冰城",
+      "shortName": "冰城",
+      "city": "哈尔滨",
+      "played": 13,
+      "wins": 2,
+      "draws": 4,
+      "losses": 7,
+      "goalsFor": 16,
+      "goalsAgainst": 22,
+      "goalDiff": -6,
+      "points": 10,
+      "form": [
+        "W",
+        "L",
+        "W",
+        "D",
+        "W"
+      ],
+      "homeRecord": {
+        "wins": 1,
+        "draws": 2,
+        "losses": 3,
+        "points": 5
+      },
+      "awayRecord": {
+        "wins": 1,
+        "draws": 2,
+        "losses": 4,
+        "points": 5
+      },
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "updatedAt": "2026-05-18T22:10:19.247Z"
+    },
+    {
+      "id": "cl1-team-14",
+      "rank": 14,
+      "name": "无锡吴钩",
+      "shortName": "吴钩",
+      "city": "无锡",
+      "played": 14,
+      "wins": 2,
+      "draws": 1,
+      "losses": 11,
+      "goalsFor": 16,
+      "goalsAgainst": 24,
+      "goalDiff": -8,
+      "points": 7,
+      "form": [
+        "D",
+        "D",
+        "L",
+        "W",
+        "D"
+      ],
+      "homeRecord": {
+        "wins": 1,
+        "draws": 0,
+        "losses": 6,
+        "points": 3
+      },
+      "awayRecord": {
+        "wins": 1,
+        "draws": 1,
+        "losses": 5,
+        "points": 4
+      },
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "updatedAt": "2026-05-18T22:10:19.247Z"
+    },
+    {
+      "id": "cl1-team-16",
+      "rank": 15,
+      "name": "青岛红狮",
+      "shortName": "红狮",
+      "city": "青岛",
+      "played": 16,
+      "wins": 1,
+      "draws": 2,
+      "losses": 13,
+      "goalsFor": 16,
+      "goalsAgainst": 23,
+      "goalDiff": -7,
+      "points": 5,
+      "form": [
+        "L",
+        "L",
+        "D",
+        "L",
+        "D"
+      ],
+      "homeRecord": {
+        "wins": 0,
+        "draws": 1,
+        "losses": 7,
+        "points": 1
+      },
+      "awayRecord": {
+        "wins": 1,
+        "draws": 1,
+        "losses": 6,
+        "points": 4
+      },
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "updatedAt": "2026-05-18T22:10:19.247Z"
+    },
+    {
+      "id": "cl1-team-15",
+      "rank": 16,
+      "name": "江西庐山",
+      "shortName": "庐山",
+      "city": "九江",
+      "played": 15,
+      "wins": 1,
+      "draws": 1,
+      "losses": 13,
+      "goalsFor": 16,
+      "goalsAgainst": 26,
+      "goalDiff": -10,
+      "points": 4,
+      "form": [
+        "L",
+        "D",
+        "L",
+        "D",
+        "L"
+      ],
+      "homeRecord": {
+        "wins": 0,
+        "draws": 0,
+        "losses": 7,
+        "points": 0
+      },
+      "awayRecord": {
+        "wins": 1,
+        "draws": 1,
+        "losses": 6,
+        "points": 4
+      },
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "updatedAt": "2026-05-18T22:10:19.247Z"
+    }
+  ]
+}

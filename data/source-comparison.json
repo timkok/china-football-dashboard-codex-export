@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-05-18T22:14:23.637Z",
+  "status": "ok",
+  "comparisons": [
+    {
+      "fieldGroup": "standings",
+      "league": "csl",
+      "primarySource": "新浪体育中超积分榜",
+      "primarySourceUrl": "https://sports.sina.com.cn/csl/table/",
+      "comparedSources": [],
+      "conflicts": [],
+      "note": "当前积分榜只有一个可解析结构化来源；发现第二来源后将逐字段比对排名和积分。"
+    },
+    {
+      "fieldGroup": "attendance",
+      "league": "csl",
+      "primarySource": "Transfermarkt",
+      "primarySourceUrl": "https://www.transfermarkt.com/chinese-super-league/besucherzahlen/wettbewerb/CSL",
+      "comparedSources": [],
+      "conflicts": [],
+      "note": "观众人数当前使用 Transfermarkt 单源数据；后续接入 FootyStats 后比对总观众、场均观众和上座率。"
+    }
+  ]
+}

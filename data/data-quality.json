@@ -1,0 +1,140 @@
+{
+  "generatedAt": "2026-05-18T22:11:44.067Z",
+  "status": "ok",
+  "expectedRounds": 30,
+  "leagues": {
+    "csl": {
+      "standings": "fallback",
+      "fixtures": "mock",
+      "scheduleCompleteness": {
+        "expectedRounds": 30,
+        "fetchedRounds": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "fetchedRoundsCount": 7,
+        "missingRounds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "anomalyCount": 0,
+        "anomalies": []
+      }
+    },
+    "cl1": {
+      "standings": "mock",
+      "fixtures": "mock",
+      "scheduleCompleteness": {
+        "expectedRounds": 30,
+        "fetchedRounds": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "fetchedRoundsCount": 7,
+        "missingRounds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "anomalyCount": 0,
+        "anomalies": []
+      }
+    },
+    "cl2": {
+      "standings": "mock",
+      "fixtures": "mock",
+      "scheduleCompleteness": {
+        "expectedRounds": 30,
+        "fetchedRounds": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "fetchedRoundsCount": 7,
+        "missingRounds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "anomalyCount": 0,
+        "anomalies": []
+      }
+    }
+  },
+  "issues": []
+}

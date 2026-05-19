@@ -1,0 +1,21 @@
+{
+  "name": "china-football-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static China football league dashboard with GitHub Actions data refresh.",
+  "type": "module",
+  "scripts": {
+    "fetch:data": "node scripts/fetch-data.js",
+    "fetch:attendance": "node scripts/fetch-attendance.js",
+    "fetch:attendance-history": "node scripts/fetch-attendance-history.js",
+    "validate:data": "node scripts/validate-data.js",
+    "generate:changelog": "node scripts/generate-changelog.js",
+    "fetch:all": "npm run fetch:data && npm run fetch:attendance && npm run fetch:attendance-history && npm run validate:data && npm run generate:changelog"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
