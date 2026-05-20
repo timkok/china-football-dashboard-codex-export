@@ -847,23 +847,24 @@
       </aside>
     </section>
 
-    <footer>china-football-dashboard · GitHub Pages 静态站点 · Live JSON first with mock fallback</footer>
+    <footer>china-football-dashboard-codex-export · GitHub Pages 静态站点 · Real data only · add ?demo=1 for demo data</footer>
   </main>
 
   <script>
     // 3. Mock Data
     const MOCK_GENERATED_AT = new Date().toISOString();
+    const IS_DEMO_MODE = new URLSearchParams(window.location.search).get("demo") === "1";
     const DATA_FILES = {
-      meta: "data/meta.json",
-      csl: { standings: "data/csl-standings.json", fixtures: "data/csl-fixtures.json" },
-      cl1: { standings: "data/cl1-standings.json", fixtures: "data/cl1-fixtures.json" },
-      cl2: { standings: "data/cl2-standings.json", fixtures: "data/cl2-fixtures.json" },
-      attendance: "data/attendance-csl.json",
-      attendanceMeta: "data/attendance-meta.json",
-      attendanceHistory: "data/attendance-history-csl.json",
-      changelog: "data/changelog.json",
-      sourceComparison: "data/source-comparison.json",
-      dataQuality: "data/data-quality.json"
+      meta: "./data/meta.json",
+      csl: { standings: "./data/csl-standings.json", fixtures: "./data/csl-fixtures.json" },
+      cl1: { standings: null, fixtures: null },
+      cl2: { standings: null, fixtures: null },
+      attendance: "./data/csl-attendance.json",
+      attendanceMeta: "./data/attendance-meta.json",
+      attendanceHistory: "./data/csl-attendance-history.json",
+      changelog: "./data/changelog.json",
+      sourceComparison: "./data/source-comparison.json",
+      dataQuality: "./data/data-quality.json"
     };
     const TARGETS = {
       csl: { teams: 16, fixtures: 12 },
@@ -1021,6 +1022,31 @@
       cl2: createLeague("cl2", "中乙 China League Two", "中乙", TEAM_SEEDS.cl2)
     };
 
+    function emptyLeague(leagueKey, name, displayName) {
+      return {
+        id: leagueKey,
+        name,
+        displayName,
+        targetTeams: TARGETS[leagueKey].teams,
+        targetFixtures: TARGETS[leagueKey].fixtures,
+        generatedAt: null,
+        dataMode: "missing",
+        source: "暂无真实数据",
+        sourceUrl: "",
+        isOfficial: false,
+        fetchedAt: null,
+        standings: [],
+        fixtures: [],
+        loadErrors: []
+      };
+    }
+
+    const EMPTY_LEAGUES = {
+      csl: emptyLeague("csl", "中超 CSL", "中超"),
+      cl1: emptyLeague("cl1", "中甲 China League One", "中甲"),
+      cl2: emptyLeague("cl2", "中乙 China League Two", "中乙")
+    };
+
     const STATUS_LABELS = {
       scheduled: "未开始",
       live: "进行中",
@@ -1073,31 +1099,33 @@
 
     const state = {
       activeLeague: "csl",
-      selectedTeamId: MOCK_LEAGUES.csl.standings[0].id,
+      selectedTeamId: IS_DEMO_MODE ? MOCK_LEAGUES.csl.standings[0].id : "",
       fixtureTeam: "all",
       fixtureStatus: "all",
-      dataMode: "Mock",
+      dataMode: "Loading",
       transientStatus: "",
       mockGeneratedAt: MOCK_GENERATED_AT,
-      lastRefreshAt: MOCK_GENERATED_AT,
-      lastRefreshSuccess: true,
-      currentSource: "内置示例数据",
+      lastRefreshAt: null,
+      lastRefreshSuccess: false,
+      currentSource: "读取中",
       currentSourceUrl: "",
       isOfficial: false,
-      dataWarning: "当前使用示例数据 / fallback 数据，不代表官方排名或真实赛果。",
+      dataWarning: "正在读取真实 JSON 数据。",
       meta: null,
-      attendance: MOCK_ATTENDANCE,
+      attendance: { ...MOCK_ATTENDANCE, mode: "missing", source: "暂无真实观众数据", summary: {}, teams: [], matches: [] },
       attendanceMeta: null,
       attendanceHistory: null,
       changelog: null,
       sourceComparison: null,
       dataQuality: null,
-      attendanceMode: "Mock",
-      attendanceWarning: "当前观众人数为示例数据，不代表真实球市表现。",
-      leagues: MOCK_LEAGUES,
+      fileResults: {},
+      missingFiles: [],
+      attendanceMode: "missing",
+      attendanceWarning: "暂无真实观众数据。",
+      leagues: IS_DEMO_MODE ? MOCK_LEAGUES : EMPTY_LEAGUES,
       charts: {},
       logs: [
-        { time: MOCK_GENERATED_AT, type: "scheduled", message: "初始化 mock 数据快照，页面已加载中超默认视图。" }
+        { time: MOCK_GENERATED_AT, type: IS_DEMO_MODE ? "manual" : "scheduled", message: IS_DEMO_MODE ? "Demo 模式已启用，正在使用内置示例数据。" : "Real-data-only 模式启动，正在读取本仓库 JSON。" }
       ]
     };
 
@@ -1109,7 +1137,7 @@
     function activeSource() {
       const data = league();
       return {
-        name: data.source || state.currentSource || "内置示例数据",
+        name: data.source || state.currentSource || "暂无真实数据",
         url: data.sourceUrl || state.currentSourceUrl || "",
         isOfficial: Boolean(data.isOfficial || state.isOfficial),
         fetchedAt: data.fetchedAt || state.lastRefreshAt,
@@ -1122,14 +1150,17 @@
     }
 
     function formatDateTime(value) {
+      if (!value) return "暂无";
       return new Intl.DateTimeFormat("zh-CN", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" }).format(new Date(value));
     }
 
     function formatFullDateTime(value) {
+      if (!value) return "暂无真实数据";
       return new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" }).format(new Date(value));
     }
 
     function formatAge(value) {
+      if (!value) return "暂无";
       const diff = Math.max(0, Date.now() - new Date(value).getTime());
       const minutes = Math.floor(diff / 60000);
       if (minutes < 1) return "刚刚";
@@ -1140,6 +1171,7 @@
     }
 
     function dataAgeHours() {
+      if (!activeSource().fetchedAt && !state.lastRefreshAt) return 0;
       return (Date.now() - new Date(activeSource().fetchedAt || state.lastRefreshAt).getTime()) / 36e5;
     }
 
@@ -1157,6 +1189,10 @@
         Fallback: "Live Fallback",
         Mock: "Mock 示例数据",
         Stale: "Stale",
+        Loading: "读取中",
+        Missing: "暂无真实数据",
+        Partial: "部分真实数据",
+        missing: "暂无真实数据",
         Refreshing: "刷新中"
       };
       return labels[mode] || `${mode} 数据`;
@@ -1173,6 +1209,10 @@
       const age = formatAge(source.fetchedAt || state.lastRefreshAt);
       if (effectiveMode() === "Refreshing") return "正在重新读取本仓库静态 JSON，页面不会直接抓取外部网页。";
       if (effectiveMode() === "Mock") return "当前为示例数据，不代表官方排名、真实赛果或真实观众人数。";
+      if (effectiveMode() === "Missing" || effectiveMode() === "missing") {
+        const names = state.missingFiles.length ? state.missingFiles.join("、") : "真实 JSON";
+        return `暂无真实数据：${names} 缺失或解析失败。请检查 GitHub Actions 数据产物。`;
+      }
       if (effectiveMode() === "Stale") {
         return `当前使用本仓库静态 JSON 快照，来源：${source.name || "未标注"}，数据年龄 ${age}。数据已超过 12 小时，请以官方公告为准。`;
       }
@@ -1182,10 +1222,22 @@
       return `当前使用本仓库静态 JSON 官方来源数据，最近更新时间 ${formatFullDateTime(source.fetchedAt || state.lastRefreshAt)}。`;
     }
 
-    async function fetchJson(path) {
-      const response = await fetch(`${path}?v=${Date.now()}`, { cache: "no-store" });
-      if (!response.ok) throw new Error(`${path} returned ${response.status}`);
-      return response.json();
+    async function safeFetchJson(path) {
+      if (!path) return { ok: false, data: null, error: "No JSON path configured", status: 0, path: "not-configured" };
+      try {
+        const response = await fetch(`${path}?v=${Date.now()}`, { cache: "no-store" });
+        if (!response.ok) {
+          return { ok: false, data: null, error: response.status === 404 ? "JSON file missing" : `HTTP ${response.status}`, status: response.status, path };
+        }
+        const text = await response.text();
+        try {
+          return { ok: true, data: JSON.parse(text), error: "", status: response.status, path };
+        } catch (error) {
+          return { ok: false, data: null, error: `JSON parse error: ${error.message}`, status: response.status, path };
+        }
+      } catch (error) {
+        return { ok: false, data: null, error: `Network error: ${error.message}`, status: 0, path };
+      }
     }
 
     function payloadFreshness(payloads) {
@@ -1270,102 +1322,92 @@
       const payloads = [standingsPayload, fixturesPayload].filter(Boolean);
       const standings = standingsPayload && Array.isArray(standingsPayload.data) && standingsPayload.data.length
         ? standingsPayload.data.map((item, index) => normalizeTeamFromPayload(item, leagueKey, index, standingsPayload))
-        : current.standings;
+        : [];
       const fixtures = fixturesPayload && Array.isArray(fixturesPayload.data) && fixturesPayload.data.length
         ? fixturesPayload.data.map((item, index) => normalizeFixtureFromPayload(item, leagueKey, index, fixturesPayload))
-        : current.fixtures;
+        : [];
       const sourcePayload = standingsPayload || fixturesPayload;
 
       state.leagues[leagueKey] = {
         ...current,
         standings,
         fixtures,
-        dataMode: deriveLeagueMode(payloads, current.dataMode || "Mock"),
-        source: sourcePayload?.source || current.source || "内置示例数据",
+        dataMode: payloads.length ? deriveLeagueMode(payloads, "JSON") : "missing",
+        source: sourcePayload?.source || "暂无真实数据",
         sourceUrl: sourcePayload?.sourceUrl || current.sourceUrl || "",
         isOfficial: Boolean(sourcePayload?.isOfficial),
-        fetchedAt: sourcePayload?.fetchedAt || payloadFreshness(payloads) || current.fetchedAt || MOCK_GENERATED_AT,
+        fetchedAt: sourcePayload?.fetchedAt || payloadFreshness(payloads) || null,
         usingMockStandings: !standingsPayload,
         usingMockFixtures: !fixturesPayload
       };
     }
 
     async function loadStaticData() {
-      try {
-        const meta = await fetchJson(DATA_FILES.meta);
-        state.meta = meta;
-        const loadedPayloads = [];
-
-        for (const leagueKey of ["csl", "cl1", "cl2"]) {
-          let standingsPayload = null;
-          let fixturesPayload = null;
-          try {
-            standingsPayload = await fetchJson(DATA_FILES[leagueKey].standings);
-            loadedPayloads.push(standingsPayload);
-          } catch (error) {
-            console.warn(`Standings JSON unavailable for ${leagueKey}:`, error);
-          }
-          try {
-            fixturesPayload = await fetchJson(DATA_FILES[leagueKey].fixtures);
-            loadedPayloads.push(fixturesPayload);
-          } catch (error) {
-            console.warn(`Fixtures JSON unavailable for ${leagueKey}:`, error);
-          }
-          applyPayloadsToLeague(leagueKey, standingsPayload, fixturesPayload);
+      const fileEntries = [
+        ["meta.json", DATA_FILES.meta],
+        ["csl-standings.json", DATA_FILES.csl.standings],
+        ["csl-fixtures.json", DATA_FILES.csl.fixtures],
+        ["csl-attendance.json", DATA_FILES.attendance],
+        ["csl-attendance-history.json", DATA_FILES.attendanceHistory],
+        ["attendance-meta.json", DATA_FILES.attendanceMeta],
+        ["data-quality.json", DATA_FILES.dataQuality],
+        ["changelog.json", DATA_FILES.changelog],
+        ["source-comparison.json", DATA_FILES.sourceComparison]
+      ];
+      const results = {};
+      for (const [key, path] of fileEntries) {
+        results[key] = await safeFetchJson(path);
+        if (results[key].ok && results[key].data?.mode === "mock" && !IS_DEMO_MODE) {
+          results[key].ok = false;
+          results[key].error = "JSON is marked mock; real-data-only mode refuses demo data";
         }
-
-        try {
-          const attendancePayload = await fetchJson(DATA_FILES.attendance);
-          validateAttendanceData(attendancePayload);
-          state.attendance = attendancePayload;
-          state.attendanceMode = attendancePayload.mode === "third_party" ? "Third-party" : "Mock";
-          state.attendanceWarning = "观众人数数据来自第三方公开来源 Transfermarkt，非官方数据，仅供趋势分析参考；如与官方公告不一致，以官方发布为准。";
-        } catch (error) {
-          console.warn("Attendance JSON unavailable; using mock attendance fallback.", error);
-          state.attendance = MOCK_ATTENDANCE;
-          state.attendanceMode = "Mock";
-          state.attendanceWarning = "当前观众人数为示例数据，不代表真实球市表现。";
-        }
-
-        try {
-          state.attendanceMeta = await fetchJson(DATA_FILES.attendanceMeta);
-        } catch (error) {
-          console.warn("Attendance meta unavailable:", error);
-        }
-
-        for (const [key, path] of [
-          ["attendanceHistory", DATA_FILES.attendanceHistory],
-          ["changelog", DATA_FILES.changelog],
-          ["sourceComparison", DATA_FILES.sourceComparison],
-          ["dataQuality", DATA_FILES.dataQuality]
-        ]) {
-          try {
-            state[key] = await fetchJson(path);
-          } catch (error) {
-            console.warn(`${key} JSON unavailable:`, error);
-          }
-        }
-
-      if (!loadedPayloads.length) throw new Error("No league JSON payloads loaded");
-      const freshest = payloadFreshness(loadedPayloads) || meta.updatedAt || meta.generatedAt || new Date().toISOString();
-      state.lastRefreshAt = freshest;
-      state.lastRefreshSuccess = meta.status !== "error";
-      state.dataMode = deriveLeagueMode(loadedPayloads, meta.mode === "mock" ? "Mock" : "Fallback");
-      state.currentSource = meta.primarySource || meta.sources?.find(item => item.status === "ok")?.name || state.leagues[state.activeLeague].source || "静态 JSON";
-      state.currentSourceUrl = meta.primarySourceUrl || meta.sources?.find(item => item.status === "ok")?.url || state.leagues[state.activeLeague].sourceUrl || "";
-        state.isOfficial = loadedPayloads.some(payload => payload.isOfficial);
-      state.dataWarning = dataNoticeText();
-        state.logs.unshift({ time: new Date().toISOString(), type: "scheduled", message: `已读取 data/*.json，模式：${state.dataMode}。` });
-      } catch (error) {
-        console.warn("Static JSON load failed; using mock fallback.", error);
-        state.dataMode = "Mock";
-        state.currentSource = "内置示例数据";
-        state.currentSourceUrl = "";
-        state.isOfficial = false;
-        state.lastRefreshSuccess = false;
-        state.dataWarning = "当前使用示例数据 / fallback 数据，不代表官方排名或真实赛果。";
-        state.logs.unshift({ time: new Date().toISOString(), type: "fallback", message: "data/*.json 不存在或读取失败，已回退到内置 mock 数据。" });
       }
+      state.fileResults = results;
+      state.missingFiles = Object.entries(results).filter(([, result]) => !result.ok).map(([key, result]) => `${key} (${result.error})`);
+
+      state.meta = results["meta.json"].ok ? results["meta.json"].data : null;
+      const standingsPayload = results["csl-standings.json"].ok ? results["csl-standings.json"].data : null;
+      const fixturesPayload = results["csl-fixtures.json"].ok ? results["csl-fixtures.json"].data : null;
+      applyPayloadsToLeague("csl", standingsPayload, fixturesPayload);
+      state.leagues.cl1 = emptyLeague("cl1", "中甲 China League One", "中甲");
+      state.leagues.cl1.loadErrors = ["未配置真实 JSON。"];
+      state.leagues.cl2 = emptyLeague("cl2", "中乙 China League Two", "中乙");
+      state.leagues.cl2.loadErrors = ["未配置真实 JSON。"];
+
+      if (results["csl-attendance.json"].ok) {
+        try {
+          validateAttendanceData(results["csl-attendance.json"].data);
+          state.attendance = results["csl-attendance.json"].data;
+          state.attendanceMode = state.attendance.mode || "third_party";
+          state.attendanceWarning = "观众人数数据来自 Transfermarkt 第三方公开来源，非官方，仅供趋势分析参考。";
+        } catch (error) {
+          results["csl-attendance.json"].ok = false;
+          results["csl-attendance.json"].error = error.message;
+          state.attendance = { ...MOCK_ATTENDANCE, mode: "missing", source: "暂无真实观众数据", summary: {}, teams: [], matches: [] };
+          state.attendanceMode = "missing";
+          state.attendanceWarning = `暂无真实观众数据：${error.message}`;
+        }
+      } else {
+        state.attendance = { ...MOCK_ATTENDANCE, mode: "missing", source: "暂无真实观众数据", summary: {}, teams: [], matches: [] };
+        state.attendanceMode = "missing";
+        state.attendanceWarning = `暂无真实观众数据：${results["csl-attendance.json"].error}`;
+      }
+
+      state.attendanceMeta = results["attendance-meta.json"].ok ? results["attendance-meta.json"].data : null;
+      state.attendanceHistory = results["csl-attendance-history.json"].ok ? results["csl-attendance-history.json"].data : null;
+      state.dataQuality = results["data-quality.json"].ok ? results["data-quality.json"].data : null;
+      state.changelog = results["changelog.json"].ok ? results["changelog.json"].data : null;
+      state.sourceComparison = results["source-comparison.json"].ok ? results["source-comparison.json"].data : null;
+
+      const loadedPayloads = [standingsPayload, fixturesPayload, state.attendance, state.attendanceHistory].filter(payload => payload && payload.mode !== "missing");
+      const freshest = payloadFreshness(loadedPayloads) || state.meta?.updatedAt || null;
+      state.lastRefreshAt = freshest;
+      state.lastRefreshSuccess = Boolean(standingsPayload || fixturesPayload || state.attendance.teams.length);
+      state.dataMode = loadedPayloads.length ? "JSON" : "Missing";
+      state.currentSource = standingsPayload?.source || state.attendance.source || "暂无真实数据";
+      state.currentSourceUrl = standingsPayload?.sourceUrl || state.attendance.sourceUrl || "";
+      state.isOfficial = Boolean(standingsPayload?.isOfficial);
+      state.logs.unshift({ time: new Date().toISOString(), type: state.lastRefreshSuccess ? "scheduled" : "error", message: state.lastRefreshSuccess ? "已读取真实 JSON 数据。" : "真实 JSON 缺失或解析失败，未启用默认 mock fallback。" });
     }
 
     function validateLoadedData(payload) {
@@ -1411,17 +1453,14 @@
     }
 
     async function loadDashboardData() {
-      try {
-        await loadStaticData();
-        validateLoadedData({
-          data: state.leagues.csl.standings
-        });
-        useJsonData();
-      } catch (error) {
-        console.warn("Dashboard JSON load failed; using mock data.", error);
+      if (IS_DEMO_MODE) {
         useMockData();
-        showMockWarning();
+        state.attendance = MOCK_ATTENDANCE;
+        state.attendanceMode = "Mock";
+        state.logs.unshift({ time: new Date().toISOString(), type: "manual", message: "URL 含 ?demo=1，已启用 demo/mock 数据。" });
+        return;
       }
+      await loadStaticData();
     }
 
     function recordToText(record) {
@@ -1663,8 +1702,19 @@
       const data = league();
       const validation = validateLeagueData(data);
       const alerts = [];
-      const avgGaPerMatch = data.standings.reduce((sum, team) => sum + team.goalsAgainst / team.played, 0) / data.standings.length;
-      const avgGfPerMatch = data.standings.reduce((sum, team) => sum + team.goalsFor / team.played, 0) / data.standings.length;
+      Object.entries(state.fileResults || {}).forEach(([name, result]) => {
+        if (!result.ok) {
+          alerts.push({ level: "critical", type: "Data Missing", target: name, message: result.error || "真实 JSON 不可用。", action: "检查 data 目录、GitHub Actions 产物和文件名。" });
+        }
+      });
+
+      if (!data.standings.length) {
+        alerts.push({ level: "critical", type: "Data Missing", target: data.name, message: "当前联赛没有真实积分榜数据。", action: "生成并提交对应 standings JSON，或使用 ?demo=1 查看演示。" });
+        return alerts;
+      }
+
+      const avgGaPerMatch = data.standings.reduce((sum, team) => sum + team.goalsAgainst / Math.max(1, team.played), 0) / data.standings.length;
+      const avgGfPerMatch = data.standings.reduce((sum, team) => sum + team.goalsFor / Math.max(1, team.played), 0) / data.standings.length;
 
       if (dataAgeHours() > 12) {
         alerts.push({ level: "critical", type: "Stale Data", target: "全站数据", message: `数据年龄为 ${formatAge(state.lastRefreshAt)}，超过 12 小时阈值。`, action: "触发手动刷新或检查定时数据管道。" });
@@ -1732,6 +1782,10 @@
     }
 
     function ensureSelectedTeam() {
+      if (!league().standings.length) {
+        state.selectedTeamId = "";
+        return;
+      }
       if (!league().standings.some(team => team.id === state.selectedTeamId)) {
         state.selectedTeamId = league().standings[0].id;
       }
@@ -1767,6 +1821,16 @@
       const attendance = state.attendance;
       const summary = attendance.summary || {};
       const avgOcc = averageOccupancy();
+      if (!attendance.teams.length) {
+        document.getElementById("attendanceSourceBadge").outerHTML = `<span class="badge error" id="attendanceSourceBadge">missing</span>`;
+        document.getElementById("attendanceMetrics").innerHTML = `
+          <article class="metric"><div class="metric-top"><span class="metric-icon" style="background:var(--red)"></span>观众数据状态</div><div class="metric-value" style="font-size:22px;">暂无真实观众数据</div><div class="metric-foot">${state.fileResults?.["csl-attendance.json"]?.error || "csl-attendance.json 不可用"}</div></article>
+        `;
+        document.getElementById("attendanceTrendNote").textContent = "未启用默认 mock fallback；添加 ?demo=1 可查看演示数据。";
+        document.getElementById("hotHomeTop5").innerHTML = "";
+        document.getElementById("attendanceBody").innerHTML = `<tr><td colspan="9" class="muted">暂无真实观众数据。请生成 data/csl-attendance.json。</td></tr>`;
+        return;
+      }
       const sourceText = attendance.mode === "mock" ? attendance.source : `${attendance.source}${attendance.isOfficial ? "" : " · third-party"}`;
       const badge = document.getElementById("attendanceSourceBadge");
       badge.outerHTML = `<span class="badge ${attendance.mode === "mock" ? "mock" : "third_party"}" id="attendanceSourceBadge">${attendance.mode === "mock" ? "mock 示例" : "Transfermarkt 非官方，仅供参考"}</span>`;
@@ -1830,6 +1894,10 @@
     function renderStandings() {
       const source = activeSource();
       document.getElementById("standingsSubtitle").textContent = `${league().name} · ${league().standings.length} 支球队 · 来源：${source.name} · fetchedAt：${formatFullDateTime(source.fetchedAt || state.lastRefreshAt)}`;
+      if (!league().standings.length) {
+        document.getElementById("standingsBody").innerHTML = `<tr><td colspan="17" class="muted">暂无真实积分榜数据。${state.activeLeague === "csl" ? (state.fileResults?.["csl-standings.json"]?.error || "") : "当前联赛未配置真实 JSON。"}</td></tr>`;
+        return;
+      }
       document.getElementById("standingsBody").innerHTML = league().standings.map(team => {
         const zone = rankZone(team, state.activeLeague);
         return `
@@ -1861,6 +1929,12 @@
     }
 
     function renderFilters() {
+      if (!league().standings.length) {
+        document.getElementById("fixtureTeamFilter").innerHTML = `<option value="all">暂无真实球队</option>`;
+        document.getElementById("fixtureStatusFilter").value = state.fixtureStatus;
+        document.getElementById("teamMonitorSelect").innerHTML = `<option value="">暂无真实球队</option>`;
+        return;
+      }
       const options = league().standings.map(team => `<option value="${team.name}">${team.name}</option>`).join("");
       document.getElementById("fixtureTeamFilter").innerHTML = `<option value="all">全部球队</option>${options}`;
       document.getElementById("fixtureTeamFilter").value = state.fixtureTeam;
@@ -1889,7 +1963,30 @@
 
     function renderDataHealth() {
       const health = updateDataHealth(league());
-      document.getElementById("dataHealth").innerHTML = `
+      const required = ["meta.json", "csl-standings.json", "csl-fixtures.json", "csl-attendance.json", "csl-attendance-history.json"];
+      const fileValues = Object.values(state.fileResults || {});
+      const mockCount = fileValues.filter(result => result.data?.mode === "mock").length;
+      const staleCount = fileValues.filter(result => {
+        const at = result.data?.fetchedAt || result.data?.updatedAt;
+        return result.ok && at && (Date.now() - new Date(at).getTime()) / 36e5 > 12;
+      }).length;
+      const fileCards = required.map(name => {
+        const result = state.fileResults?.[name];
+        const payload = result?.data || {};
+        const timestamp = payload.fetchedAt || payload.updatedAt;
+        const ageHours = timestamp ? (Date.now() - new Date(timestamp).getTime()) / 36e5 : 0;
+        const status = !result ? "loading" : !result.ok ? "missing" : ageHours > 12 ? "stale" : "ok";
+        return `
+          <div class="health-item">
+            <span>${name}</span>
+            <strong>${status}</strong>
+            <div class="muted">${payload.source || payload.mode || result?.error || "无来源"}</div>
+            <div class="muted">${timestamp ? formatFullDateTime(timestamp) : "暂无 fetchedAt"}</div>
+            ${result && !result.ok ? `<div class="muted">${result.error}</div>` : ""}
+          </div>
+        `;
+      }).join("");
+      document.getElementById("dataHealth").innerHTML = fileCards + `
         <div class="health-item"><span>当前数据模式</span><strong>${health.mode}</strong></div>
         <div class="health-item"><span>最近刷新时间</span><strong>${formatAge(health.lastRefreshAt)}</strong></div>
         <div class="health-item"><span>当前数据来源</span><strong>${health.sourceName}</strong></div>
@@ -1901,6 +1998,8 @@
         <div class="health-item"><span>赛程场次数 / 目标</span><strong>${health.fixtureText}</strong><div class="progress"><i style="width:${health.fixtureCompleteness * 100}%"></i></div></div>
         <div class="health-item"><span>异常数量</span><strong>${health.alertCount}</strong></div>
         <div class="health-item"><span>数据年龄</span><strong>${health.age}</strong></div>
+        <div class="health-item"><span>使用 mock 的模块数</span><strong>${mockCount}</strong></div>
+        <div class="health-item"><span>stale 模块数</span><strong>${staleCount}</strong></div>
       `;
     }
 
@@ -1992,6 +2091,11 @@
 
     function renderTeamMonitor() {
       const team = teamById(state.selectedTeamId);
+      if (!team) {
+        document.getElementById("teamSummary").innerHTML = `<div class="muted">暂无真实球队数据。${IS_DEMO_MODE ? "" : "添加 ?demo=1 可查看演示。"}</div>`;
+        document.getElementById("teamFixtures").innerHTML = `<li class="recent-item muted">暂无真实比赛。</li>`;
+        return;
+      }
       const attendance = attendanceForTeam(team.name);
       const scores = predictionScores(team);
       document.getElementById("teamSummary").innerHTML = `
@@ -2083,9 +2187,12 @@
     }
 
     // 6. Chart Functions
-    function showChartFallback() {
+    function showChartFallback(message = "图表不可用，已保留表格数据。") {
       document.querySelectorAll(".chart").forEach(el => { el.style.display = "none"; });
-      document.querySelectorAll(".chart-fallback").forEach(el => { el.style.display = "flex"; });
+      document.querySelectorAll(".chart-fallback").forEach(el => {
+        el.style.display = "flex";
+        el.textContent = message;
+      });
     }
 
     function hideChartFallback() {
@@ -2096,6 +2203,34 @@
     function chart(id) {
       if (!state.charts[id]) state.charts[id] = echarts.init(document.getElementById(id));
       return state.charts[id];
+    }
+
+    function renderChartSafely(containerId, data, renderFn) {
+      const container = document.getElementById(containerId);
+      const fallback = container?.nextElementSibling;
+      if (!container || !fallback) return;
+      if (!window.echarts) {
+        container.style.display = "none";
+        fallback.style.display = "flex";
+        fallback.textContent = "图表库未加载；表格数据仍可用。";
+        return;
+      }
+      if (!Array.isArray(data) || !data.length) {
+        container.style.display = "none";
+        fallback.style.display = "flex";
+        fallback.textContent = "暂无真实数据，图表等待 JSON 数据。";
+        return;
+      }
+      try {
+        container.style.display = "block";
+        fallback.style.display = "none";
+        chart(containerId).setOption(renderFn(), true);
+      } catch (error) {
+        console.error(`Chart ${containerId} failed`, error);
+        container.style.display = "none";
+        fallback.style.display = "flex";
+        fallback.textContent = `图表渲染错误：${error.message}`;
+      }
     }
 
     function chartBase() {
@@ -2118,7 +2253,11 @@
 
     function renderCharts() {
       if (!window.echarts) {
-        showChartFallback();
+        showChartFallback("图表库未加载；表格数据仍可用。");
+        return;
+      }
+      if (!league().standings.length) {
+        showChartFallback("暂无真实数据，图表等待 JSON 数据。");
         return;
       }
       try {

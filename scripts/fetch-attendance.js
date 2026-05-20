@@ -88,6 +88,14 @@ function formatError(error) {
   return error && error.message ? error.message : String(error);
 }
 
+function heatLabel(rate) {
+  if (rate === null || rate === undefined) return "暂无数据";
+  if (rate >= 0.9) return "爆满";
+  if (rate >= 0.7) return "高热度";
+  if (rate >= 0.4) return "正常";
+  return "偏冷";
+}
+
 async function getHtml(url) {
   const response = await fetch(url, {
     headers: {
@@ -131,6 +139,7 @@ function parseAttendanceHtml(html, source) {
       totalAttendance,
       averageAttendance,
       occupancyRate,
+      heatLabel: heatLabel(occupancyRate),
       source: source.name
     });
   });
@@ -157,6 +166,7 @@ function parseAttendanceHtml(html, source) {
       matches,
       totalAttendance,
       averageAttendance,
+      averageOccupancyRate: teams.reduce((sum, team) => sum + (team.occupancyRate || 0), 0) / teams.length,
       highestAverageTeam: highest.team,
       highestAverageAttendance: highest.averageAttendance
     },
@@ -239,6 +249,7 @@ async function main() {
     } catch (error) {
       logs.push({ level: "warning", source: SOURCES[1].id, message: `Attendance trend unavailable: ${formatError(error)}` });
     }
+    await writeJson("csl-attendance.json", attendance);
     await writeJson("attendance-csl.json", attendance);
     await writeJson("attendance-meta.json", {
       updatedAt: NOW,
@@ -250,7 +261,7 @@ async function main() {
       teamsCount: attendance.teams.length,
       logs
     });
-    console.log(`[write] data/attendance-csl.json: ${attendance.teams.length} teams from ${usedSource.url}`);
+    console.log(`[write] data/csl-attendance.json: ${attendance.teams.length} teams from ${usedSource.url}`);
     console.log("[write] data/attendance-meta.json: ok");
     return;
   }
@@ -263,11 +274,11 @@ async function main() {
     source: previous?.source || "none",
     sourceUrl: previous?.sourceUrl || "",
     isOfficial: false,
-    preservedPreviousData: existsSync(path.join(DATA_DIR, "attendance-csl.json")),
+    preservedPreviousData: existsSync(path.join(DATA_DIR, "csl-attendance.json")) || existsSync(path.join(DATA_DIR, "attendance-csl.json")),
     logs
   });
-  console.error("[error] Transfermarkt attendance fetch failed; preserved previous attendance-csl.json if present");
-  process.exitCode = existsSync(path.join(DATA_DIR, "attendance-csl.json")) ? 0 : 1;
+  console.error("[error] Transfermarkt attendance fetch failed; preserved previous csl-attendance.json if present");
+  process.exitCode = existsSync(path.join(DATA_DIR, "csl-attendance.json")) || existsSync(path.join(DATA_DIR, "attendance-csl.json")) ? 0 : 1;
 }
 
 main().catch(error => {

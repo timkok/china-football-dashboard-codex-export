@@ -83,8 +83,9 @@ async function main() {
     schemaVersion: 1,
     data
   };
+  await writeFile(path.join(DATA_DIR, "csl-attendance-history.json"), `${JSON.stringify(payload, null, 2)}\n`);
   await writeFile(path.join(DATA_DIR, "attendance-history-csl.json"), `${JSON.stringify(payload, null, 2)}\n`);
-  console.log(`[write] data/attendance-history-csl.json: ${data.length} rows`);
+  console.log(`[write] data/csl-attendance-history.json: ${data.length} rows`);
 }
 
 main().catch(error => {
