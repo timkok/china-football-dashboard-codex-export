@@ -1153,6 +1153,7 @@
       const mode = effectiveMode();
       const labels = {
         Live: activeSource().isOfficial ? "Live Official" : "Live Fallback",
+        JSON: "JSON 静态数据",
         Fallback: "Live Fallback",
         Mock: "Mock 示例数据",
         Stale: "Stale",
@@ -1165,6 +1166,20 @@
       const mode = effectiveMode().toLowerCase();
       if (mode === "refreshing") return "loading";
       return mode;
+    }
+
+    function dataNoticeText() {
+      const source = activeSource();
+      const age = formatAge(source.fetchedAt || state.lastRefreshAt);
+      if (effectiveMode() === "Refreshing") return "正在重新读取本仓库静态 JSON，页面不会直接抓取外部网页。";
+      if (effectiveMode() === "Mock") return "当前为示例数据，不代表官方排名、真实赛果或真实观众人数。";
+      if (effectiveMode() === "Stale") {
+        return `当前使用本仓库静态 JSON 快照，来源：${source.name || "未标注"}，数据年龄 ${age}。数据已超过 12 小时，请以官方公告为准。`;
+      }
+      if (!source.isOfficial) {
+        return `当前使用本仓库静态 JSON 数据，来源：${source.name || "非官方 fallback"}。非官方数据仅供参考，如与官方公告不一致，以官方发布为准。`;
+      }
+      return `当前使用本仓库静态 JSON 官方来源数据，最近更新时间 ${formatFullDateTime(source.fetchedAt || state.lastRefreshAt)}。`;
     }
 
     async function fetchJson(path) {
@@ -1339,9 +1354,7 @@
       state.currentSource = meta.primarySource || meta.sources?.find(item => item.status === "ok")?.name || state.leagues[state.activeLeague].source || "静态 JSON";
       state.currentSourceUrl = meta.primarySourceUrl || meta.sources?.find(item => item.status === "ok")?.url || state.leagues[state.activeLeague].sourceUrl || "";
         state.isOfficial = loadedPayloads.some(payload => payload.isOfficial);
-      state.dataWarning = state.dataMode === "Live"
-        ? "当前优先使用本仓库 data/*.json 静态数据；如与官方公告不一致，以中足联 / 足协官方公告为准。"
-        : "当前使用示例数据 / fallback 数据，不代表官方排名或真实赛果。";
+      state.dataWarning = dataNoticeText();
         state.logs.unshift({ time: new Date().toISOString(), type: "scheduled", message: `已读取 data/*.json，模式：${state.dataMode}。` });
       } catch (error) {
         console.warn("Static JSON load failed; using mock fallback.", error);
@@ -1734,7 +1747,7 @@
       document.getElementById("currentSource").textContent = source.name || "内置示例数据";
       document.getElementById("currentSourceUrl").textContent = source.url || "无";
       document.getElementById("officialFlag").textContent = source.isOfficial ? "是" : "否";
-      document.getElementById("dataNotice").textContent = state.dataWarning;
+      document.getElementById("dataNotice").textContent = dataNoticeText();
       const pill = document.getElementById("dataModePill");
       pill.className = `pill ${modeClass()}`;
       pill.textContent = displayModeLabel();
@@ -2012,7 +2025,19 @@
 
     function renderAlerts() {
       const alerts = generateAlerts();
-      document.getElementById("alertList").innerHTML = alerts.length ? alerts.map(alert => `
+      const qualityTypes = new Set(["Stale Data", "Data Completeness Alert", "Schedule Quality Alert", "Data Conflict Alert", "Attendance Stale Alert", "Data Missing Alert", "Low Occupancy Alert", "High Demand Alert", "Fixture Alert"]);
+      const qualityAlerts = alerts.filter(alert => qualityTypes.has(alert.type));
+      const sportingAlerts = alerts.filter(alert => !qualityTypes.has(alert.type));
+      const visibleAlerts = [...qualityAlerts, ...sportingAlerts.slice(0, 4)];
+      const hiddenCount = Math.max(0, alerts.length - visibleAlerts.length);
+      const summary = alerts.length ? `
+        <li class="alert-item info">
+          <div class="alert-head"><span>Alert Summary</span><span class="badge info">${alerts.length}</span></div>
+          <div class="alert-copy">优先展示数据质量、来源、观众和赛程完整度告警；竞技状态类告警仅展示前 4 条。</div>
+          ${hiddenCount ? `<div class="alert-action">已折叠 ${hiddenCount} 条低优先级竞技状态告警，避免淹没数据质量问题。</div>` : ""}
+        </li>
+      ` : "";
+      document.getElementById("alertList").innerHTML = alerts.length ? summary + visibleAlerts.map(alert => `
         <li class="alert-item ${alert.level}">
           <div class="alert-head"><span>${alert.type}</span><span class="badge ${alert.level}">${alert.level}</span></div>
           <div class="alert-copy"><strong>${alert.target}</strong> · ${alert.message}</div>
