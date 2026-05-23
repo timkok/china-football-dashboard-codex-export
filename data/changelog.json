@@ -1,13 +1,50 @@
 {
-  "generatedAt": "2026-05-23T08:20:51.770Z",
+  "generatedAt": "2026-05-23T13:26:06.555Z",
   "summary": {
-    "rankingChanges": 0,
-    "pointsChanges": 0,
+    "rankingChanges": 3,
+    "pointsChanges": 2,
     "attendanceChanges": 0,
     "anomalyChanges": 0
   },
-  "rankingChanges": [],
-  "pointsChanges": [],
+  "rankingChanges": [
+    {
+      "team": "上海海港",
+      "rank": 10,
+      "rankChange": 1,
+      "points": 12,
+      "pointsChange": 1
+    },
+    {
+      "team": "河南队",
+      "rank": 11,
+      "rankChange": -1,
+      "points": 12,
+      "pointsChange": 0
+    },
+    {
+      "team": "天津津门虎",
+      "rank": 16,
+      "rankChange": 0,
+      "points": 2,
+      "pointsChange": 1
+    }
+  ],
+  "pointsChanges": [
+    {
+      "team": "上海海港",
+      "rank": 10,
+      "rankChange": 1,
+      "points": 12,
+      "pointsChange": 1
+    },
+    {
+      "team": "天津津门虎",
+      "rank": 16,
+      "rankChange": 0,
+      "points": 2,
+      "pointsChange": 1
+    }
+  ],
   "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
@@ -58,14 +95,14 @@
         "points": 12
       },
       {
-        "team": "河南队",
+        "team": "上海海港",
         "rank": 10,
         "points": 12
       },
       {
-        "team": "上海海港",
+        "team": "河南队",
         "rank": 11,
-        "points": 11
+        "points": 12
       },
       {
         "team": "深圳新鵬城",
@@ -90,7 +127,7 @@
       {
         "team": "天津津门虎",
         "rank": 16,
-        "points": 1
+        "points": 2
       }
     ],
     "attendance": [
