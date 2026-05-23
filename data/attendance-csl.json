@@ -7,15 +7,15 @@
   "sourceUrl": "https://www.transfermarkt.com/chinese-super-league/besucherzahlen/wettbewerb/CSL",
   "isOfficial": false,
   "mode": "third_party",
-  "fetchedAt": "2026-05-23T14:10:27.268Z",
+  "fetchedAt": "2026-05-23T19:10:26.351Z",
   "schemaVersion": 1,
   "summary": {
-    "matches": 104,
-    "totalAttendance": 3160762,
-    "averageAttendance": 30391,
-    "averageOccupancyRate": 0.6447192976270123,
+    "matches": 107,
+    "totalAttendance": 3292353,
+    "averageAttendance": 30769,
+    "averageOccupancyRate": 0.6451410361549884,
     "highestAverageTeam": "Dalian Yingbo",
-    "highestAverageAttendance": 60739
+    "highestAverageAttendance": 60970
   },
   "teams": [
     {
@@ -25,10 +25,10 @@
       "stadium": "Dalian Suoyuwan Football Stadium",
       "stadiumCn": "大连梭鱼湾足球场",
       "capacity": 65277,
-      "matches": 6,
-      "totalAttendance": 364436,
-      "averageAttendance": 60739,
-      "occupancyRate": 0.9304808738146667,
+      "matches": 7,
+      "totalAttendance": 426792,
+      "averageAttendance": 60970,
+      "occupancyRate": 0.9340196393829373,
       "heatLabel": "爆满",
       "source": "Transfermarkt"
     },
@@ -39,10 +39,10 @@
       "stadium": "Workers Stadium",
       "stadiumCn": "北京工人体育场",
       "capacity": 68000,
-      "matches": 6,
-      "totalAttendance": 298711,
-      "averageAttendance": 49785,
-      "occupancyRate": 0.7321323529411765,
+      "matches": 7,
+      "totalAttendance": 346764,
+      "averageAttendance": 49538,
+      "occupancyRate": 0.7285,
       "heatLabel": "高热度",
       "source": "Transfermarkt"
     },
@@ -160,6 +160,20 @@
     },
     {
       "rank": 11,
+      "team": "Shanghai Port",
+      "teamCn": "上海海港",
+      "stadium": "SAIC Motor Pudong Arena",
+      "stadiumCn": "SAIC Motor Pudong Arena",
+      "capacity": 33765,
+      "matches": 8,
+      "totalAttendance": 156505,
+      "averageAttendance": 19563,
+      "occupancyRate": 0.5793869391381609,
+      "heatLabel": "正常",
+      "source": "Transfermarkt"
+    },
+    {
+      "rank": 12,
       "team": "Shenzhen Peng City",
       "teamCn": "深圳新鹏城",
       "stadium": "Shenzhen Sports Center Stadium",
@@ -169,20 +183,6 @@
       "totalAttendance": 141133,
       "averageAttendance": 20162,
       "occupancyRate": 0.44804444444444447,
-      "heatLabel": "正常",
-      "source": "Transfermarkt"
-    },
-    {
-      "rank": 12,
-      "team": "Shanghai Port",
-      "teamCn": "上海海港",
-      "stadium": "SAIC Motor Pudong Arena",
-      "stadiumCn": "SAIC Motor Pudong Arena",
-      "capacity": 33765,
-      "matches": 7,
-      "totalAttendance": 135323,
-      "averageAttendance": 19332,
-      "occupancyRate": 0.5725455353176366,
       "heatLabel": "正常",
       "source": "Transfermarkt"
     },
@@ -248,10 +248,10 @@
     {
       "season": "25/26",
       "matches": 107,
-      "totalAttendance": 3160762,
-      "averageAttendance": 30392,
+      "totalAttendance": 3292353,
+      "averageAttendance": 30770,
       "highestAverageTeam": "Dalian Yingbo",
-      "highestAverageAttendance": 52062
+      "highestAverageAttendance": 60970
     },
     {
       "season": "24/25",

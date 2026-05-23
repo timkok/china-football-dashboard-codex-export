@@ -1,51 +1,111 @@
 {
-  "generatedAt": "2026-05-23T13:26:06.555Z",
+  "generatedAt": "2026-05-23T19:10:28.798Z",
   "summary": {
-    "rankingChanges": 3,
+    "rankingChanges": 8,
     "pointsChanges": 2,
-    "attendanceChanges": 0,
+    "attendanceChanges": 3,
     "anomalyChanges": 0
   },
   "rankingChanges": [
     {
-      "team": "上海海港",
-      "rank": 10,
-      "rankChange": 1,
-      "points": 12,
-      "pointsChange": 1
+      "team": "大连英博",
+      "rank": 2,
+      "rankChange": 2,
+      "points": 22,
+      "pointsChange": 3
+    },
+    {
+      "team": "重庆铜梁龙",
+      "rank": 3,
+      "rankChange": -1,
+      "points": 21,
+      "pointsChange": 0
+    },
+    {
+      "team": "云南玉昆",
+      "rank": 4,
+      "rankChange": -1,
+      "points": 20,
+      "pointsChange": 0
     },
     {
       "team": "河南队",
-      "rank": 11,
+      "rank": 6,
+      "rankChange": 5,
+      "points": 15,
+      "pointsChange": 3
+    },
+    {
+      "team": "浙江队",
+      "rank": 7,
+      "rankChange": -1,
+      "points": 14,
+      "pointsChange": 0
+    },
+    {
+      "team": "青岛西海岸",
+      "rank": 8,
+      "rankChange": -1,
+      "points": 14,
+      "pointsChange": 0
+    },
+    {
+      "team": "上海申花",
+      "rank": 9,
       "rankChange": -1,
       "points": 12,
       "pointsChange": 0
     },
     {
-      "team": "天津津门虎",
-      "rank": 16,
-      "rankChange": 0,
-      "points": 2,
-      "pointsChange": 1
+      "team": "北京国安",
+      "rank": 11,
+      "rankChange": -2,
+      "points": 12,
+      "pointsChange": 0
     }
   ],
   "pointsChanges": [
     {
-      "team": "上海海港",
-      "rank": 10,
-      "rankChange": 1,
-      "points": 12,
-      "pointsChange": 1
+      "team": "大连英博",
+      "rank": 2,
+      "rankChange": 2,
+      "points": 22,
+      "pointsChange": 3
     },
     {
-      "team": "天津津门虎",
-      "rank": 16,
-      "rankChange": 0,
-      "points": 2,
-      "pointsChange": 1
+      "team": "河南队",
+      "rank": 6,
+      "rankChange": 5,
+      "points": 15,
+      "pointsChange": 3
     }
   ],
-  "attendanceChanges": [],
+  "attendanceChanges": [
+    {
+      "team": "Dalian Yingbo",
+      "teamCn": "大连英博",
+      "averageAttendance": 60970,
+      "averageAttendanceChange": 231,
+      "occupancyRate": 0.9340196393829373,
+      "occupancyRateChange": 0.0035387655682705965
+    },
+    {
+      "team": "Beijing Guoan",
+      "teamCn": "北京国安",
+      "averageAttendance": 49538,
+      "averageAttendanceChange": -247,
+      "occupancyRate": 0.7285,
+      "occupancyRateChange": -0.0036323529411764754
+    },
+    {
+      "team": "Shanghai Port",
+      "teamCn": "上海海港",
+      "averageAttendance": 19563,
+      "averageAttendanceChange": 231,
+      "occupancyRate": 0.5793869391381609,
+      "occupancyRateChange": 0.006841403820524228
+    }
+  ],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
@@ -55,19 +115,19 @@
         "points": 34
       },
       {
-        "team": "重庆铜梁龙",
+        "team": "大连英博",
         "rank": 2,
+        "points": 22
+      },
+      {
+        "team": "重庆铜梁龙",
+        "rank": 3,
         "points": 21
       },
       {
         "team": "云南玉昆",
-        "rank": 3,
-        "points": 20
-      },
-      {
-        "team": "大连英博",
         "rank": 4,
-        "points": 19
+        "points": 20
       },
       {
         "team": "山东泰山",
@@ -75,22 +135,22 @@
         "points": 17
       },
       {
-        "team": "浙江队",
+        "team": "河南队",
         "rank": 6,
-        "points": 14
+        "points": 15
       },
       {
-        "team": "青岛西海岸",
+        "team": "浙江队",
         "rank": 7,
         "points": 14
       },
       {
-        "team": "上海申花",
+        "team": "青岛西海岸",
         "rank": 8,
-        "points": 12
+        "points": 14
       },
       {
-        "team": "北京国安",
+        "team": "上海申花",
         "rank": 9,
         "points": 12
       },
@@ -100,7 +160,7 @@
         "points": 12
       },
       {
-        "team": "河南队",
+        "team": "北京国安",
         "rank": 11,
         "points": 12
       },
@@ -133,13 +193,13 @@
     "attendance": [
       {
         "team": "Dalian Yingbo",
-        "averageAttendance": 60739,
-        "occupancyRate": 0.9304808738146667
+        "averageAttendance": 60970,
+        "occupancyRate": 0.9340196393829373
       },
       {
         "team": "Beijing Guoan",
-        "averageAttendance": 49785,
-        "occupancyRate": 0.7321323529411765
+        "averageAttendance": 49538,
+        "occupancyRate": 0.7285
       },
       {
         "team": "Shanghai Shenhua",
@@ -182,14 +242,14 @@
         "occupancyRate": 0.709775
       },
       {
+        "team": "Shanghai Port",
+        "averageAttendance": 19563,
+        "occupancyRate": 0.5793869391381609
+      },
+      {
         "team": "Shenzhen Peng City",
         "averageAttendance": 20162,
         "occupancyRate": 0.44804444444444447
-      },
-      {
-        "team": "Shanghai Port",
-        "averageAttendance": 19332,
-        "occupancyRate": 0.5725455353176366
       },
       {
         "team": "Yunnan Yukun",
