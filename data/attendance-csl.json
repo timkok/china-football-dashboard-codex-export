@@ -7,13 +7,13 @@
   "sourceUrl": "https://www.transfermarkt.com/chinese-super-league/besucherzahlen/wettbewerb/CSL",
   "isOfficial": false,
   "mode": "third_party",
-  "fetchedAt": "2026-05-24T13:26:53.434Z",
+  "fetchedAt": "2026-05-24T14:09:09.611Z",
   "schemaVersion": 1,
   "summary": {
-    "matches": 108,
-    "totalAttendance": 3324685,
-    "averageAttendance": 30784,
-    "averageOccupancyRate": 0.6457388754932858,
+    "matches": 109,
+    "totalAttendance": 3343079,
+    "averageAttendance": 30670,
+    "averageOccupancyRate": 0.6447138754932858,
     "highestAverageTeam": "Dalian Yingbo",
     "highestAverageAttendance": 60970
   },
@@ -174,6 +174,20 @@
     },
     {
       "rank": 12,
+      "team": "Yunnan Yukun",
+      "teamCn": "云南玉昆",
+      "stadium": "Yuxi Plateau Sports Center Stadium",
+      "stadiumCn": "玉溪高原体育中心",
+      "capacity": 30000,
+      "matches": 7,
+      "totalAttendance": 149397,
+      "averageAttendance": 21342,
+      "occupancyRate": 0.7114,
+      "heatLabel": "高热度",
+      "source": "Transfermarkt"
+    },
+    {
+      "rank": 13,
       "team": "Shenzhen Peng City",
       "teamCn": "深圳新鹏城",
       "stadium": "Shenzhen Sports Center Stadium",
@@ -184,20 +198,6 @@
       "averageAttendance": 20162,
       "occupancyRate": 0.44804444444444447,
       "heatLabel": "正常",
-      "source": "Transfermarkt"
-    },
-    {
-      "rank": 13,
-      "team": "Yunnan Yukun",
-      "teamCn": "云南玉昆",
-      "stadium": "Yuxi Plateau Sports Center Stadium",
-      "stadiumCn": "玉溪高原体育中心",
-      "capacity": 30000,
-      "matches": 6,
-      "totalAttendance": 131003,
-      "averageAttendance": 21834,
-      "occupancyRate": 0.7278,
-      "heatLabel": "高热度",
       "source": "Transfermarkt"
     },
     {
@@ -247,9 +247,9 @@
   "trend": [
     {
       "season": "25/26",
-      "matches": 109,
-      "totalAttendance": 3324685,
-      "averageAttendance": 30784,
+      "matches": 112,
+      "totalAttendance": 3343079,
+      "averageAttendance": 30670,
       "highestAverageTeam": "Dalian Yingbo",
       "highestAverageAttendance": 60970
     },
