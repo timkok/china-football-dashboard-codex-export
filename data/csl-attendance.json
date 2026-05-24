@@ -7,13 +7,13 @@
   "sourceUrl": "https://www.transfermarkt.com/chinese-super-league/besucherzahlen/wettbewerb/CSL",
   "isOfficial": false,
   "mode": "third_party",
-  "fetchedAt": "2026-05-24T09:06:13.768Z",
+  "fetchedAt": "2026-05-24T13:26:53.434Z",
   "schemaVersion": 1,
   "summary": {
-    "matches": 107,
-    "totalAttendance": 3292353,
-    "averageAttendance": 30769,
-    "averageOccupancyRate": 0.6451410361549884,
+    "matches": 108,
+    "totalAttendance": 3324685,
+    "averageAttendance": 30784,
+    "averageOccupancyRate": 0.6457388754932858,
     "highestAverageTeam": "Dalian Yingbo",
     "highestAverageAttendance": 60970
   },
@@ -104,6 +104,20 @@
     },
     {
       "rank": 7,
+      "team": "Qingdao Hainiu",
+      "teamCn": "青岛海牛",
+      "stadium": "Qingdao Youth Football Stadium",
+      "stadiumCn": "青岛青春足球场",
+      "capacity": 53317,
+      "matches": 7,
+      "totalAttendance": 204872,
+      "averageAttendance": 29267,
+      "occupancyRate": 0.5489243580846634,
+      "heatLabel": "正常",
+      "source": "Transfermarkt"
+    },
+    {
+      "rank": 8,
       "team": "Zhejiang FC",
       "teamCn": "浙江队",
       "stadium": "Huanglong Sports Centre Stadium",
@@ -117,7 +131,7 @@
       "source": "Transfermarkt"
     },
     {
-      "rank": 8,
+      "rank": 9,
       "team": "Tianjin Jinmen Tiger",
       "teamCn": "天津津门虎",
       "stadium": "TEDA Football Stadium",
@@ -127,20 +141,6 @@
       "totalAttendance": 173187,
       "averageAttendance": 24741,
       "occupancyRate": 0.6934136771300449,
-      "heatLabel": "正常",
-      "source": "Transfermarkt"
-    },
-    {
-      "rank": 9,
-      "team": "Qingdao Hainiu",
-      "teamCn": "青岛海牛",
-      "stadium": "Qingdao Youth Football Stadium",
-      "stadiumCn": "青岛青春足球场",
-      "capacity": 53317,
-      "matches": 6,
-      "totalAttendance": 172540,
-      "averageAttendance": 28757,
-      "occupancyRate": 0.5393589286719058,
       "heatLabel": "正常",
       "source": "Transfermarkt"
     },
@@ -247,9 +247,9 @@
   "trend": [
     {
       "season": "25/26",
-      "matches": 107,
-      "totalAttendance": 3292353,
-      "averageAttendance": 30770,
+      "matches": 109,
+      "totalAttendance": 3324685,
+      "averageAttendance": 30784,
       "highestAverageTeam": "Dalian Yingbo",
       "highestAverageAttendance": 60970
     },

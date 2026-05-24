@@ -1,14 +1,74 @@
 {
-  "generatedAt": "2026-05-24T03:38:02.844Z",
+  "generatedAt": "2026-05-24T13:26:56.757Z",
   "summary": {
-    "rankingChanges": 0,
-    "pointsChanges": 0,
-    "attendanceChanges": 0,
+    "rankingChanges": 5,
+    "pointsChanges": 2,
+    "attendanceChanges": 1,
     "anomalyChanges": 0
   },
-  "rankingChanges": [],
-  "pointsChanges": [],
-  "attendanceChanges": [],
+  "rankingChanges": [
+    {
+      "team": "重庆铜梁龙",
+      "rank": 2,
+      "rankChange": 1,
+      "points": 24,
+      "pointsChange": 3
+    },
+    {
+      "team": "大连英博",
+      "rank": 3,
+      "rankChange": -1,
+      "points": 22,
+      "pointsChange": 0
+    },
+    {
+      "team": "青岛西海岸",
+      "rank": 6,
+      "rankChange": 2,
+      "points": 17,
+      "pointsChange": 3
+    },
+    {
+      "team": "河南队",
+      "rank": 7,
+      "rankChange": -1,
+      "points": 15,
+      "pointsChange": 0
+    },
+    {
+      "team": "浙江队",
+      "rank": 8,
+      "rankChange": -1,
+      "points": 14,
+      "pointsChange": 0
+    }
+  ],
+  "pointsChanges": [
+    {
+      "team": "重庆铜梁龙",
+      "rank": 2,
+      "rankChange": 1,
+      "points": 24,
+      "pointsChange": 3
+    },
+    {
+      "team": "青岛西海岸",
+      "rank": 6,
+      "rankChange": 2,
+      "points": 17,
+      "pointsChange": 3
+    }
+  ],
+  "attendanceChanges": [
+    {
+      "team": "Qingdao Hainiu",
+      "teamCn": "青岛海牛",
+      "averageAttendance": 29267,
+      "averageAttendanceChange": 510,
+      "occupancyRate": 0.5489243580846634,
+      "occupancyRateChange": 0.00956542941275762
+    }
+  ],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
@@ -18,14 +78,14 @@
         "points": 34
       },
       {
-        "team": "大连英博",
+        "team": "重庆铜梁龙",
         "rank": 2,
-        "points": 22
+        "points": 24
       },
       {
-        "team": "重庆铜梁龙",
+        "team": "大连英博",
         "rank": 3,
-        "points": 21
+        "points": 22
       },
       {
         "team": "云南玉昆",
@@ -38,17 +98,17 @@
         "points": 17
       },
       {
-        "team": "河南队",
+        "team": "青岛西海岸",
         "rank": 6,
+        "points": 17
+      },
+      {
+        "team": "河南队",
+        "rank": 7,
         "points": 15
       },
       {
         "team": "浙江队",
-        "rank": 7,
-        "points": 14
-      },
-      {
-        "team": "青岛西海岸",
         "rank": 8,
         "points": 14
       },
@@ -125,6 +185,11 @@
         "occupancyRate": 0.5263871285734404
       },
       {
+        "team": "Qingdao Hainiu",
+        "averageAttendance": 29267,
+        "occupancyRate": 0.5489243580846634
+      },
+      {
         "team": "Zhejiang FC",
         "averageAttendance": 24963,
         "occupancyRate": 0.4800576923076923
@@ -133,11 +198,6 @@
         "team": "Tianjin Jinmen Tiger",
         "averageAttendance": 24741,
         "occupancyRate": 0.6934136771300449
-      },
-      {
-        "team": "Qingdao Hainiu",
-        "averageAttendance": 28757,
-        "occupancyRate": 0.5393589286719058
       },
       {
         "team": "Liaoning Tieren",
