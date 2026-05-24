@@ -8,7 +8,7 @@
   "source": "新浪体育中超积分榜",
   "sourceUrl": "https://sports.sina.com.cn/csl/table/",
   "isOfficial": false,
-  "fetchedAt": "2026-05-24T13:26:45.704Z",
+  "fetchedAt": "2026-05-24T19:17:38.503Z",
   "schemaVersion": 1,
   "data": [
     {
@@ -47,7 +47,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-24T13:26:45.704Z"
+      "updatedAt": "2026-05-24T19:17:38.503Z"
     },
     {
       "rank": 2,
@@ -85,7 +85,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-24T13:26:45.704Z"
+      "updatedAt": "2026-05-24T19:17:38.503Z"
     },
     {
       "rank": 3,
@@ -123,7 +123,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-24T13:26:45.704Z"
+      "updatedAt": "2026-05-24T19:17:38.503Z"
     },
     {
       "rank": 4,
@@ -161,7 +161,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-24T13:26:45.704Z"
+      "updatedAt": "2026-05-24T19:17:38.503Z"
     },
     {
       "rank": 5,
@@ -169,14 +169,14 @@
       "name": "山东泰山",
       "shortName": "泰山",
       "city": "济南",
-      "played": 13,
+      "played": 14,
       "wins": 7,
-      "draws": 2,
+      "draws": 3,
       "losses": 4,
-      "goalsFor": 22,
-      "goalsAgainst": 21,
+      "goalsFor": 25,
+      "goalsAgainst": 24,
       "goalDiff": 1,
-      "points": 17,
+      "points": 18,
       "form": [
         "W",
         "L",
@@ -186,9 +186,9 @@
       ],
       "homeRecord": {
         "wins": 4,
-        "draws": 2,
+        "draws": 3,
         "losses": 1,
-        "points": 14
+        "points": 15
       },
       "awayRecord": {
         "wins": 3,
@@ -199,7 +199,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-24T13:26:45.704Z"
+      "updatedAt": "2026-05-24T19:17:38.503Z"
     },
     {
       "rank": 6,
@@ -237,7 +237,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-24T13:26:45.704Z"
+      "updatedAt": "2026-05-24T19:17:38.503Z"
     },
     {
       "rank": 7,
@@ -275,21 +275,21 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-24T13:26:45.704Z"
+      "updatedAt": "2026-05-24T19:17:38.503Z"
     },
     {
       "rank": 8,
-      "team": "浙江队",
-      "name": "浙江队",
-      "shortName": "浙江",
-      "city": "杭州",
-      "played": 13,
-      "wins": 5,
-      "draws": 4,
-      "losses": 4,
-      "goalsFor": 18,
-      "goalsAgainst": 18,
-      "goalDiff": 0,
+      "team": "辽宁铁人",
+      "name": "辽宁铁人",
+      "shortName": "铁人",
+      "city": "沈阳",
+      "played": 14,
+      "wins": 4,
+      "draws": 2,
+      "losses": 8,
+      "goalsFor": 17,
+      "goalsAgainst": 21,
+      "goalDiff": -4,
       "points": 14,
       "form": [
         "L",
@@ -300,8 +300,46 @@
       ],
       "homeRecord": {
         "wins": 3,
+        "draws": 0,
+        "losses": 3,
+        "points": 9
+      },
+      "awayRecord": {
+        "wins": 1,
+        "draws": 2,
+        "losses": 5,
+        "points": 5
+      },
+      "source": "新浪体育中超积分榜",
+      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
+      "isOfficial": false,
+      "updatedAt": "2026-05-24T19:17:38.503Z"
+    },
+    {
+      "rank": 9,
+      "team": "浙江队",
+      "name": "浙江队",
+      "shortName": "浙江",
+      "city": "杭州",
+      "played": 14,
+      "wins": 5,
+      "draws": 4,
+      "losses": 5,
+      "goalsFor": 18,
+      "goalsAgainst": 23,
+      "goalDiff": -5,
+      "points": 14,
+      "form": [
+        "W",
+        "W",
+        "D",
+        "W",
+        "W"
+      ],
+      "homeRecord": {
+        "wins": 3,
         "draws": 3,
-        "losses": 1,
+        "losses": 2,
         "points": 12
       },
       "awayRecord": {
@@ -313,33 +351,71 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-24T13:26:45.704Z"
+      "updatedAt": "2026-05-24T19:17:38.503Z"
     },
     {
-      "rank": 9,
+      "rank": 10,
+      "team": "深圳新鵬城",
+      "name": "深圳新鵬城",
+      "shortName": "深圳新",
+      "city": "未标注",
+      "played": 14,
+      "wins": 4,
+      "draws": 2,
+      "losses": 8,
+      "goalsFor": 17,
+      "goalsAgainst": 23,
+      "goalDiff": -6,
+      "points": 14,
+      "form": [
+        "W",
+        "D",
+        "W",
+        "W",
+        "D"
+      ],
+      "homeRecord": {
+        "wins": 3,
+        "draws": 1,
+        "losses": 3,
+        "points": 10
+      },
+      "awayRecord": {
+        "wins": 1,
+        "draws": 1,
+        "losses": 5,
+        "points": 4
+      },
+      "source": "新浪体育中超积分榜",
+      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
+      "isOfficial": false,
+      "updatedAt": "2026-05-24T19:17:38.503Z"
+    },
+    {
+      "rank": 11,
       "team": "上海申花",
       "name": "上海申花",
       "shortName": "申花",
       "city": "上海",
-      "played": 13,
+      "played": 14,
       "wins": 6,
       "draws": 4,
-      "losses": 3,
-      "goalsFor": 26,
-      "goalsAgainst": 20,
-      "goalDiff": 6,
+      "losses": 4,
+      "goalsFor": 27,
+      "goalsAgainst": 22,
+      "goalDiff": 5,
       "points": 12,
       "form": [
+        "L",
         "W",
         "W",
         "D",
-        "W",
         "W"
       ],
       "homeRecord": {
         "wins": 4,
         "draws": 2,
-        "losses": 1,
+        "losses": 2,
         "points": 14
       },
       "awayRecord": {
@@ -351,10 +427,10 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-24T13:26:45.704Z"
+      "updatedAt": "2026-05-24T19:17:38.503Z"
     },
     {
-      "rank": 10,
+      "rank": 12,
       "team": "上海海港",
       "name": "上海海港",
       "shortName": "海港",
@@ -368,11 +444,11 @@
       "goalDiff": 3,
       "points": 12,
       "form": [
+        "D",
         "W",
         "D",
         "W",
-        "W",
-        "D"
+        "L"
       ],
       "homeRecord": {
         "wins": 3,
@@ -389,10 +465,10 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-24T13:26:45.704Z"
+      "updatedAt": "2026-05-24T19:17:38.503Z"
     },
     {
-      "rank": 11,
+      "rank": 13,
       "team": "北京国安",
       "name": "北京国安",
       "shortName": "国安",
@@ -406,8 +482,8 @@
       "goalDiff": 2,
       "points": 12,
       "form": [
-        "L",
         "W",
+        "L",
         "W",
         "D",
         "W"
@@ -427,83 +503,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-24T13:26:45.704Z"
-    },
-    {
-      "rank": 12,
-      "team": "深圳新鵬城",
-      "name": "深圳新鵬城",
-      "shortName": "深圳新",
-      "city": "未标注",
-      "played": 13,
-      "wins": 3,
-      "draws": 2,
-      "losses": 8,
-      "goalsFor": 15,
-      "goalsAgainst": 22,
-      "goalDiff": -7,
-      "points": 11,
-      "form": [
-        "D",
-        "W",
-        "D",
-        "W",
-        "L"
-      ],
-      "homeRecord": {
-        "wins": 3,
-        "draws": 1,
-        "losses": 3,
-        "points": 10
-      },
-      "awayRecord": {
-        "wins": 0,
-        "draws": 1,
-        "losses": 5,
-        "points": 1
-      },
-      "source": "新浪体育中超积分榜",
-      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
-      "isOfficial": false,
-      "updatedAt": "2026-05-24T13:26:45.704Z"
-    },
-    {
-      "rank": 13,
-      "team": "辽宁铁人",
-      "name": "辽宁铁人",
-      "shortName": "铁人",
-      "city": "沈阳",
-      "played": 13,
-      "wins": 3,
-      "draws": 2,
-      "losses": 8,
-      "goalsFor": 12,
-      "goalsAgainst": 21,
-      "goalDiff": -9,
-      "points": 11,
-      "form": [
-        "W",
-        "L",
-        "W",
-        "D",
-        "W"
-      ],
-      "homeRecord": {
-        "wins": 3,
-        "draws": 0,
-        "losses": 3,
-        "points": 9
-      },
-      "awayRecord": {
-        "wins": 0,
-        "draws": 2,
-        "losses": 5,
-        "points": 2
-      },
-      "source": "新浪体育中超积分榜",
-      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
-      "isOfficial": false,
-      "updatedAt": "2026-05-24T13:26:45.704Z"
+      "updatedAt": "2026-05-24T19:17:38.503Z"
     },
     {
       "rank": 14,
@@ -541,7 +541,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-24T13:26:45.704Z"
+      "updatedAt": "2026-05-24T19:17:38.503Z"
     },
     {
       "rank": 15,
@@ -549,14 +549,14 @@
       "name": "武汉三镇",
       "shortName": "三镇",
       "city": "武汉",
-      "played": 13,
+      "played": 14,
       "wins": 2,
-      "draws": 5,
+      "draws": 6,
       "losses": 6,
-      "goalsFor": 18,
-      "goalsAgainst": 26,
+      "goalsFor": 21,
+      "goalsAgainst": 29,
       "goalDiff": -8,
-      "points": 6,
+      "points": 7,
       "form": [
         "L",
         "D",
@@ -572,14 +572,14 @@
       },
       "awayRecord": {
         "wins": 0,
-        "draws": 4,
+        "draws": 5,
         "losses": 3,
-        "points": 4
+        "points": 5
       },
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-24T13:26:45.704Z"
+      "updatedAt": "2026-05-24T19:17:38.503Z"
     },
     {
       "rank": 16,
@@ -617,7 +617,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-24T13:26:45.704Z"
+      "updatedAt": "2026-05-24T19:17:38.503Z"
     }
   ]
 }
