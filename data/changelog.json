@@ -1,111 +1,14 @@
 {
-  "generatedAt": "2026-05-23T19:10:28.798Z",
+  "generatedAt": "2026-05-24T03:38:02.844Z",
   "summary": {
-    "rankingChanges": 8,
-    "pointsChanges": 2,
-    "attendanceChanges": 3,
+    "rankingChanges": 0,
+    "pointsChanges": 0,
+    "attendanceChanges": 0,
     "anomalyChanges": 0
   },
-  "rankingChanges": [
-    {
-      "team": "大连英博",
-      "rank": 2,
-      "rankChange": 2,
-      "points": 22,
-      "pointsChange": 3
-    },
-    {
-      "team": "重庆铜梁龙",
-      "rank": 3,
-      "rankChange": -1,
-      "points": 21,
-      "pointsChange": 0
-    },
-    {
-      "team": "云南玉昆",
-      "rank": 4,
-      "rankChange": -1,
-      "points": 20,
-      "pointsChange": 0
-    },
-    {
-      "team": "河南队",
-      "rank": 6,
-      "rankChange": 5,
-      "points": 15,
-      "pointsChange": 3
-    },
-    {
-      "team": "浙江队",
-      "rank": 7,
-      "rankChange": -1,
-      "points": 14,
-      "pointsChange": 0
-    },
-    {
-      "team": "青岛西海岸",
-      "rank": 8,
-      "rankChange": -1,
-      "points": 14,
-      "pointsChange": 0
-    },
-    {
-      "team": "上海申花",
-      "rank": 9,
-      "rankChange": -1,
-      "points": 12,
-      "pointsChange": 0
-    },
-    {
-      "team": "北京国安",
-      "rank": 11,
-      "rankChange": -2,
-      "points": 12,
-      "pointsChange": 0
-    }
-  ],
-  "pointsChanges": [
-    {
-      "team": "大连英博",
-      "rank": 2,
-      "rankChange": 2,
-      "points": 22,
-      "pointsChange": 3
-    },
-    {
-      "team": "河南队",
-      "rank": 6,
-      "rankChange": 5,
-      "points": 15,
-      "pointsChange": 3
-    }
-  ],
-  "attendanceChanges": [
-    {
-      "team": "Dalian Yingbo",
-      "teamCn": "大连英博",
-      "averageAttendance": 60970,
-      "averageAttendanceChange": 231,
-      "occupancyRate": 0.9340196393829373,
-      "occupancyRateChange": 0.0035387655682705965
-    },
-    {
-      "team": "Beijing Guoan",
-      "teamCn": "北京国安",
-      "averageAttendance": 49538,
-      "averageAttendanceChange": -247,
-      "occupancyRate": 0.7285,
-      "occupancyRateChange": -0.0036323529411764754
-    },
-    {
-      "team": "Shanghai Port",
-      "teamCn": "上海海港",
-      "averageAttendance": 19563,
-      "averageAttendanceChange": 231,
-      "occupancyRate": 0.5793869391381609,
-      "occupancyRateChange": 0.006841403820524228
-    }
-  ],
+  "rankingChanges": [],
+  "pointsChanges": [],
+  "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
