@@ -1,133 +1,14 @@
 {
-  "generatedAt": "2026-05-24T19:17:44.955Z",
+  "generatedAt": "2026-05-25T03:52:29.963Z",
   "summary": {
-    "rankingChanges": 8,
-    "pointsChanges": 4,
-    "attendanceChanges": 4,
+    "rankingChanges": 0,
+    "pointsChanges": 0,
+    "attendanceChanges": 0,
     "anomalyChanges": 0
   },
-  "rankingChanges": [
-    {
-      "team": "山东泰山",
-      "rank": 5,
-      "rankChange": 0,
-      "points": 18,
-      "pointsChange": 1
-    },
-    {
-      "team": "辽宁铁人",
-      "rank": 8,
-      "rankChange": 5,
-      "points": 14,
-      "pointsChange": 3
-    },
-    {
-      "team": "浙江队",
-      "rank": 9,
-      "rankChange": -1,
-      "points": 14,
-      "pointsChange": 0
-    },
-    {
-      "team": "深圳新鵬城",
-      "rank": 10,
-      "rankChange": 2,
-      "points": 14,
-      "pointsChange": 3
-    },
-    {
-      "team": "上海申花",
-      "rank": 11,
-      "rankChange": -2,
-      "points": 12,
-      "pointsChange": 0
-    },
-    {
-      "team": "上海海港",
-      "rank": 12,
-      "rankChange": -2,
-      "points": 12,
-      "pointsChange": 0
-    },
-    {
-      "team": "北京国安",
-      "rank": 13,
-      "rankChange": -2,
-      "points": 12,
-      "pointsChange": 0
-    },
-    {
-      "team": "武汉三镇",
-      "rank": 15,
-      "rankChange": 0,
-      "points": 7,
-      "pointsChange": 1
-    }
-  ],
-  "pointsChanges": [
-    {
-      "team": "山东泰山",
-      "rank": 5,
-      "rankChange": 0,
-      "points": 18,
-      "pointsChange": 1
-    },
-    {
-      "team": "辽宁铁人",
-      "rank": 8,
-      "rankChange": 5,
-      "points": 14,
-      "pointsChange": 3
-    },
-    {
-      "team": "深圳新鵬城",
-      "rank": 10,
-      "rankChange": 2,
-      "points": 14,
-      "pointsChange": 3
-    },
-    {
-      "team": "武汉三镇",
-      "rank": 15,
-      "rankChange": 0,
-      "points": 7,
-      "pointsChange": 1
-    }
-  ],
-  "attendanceChanges": [
-    {
-      "team": "Shanghai Shenhua",
-      "teamCn": "上海申花",
-      "averageAttendance": 41328,
-      "averageAttendanceChange": -1302,
-      "occupancyRate": 0.5872039328796124,
-      "occupancyRateChange": -0.018499310893565046
-    },
-    {
-      "team": "Shandong Taishan",
-      "teamCn": "山东泰山",
-      "averageAttendance": 27861,
-      "averageAttendanceChange": -2042,
-      "occupancyRate": 0.4904414871144909,
-      "occupancyRateChange": -0.03594564145894946
-    },
-    {
-      "team": "Zhejiang FC",
-      "teamCn": "浙江队",
-      "averageAttendance": 24298,
-      "averageAttendanceChange": -665,
-      "occupancyRate": 0.46726923076923077,
-      "occupancyRateChange": -0.012788461538461526
-    },
-    {
-      "team": "Yunnan Yukun",
-      "teamCn": "云南玉昆",
-      "averageAttendance": 21342,
-      "averageAttendanceChange": -492,
-      "occupancyRate": 0.7114,
-      "occupancyRateChange": -0.01639999999999997
-    }
-  ],
+  "rankingChanges": [],
+  "pointsChanges": [],
+  "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
