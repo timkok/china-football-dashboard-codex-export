@@ -1,13 +1,43 @@
 {
-  "generatedAt": "2026-05-29T09:55:16.825Z",
+  "generatedAt": "2026-05-29T15:33:11.084Z",
   "summary": {
-    "rankingChanges": 0,
-    "pointsChanges": 0,
+    "rankingChanges": 3,
+    "pointsChanges": 1,
     "attendanceChanges": 0,
     "anomalyChanges": 0
   },
-  "rankingChanges": [],
-  "pointsChanges": [],
+  "rankingChanges": [
+    {
+      "team": "辽宁铁人",
+      "rank": 6,
+      "rankChange": 2,
+      "points": 17,
+      "pointsChange": 3
+    },
+    {
+      "team": "青岛西海岸",
+      "rank": 7,
+      "rankChange": -1,
+      "points": 17,
+      "pointsChange": 0
+    },
+    {
+      "team": "河南队",
+      "rank": 8,
+      "rankChange": -1,
+      "points": 15,
+      "pointsChange": 0
+    }
+  ],
+  "pointsChanges": [
+    {
+      "team": "辽宁铁人",
+      "rank": 6,
+      "rankChange": 2,
+      "points": 17,
+      "pointsChange": 3
+    }
+  ],
   "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
@@ -38,19 +68,19 @@
         "points": 18
       },
       {
-        "team": "青岛西海岸",
+        "team": "辽宁铁人",
         "rank": 6,
         "points": 17
       },
       {
-        "team": "河南队",
+        "team": "青岛西海岸",
         "rank": 7,
-        "points": 15
+        "points": 17
       },
       {
-        "team": "辽宁铁人",
+        "team": "河南队",
         "rank": 8,
-        "points": 14
+        "points": 15
       },
       {
         "team": "浙江队",
