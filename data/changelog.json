@@ -1,44 +1,23 @@
 {
-  "generatedAt": "2026-05-29T15:33:11.084Z",
+  "generatedAt": "2026-05-29T20:26:08.198Z",
   "summary": {
-    "rankingChanges": 3,
-    "pointsChanges": 1,
-    "attendanceChanges": 0,
+    "rankingChanges": 0,
+    "pointsChanges": 0,
+    "attendanceChanges": 1,
     "anomalyChanges": 0
   },
-  "rankingChanges": [
+  "rankingChanges": [],
+  "pointsChanges": [],
+  "attendanceChanges": [
     {
-      "team": "辽宁铁人",
-      "rank": 6,
-      "rankChange": 2,
-      "points": 17,
-      "pointsChange": 3
-    },
-    {
-      "team": "青岛西海岸",
-      "rank": 7,
-      "rankChange": -1,
-      "points": 17,
-      "pointsChange": 0
-    },
-    {
-      "team": "河南队",
-      "rank": 8,
-      "rankChange": -1,
-      "points": 15,
-      "pointsChange": 0
+      "team": "Liaoning Tieren",
+      "teamCn": "辽宁铁人",
+      "averageAttendance": 28872,
+      "averageAttendanceChange": 481,
+      "occupancyRate": 0.7218,
+      "occupancyRateChange": 0.012024999999999952
     }
   ],
-  "pointsChanges": [
-    {
-      "team": "辽宁铁人",
-      "rank": 6,
-      "rankChange": 2,
-      "points": 17,
-      "pointsChange": 3
-    }
-  ],
-  "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
@@ -160,6 +139,11 @@
         "occupancyRate": 0.5489243580846634
       },
       {
+        "team": "Liaoning Tieren",
+        "averageAttendance": 28872,
+        "occupancyRate": 0.7218
+      },
+      {
         "team": "Zhejiang FC",
         "averageAttendance": 24298,
         "occupancyRate": 0.46726923076923077
@@ -168,11 +152,6 @@
         "team": "Tianjin Jinmen Tiger",
         "averageAttendance": 24741,
         "occupancyRate": 0.6934136771300449
-      },
-      {
-        "team": "Liaoning Tieren",
-        "averageAttendance": 28391,
-        "occupancyRate": 0.709775
       },
       {
         "team": "Shanghai Port",
