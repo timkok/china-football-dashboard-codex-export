@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-30T03:27:05.941Z",
+  "updatedAt": "2026-05-30T08:28:30.602Z",
   "mode": "fallback",
   "sources": [
     {
@@ -8,7 +8,7 @@
       "url": "https://www.cfl-china.cn/",
       "isOfficial": true,
       "status": "error",
-      "lastFetchedAt": "2026-05-30T03:27:05.941Z"
+      "lastFetchedAt": "2026-05-30T08:28:30.602Z"
     },
     {
       "id": "sina-sports",
@@ -16,7 +16,7 @@
       "url": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
       "status": "ok",
-      "lastFetchedAt": "2026-05-30T03:27:05.941Z"
+      "lastFetchedAt": "2026-05-30T08:28:30.602Z"
     },
     {
       "id": "qiumiwu",
@@ -24,7 +24,7 @@
       "url": "https://www.qiumiwu.com/league/zhongchao/standings",
       "isOfficial": false,
       "status": "unused",
-      "lastFetchedAt": "2026-05-30T03:27:05.941Z"
+      "lastFetchedAt": "2026-05-30T08:28:30.602Z"
     }
   ],
   "leagues": {
