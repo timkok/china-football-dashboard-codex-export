@@ -1,23 +1,14 @@
 {
-  "generatedAt": "2026-05-29T20:26:08.198Z",
+  "generatedAt": "2026-05-30T03:27:13.362Z",
   "summary": {
     "rankingChanges": 0,
     "pointsChanges": 0,
-    "attendanceChanges": 1,
+    "attendanceChanges": 0,
     "anomalyChanges": 0
   },
   "rankingChanges": [],
   "pointsChanges": [],
-  "attendanceChanges": [
-    {
-      "team": "Liaoning Tieren",
-      "teamCn": "辽宁铁人",
-      "averageAttendance": 28872,
-      "averageAttendanceChange": 481,
-      "occupancyRate": 0.7218,
-      "occupancyRateChange": 0.012024999999999952
-    }
-  ],
+  "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
