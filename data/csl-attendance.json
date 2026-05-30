@@ -7,13 +7,13 @@
   "sourceUrl": "https://www.transfermarkt.com/chinese-super-league/besucherzahlen/wettbewerb/CSL",
   "isOfficial": false,
   "mode": "third_party",
-  "fetchedAt": "2026-05-30T09:00:41.360Z",
+  "fetchedAt": "2026-05-30T13:39:08.353Z",
   "schemaVersion": 1,
   "summary": {
-    "matches": 113,
-    "totalAttendance": 3440257,
-    "averageAttendance": 30444,
-    "averageOccupancyRate": 0.6412633496250999,
+    "matches": 114,
+    "totalAttendance": 3459568,
+    "averageAttendance": 30347,
+    "averageOccupancyRate": 0.6431383496251,
     "highestAverageTeam": "Dalian Yingbo",
     "highestAverageAttendance": 60970
   },
@@ -235,10 +235,10 @@
       "stadium": "West Coast University City Sports Center Stadium",
       "stadiumCn": "西海岸大学城体育中心",
       "capacity": 20000,
-      "matches": 6,
-      "totalAttendance": 90677,
-      "averageAttendance": 15113,
-      "occupancyRate": 0.75565,
+      "matches": 7,
+      "totalAttendance": 109988,
+      "averageAttendance": 15713,
+      "occupancyRate": 0.78565,
       "heatLabel": "高热度",
       "source": "Transfermarkt"
     }
@@ -247,9 +247,9 @@
   "trend": [
     {
       "season": "25/26",
-      "matches": 113,
-      "totalAttendance": 3440257,
-      "averageAttendance": 30445,
+      "matches": 116,
+      "totalAttendance": 3459568,
+      "averageAttendance": 30347,
       "highestAverageTeam": "Dalian Yingbo",
       "highestAverageAttendance": 60970
     },

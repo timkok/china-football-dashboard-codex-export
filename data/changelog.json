@@ -1,21 +1,102 @@
 {
-  "generatedAt": "2026-05-30T08:28:36.757Z",
+  "generatedAt": "2026-05-30T13:39:11.797Z",
   "summary": {
-    "rankingChanges": 0,
-    "pointsChanges": 0,
-    "attendanceChanges": 0,
+    "rankingChanges": 6,
+    "pointsChanges": 4,
+    "attendanceChanges": 1,
     "anomalyChanges": 0
   },
-  "rankingChanges": [],
-  "pointsChanges": [],
-  "attendanceChanges": [],
+  "rankingChanges": [
+    {
+      "team": "成都蓉城",
+      "rank": 1,
+      "rankChange": 0,
+      "points": 37,
+      "pointsChange": 3
+    },
+    {
+      "team": "青岛西海岸",
+      "rank": 6,
+      "rankChange": 1,
+      "points": 18,
+      "pointsChange": 1
+    },
+    {
+      "team": "浙江队",
+      "rank": 7,
+      "rankChange": 2,
+      "points": 17,
+      "pointsChange": 3
+    },
+    {
+      "team": "辽宁铁人",
+      "rank": 8,
+      "rankChange": -2,
+      "points": 17,
+      "pointsChange": 0
+    },
+    {
+      "team": "河南队",
+      "rank": 9,
+      "rankChange": -1,
+      "points": 15,
+      "pointsChange": 0
+    },
+    {
+      "team": "上海申花",
+      "rank": 11,
+      "rankChange": 0,
+      "points": 13,
+      "pointsChange": 1
+    }
+  ],
+  "pointsChanges": [
+    {
+      "team": "成都蓉城",
+      "rank": 1,
+      "rankChange": 0,
+      "points": 37,
+      "pointsChange": 3
+    },
+    {
+      "team": "青岛西海岸",
+      "rank": 6,
+      "rankChange": 1,
+      "points": 18,
+      "pointsChange": 1
+    },
+    {
+      "team": "浙江队",
+      "rank": 7,
+      "rankChange": 2,
+      "points": 17,
+      "pointsChange": 3
+    },
+    {
+      "team": "上海申花",
+      "rank": 11,
+      "rankChange": 0,
+      "points": 13,
+      "pointsChange": 1
+    }
+  ],
+  "attendanceChanges": [
+    {
+      "team": "Qingdao West Coast",
+      "teamCn": "青岛西海岸",
+      "averageAttendance": 15713,
+      "averageAttendanceChange": 600,
+      "occupancyRate": 0.78565,
+      "occupancyRateChange": 0.029999999999999916
+    }
+  ],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
       {
         "team": "成都蓉城",
         "rank": 1,
-        "points": 34
+        "points": 37
       },
       {
         "team": "重庆铜梁龙",
@@ -38,24 +119,24 @@
         "points": 18
       },
       {
-        "team": "辽宁铁人",
+        "team": "青岛西海岸",
         "rank": 6,
-        "points": 17
+        "points": 18
       },
       {
-        "team": "青岛西海岸",
+        "team": "浙江队",
         "rank": 7,
         "points": 17
       },
       {
-        "team": "河南队",
+        "team": "辽宁铁人",
         "rank": 8,
-        "points": 15
+        "points": 17
       },
       {
-        "team": "浙江队",
+        "team": "河南队",
         "rank": 9,
-        "points": 14
+        "points": 15
       },
       {
         "team": "深圳新鵬城",
@@ -65,7 +146,7 @@
       {
         "team": "上海申花",
         "rank": 11,
-        "points": 12
+        "points": 13
       },
       {
         "team": "上海海港",
@@ -171,8 +252,8 @@
       },
       {
         "team": "Qingdao West Coast",
-        "averageAttendance": 15113,
-        "occupancyRate": 0.75565
+        "averageAttendance": 15713,
+        "occupancyRate": 0.78565
       }
     ]
   }
