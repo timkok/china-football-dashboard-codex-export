@@ -1,30 +1,61 @@
 {
-  "generatedAt": "2026-05-31T13:45:35.010Z",
+  "generatedAt": "2026-05-31T19:18:02.230Z",
   "summary": {
-    "rankingChanges": 1,
-    "pointsChanges": 1,
-    "attendanceChanges": 0,
+    "rankingChanges": 2,
+    "pointsChanges": 2,
+    "attendanceChanges": 2,
     "anomalyChanges": 0
   },
   "rankingChanges": [
     {
-      "team": "天津津门虎",
-      "rank": 16,
+      "team": "云南玉昆",
+      "rank": 4,
       "rankChange": 0,
-      "points": 5,
-      "pointsChange": 3
+      "points": 21,
+      "pointsChange": 1
+    },
+    {
+      "team": "武汉三镇",
+      "rank": 15,
+      "rankChange": 0,
+      "points": 8,
+      "pointsChange": 1
     }
   ],
   "pointsChanges": [
     {
-      "team": "天津津门虎",
-      "rank": 16,
+      "team": "云南玉昆",
+      "rank": 4,
       "rankChange": 0,
-      "points": 5,
-      "pointsChange": 3
+      "points": 21,
+      "pointsChange": 1
+    },
+    {
+      "team": "武汉三镇",
+      "rank": 15,
+      "rankChange": 0,
+      "points": 8,
+      "pointsChange": 1
     }
   ],
-  "attendanceChanges": [],
+  "attendanceChanges": [
+    {
+      "team": "Tianjin Jinmen Tiger",
+      "teamCn": "天津津门虎",
+      "averageAttendance": 25131,
+      "averageAttendanceChange": 390,
+      "occupancyRate": 0.7043441704035874,
+      "occupancyRateChange": 0.010930493273542563
+    },
+    {
+      "team": "Wuhan Three Towns",
+      "teamCn": "武汉三镇",
+      "averageAttendance": 18942,
+      "averageAttendanceChange": 550,
+      "occupancyRate": 0.4209333333333333,
+      "occupancyRateChange": 0.01222222222222219
+    }
+  ],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
@@ -46,7 +77,7 @@
       {
         "team": "云南玉昆",
         "rank": 4,
-        "points": 20
+        "points": 21
       },
       {
         "team": "山东泰山",
@@ -101,7 +132,7 @@
       {
         "team": "武汉三镇",
         "rank": 15,
-        "points": 7
+        "points": 8
       },
       {
         "team": "天津津门虎",
@@ -151,14 +182,14 @@
         "occupancyRate": 0.7218
       },
       {
+        "team": "Tianjin Jinmen Tiger",
+        "averageAttendance": 25131,
+        "occupancyRate": 0.7043441704035874
+      },
+      {
         "team": "Zhejiang FC",
         "averageAttendance": 24298,
         "occupancyRate": 0.46726923076923077
-      },
-      {
-        "team": "Tianjin Jinmen Tiger",
-        "averageAttendance": 24741,
-        "occupancyRate": 0.6934136771300449
       },
       {
         "team": "Shenzhen Peng City",
@@ -182,8 +213,8 @@
       },
       {
         "team": "Wuhan Three Towns",
-        "averageAttendance": 18392,
-        "occupancyRate": 0.40871111111111114
+        "averageAttendance": 18942,
+        "occupancyRate": 0.4209333333333333
       },
       {
         "team": "Qingdao West Coast",

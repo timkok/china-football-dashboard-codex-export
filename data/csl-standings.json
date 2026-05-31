@@ -8,7 +8,7 @@
   "source": "新浪体育中超积分榜",
   "sourceUrl": "https://sports.sina.com.cn/csl/table/",
   "isOfficial": false,
-  "fetchedAt": "2026-05-31T13:45:25.778Z",
+  "fetchedAt": "2026-05-31T19:17:50.471Z",
   "schemaVersion": 1,
   "data": [
     {
@@ -47,7 +47,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T13:45:25.778Z"
+      "updatedAt": "2026-05-31T19:17:50.471Z"
     },
     {
       "rank": 2,
@@ -85,7 +85,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T13:45:25.778Z"
+      "updatedAt": "2026-05-31T19:17:50.471Z"
     },
     {
       "rank": 3,
@@ -123,7 +123,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T13:45:25.778Z"
+      "updatedAt": "2026-05-31T19:17:50.471Z"
     },
     {
       "rank": 4,
@@ -131,14 +131,14 @@
       "name": "云南玉昆",
       "shortName": "玉昆",
       "city": "玉溪",
-      "played": 14,
+      "played": 15,
       "wins": 6,
-      "draws": 2,
+      "draws": 3,
       "losses": 6,
-      "goalsFor": 26,
-      "goalsAgainst": 23,
+      "goalsFor": 27,
+      "goalsAgainst": 24,
       "goalDiff": 3,
-      "points": 20,
+      "points": 21,
       "form": [
         "D",
         "W",
@@ -154,14 +154,14 @@
       },
       "awayRecord": {
         "wins": 3,
-        "draws": 1,
+        "draws": 2,
         "losses": 3,
-        "points": 10
+        "points": 11
       },
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T13:45:25.778Z"
+      "updatedAt": "2026-05-31T19:17:50.471Z"
     },
     {
       "rank": 5,
@@ -199,7 +199,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T13:45:25.778Z"
+      "updatedAt": "2026-05-31T19:17:50.471Z"
     },
     {
       "rank": 6,
@@ -237,7 +237,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T13:45:25.778Z"
+      "updatedAt": "2026-05-31T19:17:50.471Z"
     },
     {
       "rank": 7,
@@ -275,7 +275,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T13:45:25.778Z"
+      "updatedAt": "2026-05-31T19:17:50.471Z"
     },
     {
       "rank": 8,
@@ -313,7 +313,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T13:45:25.778Z"
+      "updatedAt": "2026-05-31T19:17:50.471Z"
     },
     {
       "rank": 9,
@@ -351,7 +351,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T13:45:25.778Z"
+      "updatedAt": "2026-05-31T19:17:50.471Z"
     },
     {
       "rank": 10,
@@ -389,7 +389,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T13:45:25.778Z"
+      "updatedAt": "2026-05-31T19:17:50.471Z"
     },
     {
       "rank": 11,
@@ -427,7 +427,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T13:45:25.778Z"
+      "updatedAt": "2026-05-31T19:17:50.471Z"
     },
     {
       "rank": 12,
@@ -465,7 +465,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T13:45:25.778Z"
+      "updatedAt": "2026-05-31T19:17:50.471Z"
     },
     {
       "rank": 13,
@@ -503,7 +503,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T13:45:25.778Z"
+      "updatedAt": "2026-05-31T19:17:50.471Z"
     },
     {
       "rank": 14,
@@ -541,7 +541,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T13:45:25.778Z"
+      "updatedAt": "2026-05-31T19:17:50.471Z"
     },
     {
       "rank": 15,
@@ -549,14 +549,14 @@
       "name": "武汉三镇",
       "shortName": "三镇",
       "city": "武汉",
-      "played": 14,
+      "played": 15,
       "wins": 2,
-      "draws": 6,
+      "draws": 7,
       "losses": 6,
-      "goalsFor": 21,
-      "goalsAgainst": 29,
+      "goalsFor": 22,
+      "goalsAgainst": 30,
       "goalDiff": -8,
-      "points": 7,
+      "points": 8,
       "form": [
         "L",
         "D",
@@ -566,9 +566,9 @@
       ],
       "homeRecord": {
         "wins": 2,
-        "draws": 1,
+        "draws": 2,
         "losses": 3,
-        "points": 7
+        "points": 8
       },
       "awayRecord": {
         "wins": 0,
@@ -579,7 +579,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T13:45:25.778Z"
+      "updatedAt": "2026-05-31T19:17:50.471Z"
     },
     {
       "rank": 16,
@@ -617,7 +617,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T13:45:25.778Z"
+      "updatedAt": "2026-05-31T19:17:50.471Z"
     }
   ]
 }
