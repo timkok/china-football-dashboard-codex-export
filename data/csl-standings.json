@@ -8,7 +8,7 @@
   "source": "新浪体育中超积分榜",
   "sourceUrl": "https://sports.sina.com.cn/csl/table/",
   "isOfficial": false,
-  "fetchedAt": "2026-05-31T08:45:22.819Z",
+  "fetchedAt": "2026-05-31T13:45:25.778Z",
   "schemaVersion": 1,
   "data": [
     {
@@ -47,7 +47,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T08:45:22.819Z"
+      "updatedAt": "2026-05-31T13:45:25.778Z"
     },
     {
       "rank": 2,
@@ -85,7 +85,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T08:45:22.819Z"
+      "updatedAt": "2026-05-31T13:45:25.778Z"
     },
     {
       "rank": 3,
@@ -93,13 +93,13 @@
       "name": "大连英博",
       "shortName": "英博",
       "city": "大连",
-      "played": 14,
+      "played": 15,
       "wins": 7,
       "draws": 1,
-      "losses": 6,
+      "losses": 7,
       "goalsFor": 21,
-      "goalsAgainst": 24,
-      "goalDiff": -3,
+      "goalsAgainst": 25,
+      "goalDiff": -4,
       "points": 22,
       "form": [
         "L",
@@ -117,13 +117,13 @@
       "awayRecord": {
         "wins": 2,
         "draws": 1,
-        "losses": 4,
+        "losses": 5,
         "points": 7
       },
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T08:45:22.819Z"
+      "updatedAt": "2026-05-31T13:45:25.778Z"
     },
     {
       "rank": 4,
@@ -161,7 +161,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T08:45:22.819Z"
+      "updatedAt": "2026-05-31T13:45:25.778Z"
     },
     {
       "rank": 5,
@@ -199,7 +199,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T08:45:22.819Z"
+      "updatedAt": "2026-05-31T13:45:25.778Z"
     },
     {
       "rank": 6,
@@ -237,7 +237,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T08:45:22.819Z"
+      "updatedAt": "2026-05-31T13:45:25.778Z"
     },
     {
       "rank": 7,
@@ -275,7 +275,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T08:45:22.819Z"
+      "updatedAt": "2026-05-31T13:45:25.778Z"
     },
     {
       "rank": 8,
@@ -313,7 +313,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T08:45:22.819Z"
+      "updatedAt": "2026-05-31T13:45:25.778Z"
     },
     {
       "rank": 9,
@@ -351,7 +351,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T08:45:22.819Z"
+      "updatedAt": "2026-05-31T13:45:25.778Z"
     },
     {
       "rank": 10,
@@ -389,7 +389,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T08:45:22.819Z"
+      "updatedAt": "2026-05-31T13:45:25.778Z"
     },
     {
       "rank": 11,
@@ -427,7 +427,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T08:45:22.819Z"
+      "updatedAt": "2026-05-31T13:45:25.778Z"
     },
     {
       "rank": 12,
@@ -465,7 +465,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T08:45:22.819Z"
+      "updatedAt": "2026-05-31T13:45:25.778Z"
     },
     {
       "rank": 13,
@@ -503,7 +503,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T08:45:22.819Z"
+      "updatedAt": "2026-05-31T13:45:25.778Z"
     },
     {
       "rank": 14,
@@ -541,7 +541,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T08:45:22.819Z"
+      "updatedAt": "2026-05-31T13:45:25.778Z"
     },
     {
       "rank": 15,
@@ -579,7 +579,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T08:45:22.819Z"
+      "updatedAt": "2026-05-31T13:45:25.778Z"
     },
     {
       "rank": 16,
@@ -587,14 +587,14 @@
       "name": "天津津门虎",
       "shortName": "津门虎",
       "city": "天津",
-      "played": 14,
-      "wins": 2,
+      "played": 15,
+      "wins": 3,
       "draws": 6,
       "losses": 6,
-      "goalsFor": 18,
+      "goalsFor": 19,
       "goalsAgainst": 21,
-      "goalDiff": -3,
-      "points": 2,
+      "goalDiff": -2,
+      "points": 5,
       "form": [
         "L",
         "L",
@@ -603,10 +603,10 @@
         "D"
       ],
       "homeRecord": {
-        "wins": 0,
+        "wins": 1,
         "draws": 3,
         "losses": 4,
-        "points": 3
+        "points": 6
       },
       "awayRecord": {
         "wins": 2,
@@ -617,7 +617,7 @@
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-05-31T08:45:22.819Z"
+      "updatedAt": "2026-05-31T13:45:25.778Z"
     }
   ]
 }

@@ -1,13 +1,29 @@
 {
-  "generatedAt": "2026-05-31T08:45:29.714Z",
+  "generatedAt": "2026-05-31T13:45:35.010Z",
   "summary": {
-    "rankingChanges": 0,
-    "pointsChanges": 0,
+    "rankingChanges": 1,
+    "pointsChanges": 1,
     "attendanceChanges": 0,
     "anomalyChanges": 0
   },
-  "rankingChanges": [],
-  "pointsChanges": [],
+  "rankingChanges": [
+    {
+      "team": "天津津门虎",
+      "rank": 16,
+      "rankChange": 0,
+      "points": 5,
+      "pointsChange": 3
+    }
+  ],
+  "pointsChanges": [
+    {
+      "team": "天津津门虎",
+      "rank": 16,
+      "rankChange": 0,
+      "points": 5,
+      "pointsChange": 3
+    }
+  ],
   "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
@@ -90,7 +106,7 @@
       {
         "team": "天津津门虎",
         "rank": 16,
-        "points": 2
+        "points": 5
       }
     ],
     "attendance": [
