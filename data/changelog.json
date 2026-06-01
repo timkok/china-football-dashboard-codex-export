@@ -1,61 +1,14 @@
 {
-  "generatedAt": "2026-05-31T19:18:02.230Z",
+  "generatedAt": "2026-06-01T04:06:29.494Z",
   "summary": {
-    "rankingChanges": 2,
-    "pointsChanges": 2,
-    "attendanceChanges": 2,
+    "rankingChanges": 0,
+    "pointsChanges": 0,
+    "attendanceChanges": 0,
     "anomalyChanges": 0
   },
-  "rankingChanges": [
-    {
-      "team": "云南玉昆",
-      "rank": 4,
-      "rankChange": 0,
-      "points": 21,
-      "pointsChange": 1
-    },
-    {
-      "team": "武汉三镇",
-      "rank": 15,
-      "rankChange": 0,
-      "points": 8,
-      "pointsChange": 1
-    }
-  ],
-  "pointsChanges": [
-    {
-      "team": "云南玉昆",
-      "rank": 4,
-      "rankChange": 0,
-      "points": 21,
-      "pointsChange": 1
-    },
-    {
-      "team": "武汉三镇",
-      "rank": 15,
-      "rankChange": 0,
-      "points": 8,
-      "pointsChange": 1
-    }
-  ],
-  "attendanceChanges": [
-    {
-      "team": "Tianjin Jinmen Tiger",
-      "teamCn": "天津津门虎",
-      "averageAttendance": 25131,
-      "averageAttendanceChange": 390,
-      "occupancyRate": 0.7043441704035874,
-      "occupancyRateChange": 0.010930493273542563
-    },
-    {
-      "team": "Wuhan Three Towns",
-      "teamCn": "武汉三镇",
-      "averageAttendance": 18942,
-      "averageAttendanceChange": 550,
-      "occupancyRate": 0.4209333333333333,
-      "occupancyRateChange": 0.01222222222222219
-    }
-  ],
+  "rankingChanges": [],
+  "pointsChanges": [],
+  "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
