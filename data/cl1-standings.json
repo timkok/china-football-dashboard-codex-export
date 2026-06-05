@@ -8,7 +8,7 @@
   "source": "mock fallback",
   "sourceUrl": "",
   "isOfficial": false,
-  "fetchedAt": "2026-06-04T20:06:02.594Z",
+  "fetchedAt": "2026-06-05T03:47:17.040Z",
   "schemaVersion": 1,
   "data": [
     {
@@ -47,7 +47,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "updatedAt": "2026-06-04T20:06:02.594Z"
+      "updatedAt": "2026-06-05T03:47:17.040Z"
     },
     {
       "id": "cl1-team-01",
@@ -85,7 +85,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "updatedAt": "2026-06-04T20:06:02.594Z"
+      "updatedAt": "2026-06-05T03:47:17.040Z"
     },
     {
       "id": "cl1-team-03",
@@ -123,7 +123,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "updatedAt": "2026-06-04T20:06:02.594Z"
+      "updatedAt": "2026-06-05T03:47:17.040Z"
     },
     {
       "id": "cl1-team-04",
@@ -161,7 +161,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "updatedAt": "2026-06-04T20:06:02.594Z"
+      "updatedAt": "2026-06-05T03:47:17.040Z"
     },
     {
       "id": "cl1-team-06",
@@ -199,7 +199,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "updatedAt": "2026-06-04T20:06:02.594Z"
+      "updatedAt": "2026-06-05T03:47:17.040Z"
     },
     {
       "id": "cl1-team-05",
@@ -237,7 +237,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "updatedAt": "2026-06-04T20:06:02.594Z"
+      "updatedAt": "2026-06-05T03:47:17.040Z"
     },
     {
       "id": "cl1-team-08",
@@ -275,7 +275,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "updatedAt": "2026-06-04T20:06:02.594Z"
+      "updatedAt": "2026-06-05T03:47:17.040Z"
     },
     {
       "id": "cl1-team-07",
@@ -313,7 +313,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "updatedAt": "2026-06-04T20:06:02.594Z"
+      "updatedAt": "2026-06-05T03:47:17.040Z"
     },
     {
       "id": "cl1-team-09",
@@ -351,7 +351,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "updatedAt": "2026-06-04T20:06:02.594Z"
+      "updatedAt": "2026-06-05T03:47:17.040Z"
     },
     {
       "id": "cl1-team-10",
@@ -389,7 +389,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "updatedAt": "2026-06-04T20:06:02.594Z"
+      "updatedAt": "2026-06-05T03:47:17.040Z"
     },
     {
       "id": "cl1-team-12",
@@ -427,7 +427,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "updatedAt": "2026-06-04T20:06:02.594Z"
+      "updatedAt": "2026-06-05T03:47:17.040Z"
     },
     {
       "id": "cl1-team-11",
@@ -465,7 +465,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "updatedAt": "2026-06-04T20:06:02.594Z"
+      "updatedAt": "2026-06-05T03:47:17.040Z"
     },
     {
       "id": "cl1-team-13",
@@ -503,7 +503,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "updatedAt": "2026-06-04T20:06:02.594Z"
+      "updatedAt": "2026-06-05T03:47:17.040Z"
     },
     {
       "id": "cl1-team-14",
@@ -541,7 +541,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "updatedAt": "2026-06-04T20:06:02.594Z"
+      "updatedAt": "2026-06-05T03:47:17.040Z"
     },
     {
       "id": "cl1-team-16",
@@ -579,7 +579,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "updatedAt": "2026-06-04T20:06:02.594Z"
+      "updatedAt": "2026-06-05T03:47:17.040Z"
     },
     {
       "id": "cl1-team-15",
@@ -617,7 +617,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "updatedAt": "2026-06-04T20:06:02.594Z"
+      "updatedAt": "2026-06-05T03:47:17.040Z"
     }
   ]
 }
