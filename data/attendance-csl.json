@@ -7,13 +7,13 @@
   "sourceUrl": "https://www.transfermarkt.com/chinese-super-league/besucherzahlen/wettbewerb/CSL",
   "isOfficial": false,
   "mode": "third_party",
-  "fetchedAt": "2026-06-09T10:09:50.995Z",
+  "fetchedAt": "2026-06-09T14:51:51.924Z",
   "schemaVersion": 1,
   "summary": {
     "matches": 120,
-    "totalAttendance": 3647151,
-    "averageAttendance": 30392,
-    "averageOccupancyRate": 0.646667509182444,
+    "totalAttendance": 3647241,
+    "averageAttendance": 30393,
+    "averageOccupancyRate": 0.6466796113511526,
     "highestAverageTeam": "Dalian Yingbo",
     "highestAverageAttendance": 60970
   },
@@ -96,9 +96,9 @@
       "stadiumCn": "济南奥体中心",
       "capacity": 56808,
       "matches": 8,
-      "totalAttendance": 222884,
-      "averageAttendance": 27861,
-      "occupancyRate": 0.4904414871144909,
+      "totalAttendance": 222974,
+      "averageAttendance": 27872,
+      "occupancyRate": 0.490635121813829,
       "heatLabel": "正常",
       "source": "Transfermarkt"
     },
@@ -248,8 +248,8 @@
     {
       "season": "25/26",
       "matches": 120,
-      "totalAttendance": 3647151,
-      "averageAttendance": 30393,
+      "totalAttendance": 3647241,
+      "averageAttendance": 30394,
       "highestAverageTeam": "Dalian Yingbo",
       "highestAverageAttendance": 60970
     },

@@ -1,14 +1,23 @@
 {
-  "generatedAt": "2026-06-09T09:43:57.382Z",
+  "generatedAt": "2026-06-09T14:51:56.667Z",
   "summary": {
     "rankingChanges": 0,
     "pointsChanges": 0,
-    "attendanceChanges": 0,
+    "attendanceChanges": 1,
     "anomalyChanges": 0
   },
   "rankingChanges": [],
   "pointsChanges": [],
-  "attendanceChanges": [],
+  "attendanceChanges": [
+    {
+      "team": "Shandong Taishan",
+      "teamCn": "山东泰山",
+      "averageAttendance": 27872,
+      "averageAttendanceChange": 11,
+      "occupancyRate": 0.490635121813829,
+      "occupancyRateChange": 0.00019363469933808553
+    }
+  ],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
@@ -121,8 +130,8 @@
       },
       {
         "team": "Shandong Taishan",
-        "averageAttendance": 27861,
-        "occupancyRate": 0.4904414871144909
+        "averageAttendance": 27872,
+        "occupancyRate": 0.490635121813829
       },
       {
         "team": "Qingdao Hainiu",
