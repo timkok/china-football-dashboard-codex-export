@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T14:12:08.088Z",
+  "generatedAt": "2026-06-22T04:16:18.661Z",
   "summary": {
     "rankingChanges": 0,
     "pointsChanges": 0,
@@ -100,7 +100,7 @@
         "occupancyRate": 0.9340196393829373
       },
       {
-        "team": "北京国安足球倶楽部",
+        "team": "Beijing Guoan",
         "averageAttendance": 49538,
         "occupancyRate": 0.7285
       },
@@ -110,47 +110,47 @@
         "occupancyRate": 0.71145
       },
       {
-        "team": "成都蓉城足球倶楽部",
+        "team": "Chengdu Rongcheng",
         "averageAttendance": 41361,
         "occupancyRate": 0.8158792780353092
       },
       {
-        "team": "上海申花足球倶楽部",
+        "team": "Shanghai Shenhua",
         "averageAttendance": 41328,
         "occupancyRate": 0.5872039328796124
       },
       {
-        "team": "山東泰山足球倶楽部",
+        "team": "Shandong Taishan",
         "averageAttendance": 27872,
         "occupancyRate": 0.490635121813829
       },
       {
-        "team": "青島海牛足球倶楽部",
+        "team": "Qingdao Hainiu",
         "averageAttendance": 29267,
         "occupancyRate": 0.5489243580846634
       },
       {
-        "team": "遼寧鉄人足球倶楽部",
+        "team": "Liaoning Tieren",
         "averageAttendance": 28872,
         "occupancyRate": 0.7218
       },
       {
-        "team": "天津津門虎足球倶楽部",
+        "team": "Tianjin Jinmen Tiger",
         "averageAttendance": 25131,
         "occupancyRate": 0.7043441704035874
       },
       {
-        "team": "浙江職業足球倶楽部",
+        "team": "Zhejiang FC",
         "averageAttendance": 24298,
         "occupancyRate": 0.46726923076923077
       },
       {
-        "team": "深圳新鹏城足球倶楽部",
+        "team": "Shenzhen Peng City",
         "averageAttendance": 20159,
         "occupancyRate": 0.44797777777777775
       },
       {
-        "team": "上海海港足球倶楽部",
+        "team": "Shanghai Port",
         "averageAttendance": 19563,
         "occupancyRate": 0.5793869391381609
       },
@@ -160,17 +160,17 @@
         "occupancyRate": 0.7114
       },
       {
-        "team": "河南FC",
+        "team": "Henan FC",
         "averageAttendance": 19362,
         "occupancyRate": 0.6915
       },
       {
-        "team": "武漢三鎮足球倶楽部",
+        "team": "Wuhan Three Towns",
         "averageAttendance": 18942,
         "occupancyRate": 0.4209333333333333
       },
       {
-        "team": "青島西海岸足球倶楽部",
+        "team": "Qingdao West Coast",
         "averageAttendance": 15713,
         "occupancyRate": 0.78565
       }
