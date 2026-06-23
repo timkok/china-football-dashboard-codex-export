@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T15:35:46.428Z",
+  "updatedAt": "2026-06-23T20:06:03.636Z",
   "status": "ok",
   "mode": "third_party",
   "source": "Transfermarkt",
@@ -15,7 +15,7 @@
     {
       "level": "info",
       "source": "tm-com-development",
-      "message": "Fetched 28 attendance trend rows"
+      "message": "Fetched 29 attendance trend rows"
     }
   ]
 }
