@@ -7,13 +7,13 @@
   "sourceUrl": "https://www.transfermarkt.com/chinese-super-league/besucherzahlen/wettbewerb/CSL",
   "isOfficial": false,
   "mode": "third_party",
-  "fetchedAt": "2026-06-26T14:24:50.391Z",
+  "fetchedAt": "2026-06-26T15:12:11.962Z",
   "schemaVersion": 1,
   "summary": {
-    "matches": 120,
-    "totalAttendance": 3647241,
-    "averageAttendance": 30393,
-    "averageOccupancyRate": 0.6466796113511526,
+    "matches": 121,
+    "totalAttendance": 3668277,
+    "averageAttendance": 30316,
+    "averageOccupancyRate": 0.6454745548025846,
     "highestAverageTeam": "Dalian Yingbo",
     "highestAverageAttendance": 60970
   },
@@ -90,6 +90,20 @@
     },
     {
       "rank": 6,
+      "team": "Qingdao Hainiu",
+      "teamCn": "青岛海牛",
+      "stadium": "Qingdao Youth Football Stadium",
+      "stadiumCn": "青岛青春足球场",
+      "capacity": 53317,
+      "matches": 8,
+      "totalAttendance": 225908,
+      "averageAttendance": 28239,
+      "occupancyRate": 0.5296434533075755,
+      "heatLabel": "正常",
+      "source": "Transfermarkt"
+    },
+    {
+      "rank": 7,
       "team": "Shandong Taishan",
       "teamCn": "山东泰山",
       "stadium": "Ji'nan Olympic Sports Center",
@@ -99,20 +113,6 @@
       "totalAttendance": 222974,
       "averageAttendance": 27872,
       "occupancyRate": 0.490635121813829,
-      "heatLabel": "正常",
-      "source": "Transfermarkt"
-    },
-    {
-      "rank": 7,
-      "team": "Qingdao Hainiu",
-      "teamCn": "青岛海牛",
-      "stadium": "Qingdao Youth Football Stadium",
-      "stadiumCn": "青岛青春足球场",
-      "capacity": 53317,
-      "matches": 7,
-      "totalAttendance": 204872,
-      "averageAttendance": 29267,
-      "occupancyRate": 0.5489243580846634,
       "heatLabel": "正常",
       "source": "Transfermarkt"
     },
@@ -248,8 +248,8 @@
     {
       "season": "25/26",
       "matches": 121,
-      "totalAttendance": 3647241,
-      "averageAttendance": 30394,
+      "totalAttendance": 3668277,
+      "averageAttendance": 30316,
       "highestAverageTeam": "Dalian Yingbo",
       "highestAverageAttendance": 60970
     },
