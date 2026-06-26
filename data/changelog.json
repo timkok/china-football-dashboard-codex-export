@@ -1,13 +1,36 @@
 {
-  "generatedAt": "2026-06-26T03:42:13.994Z",
+  "generatedAt": "2026-06-26T14:24:55.427Z",
   "summary": {
-    "rankingChanges": 0,
-    "pointsChanges": 0,
+    "rankingChanges": 2,
+    "pointsChanges": 1,
     "attendanceChanges": 0,
     "anomalyChanges": 0
   },
-  "rankingChanges": [],
-  "pointsChanges": [],
+  "rankingChanges": [
+    {
+      "team": "青岛海牛",
+      "rank": 13,
+      "rankChange": 1,
+      "points": 13,
+      "pointsChange": 3
+    },
+    {
+      "team": "上海海港",
+      "rank": 14,
+      "rankChange": -1,
+      "points": 12,
+      "pointsChange": 0
+    }
+  ],
+  "pointsChanges": [
+    {
+      "team": "青岛海牛",
+      "rank": 13,
+      "rankChange": 1,
+      "points": 13,
+      "pointsChange": 3
+    }
+  ],
   "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
@@ -73,14 +96,14 @@
         "points": 13
       },
       {
-        "team": "上海海港",
+        "team": "青岛海牛",
         "rank": 13,
-        "points": 12
+        "points": 13
       },
       {
-        "team": "青岛海牛",
+        "team": "上海海港",
         "rank": 14,
-        "points": 10
+        "points": 12
       },
       {
         "team": "武汉三镇",
