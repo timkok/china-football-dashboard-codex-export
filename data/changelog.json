@@ -1,23 +1,14 @@
 {
-  "generatedAt": "2026-06-27T03:28:50.580Z",
+  "generatedAt": "2026-06-27T08:36:06.390Z",
   "summary": {
     "rankingChanges": 0,
     "pointsChanges": 0,
-    "attendanceChanges": 1,
+    "attendanceChanges": 0,
     "anomalyChanges": 0
   },
   "rankingChanges": [],
   "pointsChanges": [],
-  "attendanceChanges": [
-    {
-      "team": "Qingdao Hainiu",
-      "teamCn": "青岛海牛",
-      "averageAttendance": 28239,
-      "averageAttendanceChange": -1028,
-      "occupancyRate": 0.5296434533075755,
-      "occupancyRateChange": -0.019280904777087993
-    }
-  ],
+  "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
