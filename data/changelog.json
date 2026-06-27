@@ -1,14 +1,95 @@
 {
-  "generatedAt": "2026-06-27T08:36:06.390Z",
+  "generatedAt": "2026-06-27T13:43:16.502Z",
   "summary": {
-    "rankingChanges": 0,
-    "pointsChanges": 0,
-    "attendanceChanges": 0,
+    "rankingChanges": 8,
+    "pointsChanges": 2,
+    "attendanceChanges": 1,
     "anomalyChanges": 0
   },
-  "rankingChanges": [],
-  "pointsChanges": [],
-  "attendanceChanges": [],
+  "rankingChanges": [
+    {
+      "team": "山东泰山",
+      "rank": 4,
+      "rankChange": 1,
+      "points": 21,
+      "pointsChange": 3
+    },
+    {
+      "team": "云南玉昆",
+      "rank": 5,
+      "rankChange": -1,
+      "points": 21,
+      "pointsChange": 0
+    },
+    {
+      "team": "深圳新鵬城",
+      "rank": 8,
+      "rankChange": 1,
+      "points": 17,
+      "pointsChange": 0
+    },
+    {
+      "team": "辽宁铁人",
+      "rank": 9,
+      "rankChange": -1,
+      "points": 17,
+      "pointsChange": 0
+    },
+    {
+      "team": "上海海港",
+      "rank": 11,
+      "rankChange": 3,
+      "points": 15,
+      "pointsChange": 3
+    },
+    {
+      "team": "河南队",
+      "rank": 12,
+      "rankChange": -1,
+      "points": 15,
+      "pointsChange": 0
+    },
+    {
+      "team": "上海申花",
+      "rank": 13,
+      "rankChange": -1,
+      "points": 13,
+      "pointsChange": 0
+    },
+    {
+      "team": "青岛海牛",
+      "rank": 14,
+      "rankChange": -1,
+      "points": 13,
+      "pointsChange": 0
+    }
+  ],
+  "pointsChanges": [
+    {
+      "team": "山东泰山",
+      "rank": 4,
+      "rankChange": 1,
+      "points": 21,
+      "pointsChange": 3
+    },
+    {
+      "team": "上海海港",
+      "rank": 11,
+      "rankChange": 3,
+      "points": 15,
+      "pointsChange": 3
+    }
+  ],
+  "attendanceChanges": [
+    {
+      "team": "Liaoning Tieren",
+      "teamCn": "辽宁铁人",
+      "averageAttendance": 28841,
+      "averageAttendanceChange": -31,
+      "occupancyRate": 0.721025,
+      "occupancyRateChange": -0.0007749999999999702
+    }
+  ],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
@@ -28,14 +109,14 @@
         "points": 22
       },
       {
-        "team": "云南玉昆",
+        "team": "山东泰山",
         "rank": 4,
         "points": 21
       },
       {
-        "team": "山东泰山",
+        "team": "云南玉昆",
         "rank": 5,
-        "points": 18
+        "points": 21
       },
       {
         "team": "青岛西海岸",
@@ -48,12 +129,12 @@
         "points": 17
       },
       {
-        "team": "辽宁铁人",
+        "team": "深圳新鵬城",
         "rank": 8,
         "points": 17
       },
       {
-        "team": "深圳新鵬城",
+        "team": "辽宁铁人",
         "rank": 9,
         "points": 17
       },
@@ -63,24 +144,24 @@
         "points": 15
       },
       {
-        "team": "河南队",
+        "team": "上海海港",
         "rank": 11,
         "points": 15
       },
       {
-        "team": "上海申花",
+        "team": "河南队",
         "rank": 12,
-        "points": 13
+        "points": 15
       },
       {
-        "team": "青岛海牛",
+        "team": "上海申花",
         "rank": 13,
         "points": 13
       },
       {
-        "team": "上海海港",
+        "team": "青岛海牛",
         "rank": 14,
-        "points": 12
+        "points": 13
       },
       {
         "team": "武汉三镇",
@@ -120,6 +201,11 @@
         "occupancyRate": 0.5872039328796124
       },
       {
+        "team": "Liaoning Tieren",
+        "averageAttendance": 28841,
+        "occupancyRate": 0.721025
+      },
+      {
         "team": "Qingdao Hainiu",
         "averageAttendance": 28239,
         "occupancyRate": 0.5296434533075755
@@ -128,11 +214,6 @@
         "team": "Shandong Taishan",
         "averageAttendance": 27872,
         "occupancyRate": 0.490635121813829
-      },
-      {
-        "team": "Liaoning Tieren",
-        "averageAttendance": 28872,
-        "occupancyRate": 0.7218
       },
       {
         "team": "Tianjin Jinmen Tiger",
