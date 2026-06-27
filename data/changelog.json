@@ -1,37 +1,23 @@
 {
-  "generatedAt": "2026-06-26T14:24:55.427Z",
+  "generatedAt": "2026-06-27T03:28:50.580Z",
   "summary": {
-    "rankingChanges": 2,
-    "pointsChanges": 1,
-    "attendanceChanges": 0,
+    "rankingChanges": 0,
+    "pointsChanges": 0,
+    "attendanceChanges": 1,
     "anomalyChanges": 0
   },
-  "rankingChanges": [
+  "rankingChanges": [],
+  "pointsChanges": [],
+  "attendanceChanges": [
     {
-      "team": "青岛海牛",
-      "rank": 13,
-      "rankChange": 1,
-      "points": 13,
-      "pointsChange": 3
-    },
-    {
-      "team": "上海海港",
-      "rank": 14,
-      "rankChange": -1,
-      "points": 12,
-      "pointsChange": 0
+      "team": "Qingdao Hainiu",
+      "teamCn": "青岛海牛",
+      "averageAttendance": 28239,
+      "averageAttendanceChange": -1028,
+      "occupancyRate": 0.5296434533075755,
+      "occupancyRateChange": -0.019280904777087993
     }
   ],
-  "pointsChanges": [
-    {
-      "team": "青岛海牛",
-      "rank": 13,
-      "rankChange": 1,
-      "points": 13,
-      "pointsChange": 3
-    }
-  ],
-  "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
@@ -143,14 +129,14 @@
         "occupancyRate": 0.5872039328796124
       },
       {
+        "team": "Qingdao Hainiu",
+        "averageAttendance": 28239,
+        "occupancyRate": 0.5296434533075755
+      },
+      {
         "team": "Shandong Taishan",
         "averageAttendance": 27872,
         "occupancyRate": 0.490635121813829
-      },
-      {
-        "team": "Qingdao Hainiu",
-        "averageAttendance": 29267,
-        "occupancyRate": 0.5489243580846634
       },
       {
         "team": "Liaoning Tieren",
