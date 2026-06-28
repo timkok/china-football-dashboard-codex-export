@@ -7,15 +7,15 @@
   "sourceUrl": "https://www.transfermarkt.com/chinese-super-league/besucherzahlen/wettbewerb/CSL",
   "isOfficial": false,
   "mode": "third_party",
-  "fetchedAt": "2026-06-28T08:51:41.936Z",
+  "fetchedAt": "2026-06-28T19:19:49.772Z",
   "schemaVersion": 1,
   "summary": {
-    "matches": 125,
-    "totalAttendance": 3779017,
-    "averageAttendance": 30232,
-    "averageOccupancyRate": 0.642122767629382,
+    "matches": 128,
+    "totalAttendance": 3874763,
+    "averageAttendance": 30271,
+    "averageOccupancyRate": 0.6416613695612042,
     "highestAverageTeam": "Dalian Yingbo",
-    "highestAverageAttendance": 60970
+    "highestAverageAttendance": 61146
   },
   "teams": [
     {
@@ -25,10 +25,10 @@
       "stadium": "Dalian Suoyuwan Football Stadium",
       "stadiumCn": "大连梭鱼湾足球场",
       "capacity": 65277,
-      "matches": 7,
-      "totalAttendance": 426792,
-      "averageAttendance": 60970,
-      "occupancyRate": 0.9340196393829373,
+      "matches": 8,
+      "totalAttendance": 489165,
+      "averageAttendance": 61146,
+      "occupancyRate": 0.9367158417206674,
       "heatLabel": "爆满",
       "source": "Transfermarkt"
     },
@@ -188,6 +188,20 @@
     },
     {
       "rank": 13,
+      "team": "Henan FC",
+      "teamCn": "河南队",
+      "stadium": "Zhengzhou Hanghai Stadium",
+      "stadiumCn": "郑州航海体育场",
+      "capacity": 28000,
+      "matches": 8,
+      "totalAttendance": 154572,
+      "averageAttendance": 19322,
+      "occupancyRate": 0.6900714285714286,
+      "heatLabel": "正常",
+      "source": "Transfermarkt"
+    },
+    {
+      "rank": 14,
       "team": "Yunnan Yukun",
       "teamCn": "云南玉昆",
       "stadium": "Yuxi Plateau Sports Center Stadium",
@@ -198,20 +212,6 @@
       "averageAttendance": 21342,
       "occupancyRate": 0.7114,
       "heatLabel": "高热度",
-      "source": "Transfermarkt"
-    },
-    {
-      "rank": 14,
-      "team": "Henan FC",
-      "teamCn": "河南队",
-      "stadium": "Zhengzhou Hanghai Stadium",
-      "stadiumCn": "郑州航海体育场",
-      "capacity": 28000,
-      "matches": 7,
-      "totalAttendance": 135531,
-      "averageAttendance": 19362,
-      "occupancyRate": 0.6915,
-      "heatLabel": "正常",
       "source": "Transfermarkt"
     },
     {
@@ -235,10 +235,10 @@
       "stadium": "West Coast University City Sports Center Stadium",
       "stadiumCn": "西海岸大学城体育中心",
       "capacity": 20000,
-      "matches": 7,
-      "totalAttendance": 109988,
-      "averageAttendance": 15713,
-      "occupancyRate": 0.78565,
+      "matches": 8,
+      "totalAttendance": 124320,
+      "averageAttendance": 15540,
+      "occupancyRate": 0.777,
       "heatLabel": "高热度",
       "source": "Transfermarkt"
     }
@@ -247,11 +247,11 @@
   "trend": [
     {
       "season": "25/26",
-      "matches": 126,
-      "totalAttendance": 3779017,
-      "averageAttendance": 30232,
+      "matches": 128,
+      "totalAttendance": 3874763,
+      "averageAttendance": 30272,
       "highestAverageTeam": "Dalian Yingbo",
-      "highestAverageAttendance": 60970
+      "highestAverageAttendance": 61146
     },
     {
       "season": "24/25",
