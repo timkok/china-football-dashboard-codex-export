@@ -1,90 +1,14 @@
 {
-  "generatedAt": "2026-06-28T19:20:01.955Z",
+  "generatedAt": "2026-06-29T11:00:05.353Z",
   "summary": {
-    "rankingChanges": 5,
-    "pointsChanges": 2,
-    "attendanceChanges": 3,
+    "rankingChanges": 0,
+    "pointsChanges": 0,
+    "attendanceChanges": 0,
     "anomalyChanges": 0
   },
-  "rankingChanges": [
-    {
-      "team": "青岛西海岸",
-      "rank": 6,
-      "rankChange": 1,
-      "points": 21,
-      "pointsChange": 3
-    },
-    {
-      "team": "北京国安",
-      "rank": 7,
-      "rankChange": -1,
-      "points": 18,
-      "pointsChange": 0
-    },
-    {
-      "team": "上海申花",
-      "rank": 11,
-      "rankChange": 2,
-      "points": 16,
-      "pointsChange": 3
-    },
-    {
-      "team": "上海海港",
-      "rank": 12,
-      "rankChange": -1,
-      "points": 15,
-      "pointsChange": 0
-    },
-    {
-      "team": "河南队",
-      "rank": 13,
-      "rankChange": -1,
-      "points": 15,
-      "pointsChange": 0
-    }
-  ],
-  "pointsChanges": [
-    {
-      "team": "青岛西海岸",
-      "rank": 6,
-      "rankChange": 1,
-      "points": 21,
-      "pointsChange": 3
-    },
-    {
-      "team": "上海申花",
-      "rank": 11,
-      "rankChange": 2,
-      "points": 16,
-      "pointsChange": 3
-    }
-  ],
-  "attendanceChanges": [
-    {
-      "team": "Dalian Yingbo",
-      "teamCn": "大连英博",
-      "averageAttendance": 61146,
-      "averageAttendanceChange": 176,
-      "occupancyRate": 0.9367158417206674,
-      "occupancyRateChange": 0.002696202337730047
-    },
-    {
-      "team": "Henan FC",
-      "teamCn": "河南队",
-      "averageAttendance": 19322,
-      "averageAttendanceChange": -40,
-      "occupancyRate": 0.6900714285714286,
-      "occupancyRateChange": -0.0014285714285714457
-    },
-    {
-      "team": "Qingdao West Coast",
-      "teamCn": "青岛西海岸",
-      "averageAttendance": 15540,
-      "averageAttendanceChange": -173,
-      "occupancyRate": 0.777,
-      "occupancyRateChange": -0.008649999999999936
-    }
-  ],
+  "rankingChanges": [],
+  "pointsChanges": [],
+  "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
