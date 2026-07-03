@@ -1,14 +1,53 @@
 {
-  "generatedAt": "2026-07-03T14:04:26.664Z",
+  "generatedAt": "2026-07-03T19:22:43.702Z",
   "summary": {
-    "rankingChanges": 0,
-    "pointsChanges": 0,
-    "attendanceChanges": 0,
+    "rankingChanges": 3,
+    "pointsChanges": 1,
+    "attendanceChanges": 1,
     "anomalyChanges": 0
   },
-  "rankingChanges": [],
-  "pointsChanges": [],
-  "attendanceChanges": [],
+  "rankingChanges": [
+    {
+      "team": "云南玉昆",
+      "rank": 3,
+      "rankChange": 2,
+      "points": 24,
+      "pointsChange": 3
+    },
+    {
+      "team": "大连英博",
+      "rank": 4,
+      "rankChange": -1,
+      "points": 22,
+      "pointsChange": 0
+    },
+    {
+      "team": "山东泰山",
+      "rank": 5,
+      "rankChange": -1,
+      "points": 21,
+      "pointsChange": 0
+    }
+  ],
+  "pointsChanges": [
+    {
+      "team": "云南玉昆",
+      "rank": 3,
+      "rankChange": 2,
+      "points": 24,
+      "pointsChange": 3
+    }
+  ],
+  "attendanceChanges": [
+    {
+      "team": "Yunnan Yukun",
+      "teamCn": "云南玉昆",
+      "averageAttendance": 20938,
+      "averageAttendanceChange": -404,
+      "occupancyRate": 0.6979333333333333,
+      "occupancyRateChange": -0.013466666666666738
+    }
+  ],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
@@ -23,17 +62,17 @@
         "points": 27
       },
       {
-        "team": "大连英博",
+        "team": "云南玉昆",
         "rank": 3,
+        "points": 24
+      },
+      {
+        "team": "大连英博",
+        "rank": 4,
         "points": 22
       },
       {
         "team": "山东泰山",
-        "rank": 4,
-        "points": 21
-      },
-      {
-        "team": "云南玉昆",
         "rank": 5,
         "points": 21
       },
@@ -150,6 +189,11 @@
         "occupancyRate": 0.4602222222222222
       },
       {
+        "team": "Yunnan Yukun",
+        "averageAttendance": 20938,
+        "occupancyRate": 0.6979333333333333
+      },
+      {
         "team": "Shanghai Port",
         "averageAttendance": 19563,
         "occupancyRate": 0.5793869391381609
@@ -158,11 +202,6 @@
         "team": "Henan FC",
         "averageAttendance": 19322,
         "occupancyRate": 0.6900714285714286
-      },
-      {
-        "team": "Yunnan Yukun",
-        "averageAttendance": 21342,
-        "occupancyRate": 0.7114
       },
       {
         "team": "Wuhan Three Towns",
