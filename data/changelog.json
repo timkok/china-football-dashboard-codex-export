@@ -1,53 +1,14 @@
 {
-  "generatedAt": "2026-07-03T19:22:43.702Z",
+  "generatedAt": "2026-07-04T02:55:26.730Z",
   "summary": {
-    "rankingChanges": 3,
-    "pointsChanges": 1,
-    "attendanceChanges": 1,
+    "rankingChanges": 0,
+    "pointsChanges": 0,
+    "attendanceChanges": 0,
     "anomalyChanges": 0
   },
-  "rankingChanges": [
-    {
-      "team": "云南玉昆",
-      "rank": 3,
-      "rankChange": 2,
-      "points": 24,
-      "pointsChange": 3
-    },
-    {
-      "team": "大连英博",
-      "rank": 4,
-      "rankChange": -1,
-      "points": 22,
-      "pointsChange": 0
-    },
-    {
-      "team": "山东泰山",
-      "rank": 5,
-      "rankChange": -1,
-      "points": 21,
-      "pointsChange": 0
-    }
-  ],
-  "pointsChanges": [
-    {
-      "team": "云南玉昆",
-      "rank": 3,
-      "rankChange": 2,
-      "points": 24,
-      "pointsChange": 3
-    }
-  ],
-  "attendanceChanges": [
-    {
-      "team": "Yunnan Yukun",
-      "teamCn": "云南玉昆",
-      "averageAttendance": 20938,
-      "averageAttendanceChange": -404,
-      "occupancyRate": 0.6979333333333333,
-      "occupancyRateChange": -0.013466666666666738
-    }
-  ],
+  "rankingChanges": [],
+  "pointsChanges": [],
+  "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
