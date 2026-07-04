@@ -1,13 +1,78 @@
 {
-  "generatedAt": "2026-07-04T08:36:58.232Z",
+  "generatedAt": "2026-07-04T13:26:00.447Z",
   "summary": {
-    "rankingChanges": 0,
-    "pointsChanges": 0,
+    "rankingChanges": 7,
+    "pointsChanges": 2,
     "attendanceChanges": 0,
     "anomalyChanges": 0
   },
-  "rankingChanges": [],
-  "pointsChanges": [],
+  "rankingChanges": [
+    {
+      "team": "青岛西海岸",
+      "rank": 4,
+      "rankChange": 2,
+      "points": 24,
+      "pointsChange": 3
+    },
+    {
+      "team": "大连英博",
+      "rank": 5,
+      "rankChange": -1,
+      "points": 22,
+      "pointsChange": 0
+    },
+    {
+      "team": "山东泰山",
+      "rank": 6,
+      "rankChange": -1,
+      "points": 21,
+      "pointsChange": 0
+    },
+    {
+      "team": "辽宁铁人",
+      "rank": 7,
+      "rankChange": 3,
+      "points": 20,
+      "pointsChange": 3
+    },
+    {
+      "team": "北京国安",
+      "rank": 8,
+      "rankChange": -1,
+      "points": 18,
+      "pointsChange": 0
+    },
+    {
+      "team": "浙江队",
+      "rank": 9,
+      "rankChange": -1,
+      "points": 17,
+      "pointsChange": 0
+    },
+    {
+      "team": "深圳新鵬城",
+      "rank": 10,
+      "rankChange": -1,
+      "points": 17,
+      "pointsChange": 0
+    }
+  ],
+  "pointsChanges": [
+    {
+      "team": "青岛西海岸",
+      "rank": 4,
+      "rankChange": 2,
+      "points": 24,
+      "pointsChange": 3
+    },
+    {
+      "team": "辽宁铁人",
+      "rank": 7,
+      "rankChange": 3,
+      "points": 20,
+      "pointsChange": 3
+    }
+  ],
   "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
@@ -28,37 +93,37 @@
         "points": 24
       },
       {
-        "team": "大连英博",
+        "team": "青岛西海岸",
         "rank": 4,
+        "points": 24
+      },
+      {
+        "team": "大连英博",
+        "rank": 5,
         "points": 22
       },
       {
         "team": "山东泰山",
-        "rank": 5,
-        "points": 21
-      },
-      {
-        "team": "青岛西海岸",
         "rank": 6,
         "points": 21
       },
       {
-        "team": "北京国安",
+        "team": "辽宁铁人",
         "rank": 7,
+        "points": 20
+      },
+      {
+        "team": "北京国安",
+        "rank": 8,
         "points": 18
       },
       {
         "team": "浙江队",
-        "rank": 8,
-        "points": 17
-      },
-      {
-        "team": "深圳新鵬城",
         "rank": 9,
         "points": 17
       },
       {
-        "team": "辽宁铁人",
+        "team": "深圳新鵬城",
         "rank": 10,
         "points": 17
       },

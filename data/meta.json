@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T08:36:43.369Z",
+  "updatedAt": "2026-07-04T13:25:54.674Z",
   "mode": "fallback",
   "sources": [
     {
@@ -8,7 +8,7 @@
       "url": "https://www.cfl-china.cn/",
       "isOfficial": true,
       "status": "error",
-      "lastFetchedAt": "2026-07-04T08:36:43.369Z"
+      "lastFetchedAt": "2026-07-04T13:25:54.674Z"
     },
     {
       "id": "sina-sports",
@@ -16,7 +16,7 @@
       "url": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
       "status": "ok",
-      "lastFetchedAt": "2026-07-04T08:36:43.369Z"
+      "lastFetchedAt": "2026-07-04T13:25:54.674Z"
     },
     {
       "id": "qiumiwu",
@@ -24,7 +24,7 @@
       "url": "https://www.qiumiwu.com/league/zhongchao/standings",
       "isOfficial": false,
       "status": "unused",
-      "lastFetchedAt": "2026-07-04T08:36:43.369Z"
+      "lastFetchedAt": "2026-07-04T13:25:54.674Z"
     }
   ],
   "leagues": {
@@ -44,7 +44,7 @@
   "logs": [
     {
       "level": "warning",
-      "message": "Official CFL standings unavailable: fetch failed"
+      "message": "Official CFL standings unavailable: Official CFL public HTML does not expose a complete 16-team standings table yet"
     },
     {
       "level": "info",
