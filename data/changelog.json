@@ -1,72 +1,31 @@
 {
-  "generatedAt": "2026-07-05T13:39:23.678Z",
+  "generatedAt": "2026-07-05T19:17:52.373Z",
   "summary": {
-    "rankingChanges": 5,
-    "pointsChanges": 3,
-    "attendanceChanges": 0,
+    "rankingChanges": 0,
+    "pointsChanges": 0,
+    "attendanceChanges": 2,
     "anomalyChanges": 0
   },
-  "rankingChanges": [
+  "rankingChanges": [],
+  "pointsChanges": [],
+  "attendanceChanges": [
     {
-      "team": "成都蓉城",
-      "rank": 1,
-      "rankChange": 0,
-      "points": 41,
-      "pointsChange": 1
+      "team": "Dalian Yingbo",
+      "teamCn": "大连英博",
+      "averageAttendance": 61032,
+      "averageAttendanceChange": 4307,
+      "occupancyRate": 0.9349694379337286,
+      "occupancyRateChange": 0.0659803606170627
     },
     {
-      "team": "上海申花",
-      "rank": 9,
-      "rankChange": 2,
-      "points": 19,
-      "pointsChange": 3
-    },
-    {
-      "team": "浙江队",
-      "rank": 10,
-      "rankChange": -1,
-      "points": 17,
-      "pointsChange": 0
-    },
-    {
-      "team": "深圳新鵬城",
-      "rank": 11,
-      "rankChange": -1,
-      "points": 17,
-      "pointsChange": 0
-    },
-    {
-      "team": "青岛海牛",
-      "rank": 14,
-      "rankChange": 0,
-      "points": 14,
-      "pointsChange": 1
+      "team": "Qingdao Hainiu",
+      "teamCn": "青岛海牛",
+      "averageAttendance": 28469,
+      "averageAttendanceChange": 230,
+      "occupancyRate": 0.5339572744152897,
+      "occupancyRateChange": 0.004313821107714277
     }
   ],
-  "pointsChanges": [
-    {
-      "team": "成都蓉城",
-      "rank": 1,
-      "rankChange": 0,
-      "points": 41,
-      "pointsChange": 1
-    },
-    {
-      "team": "上海申花",
-      "rank": 9,
-      "rankChange": 2,
-      "points": 19,
-      "pointsChange": 3
-    },
-    {
-      "team": "青岛海牛",
-      "rank": 14,
-      "rankChange": 0,
-      "points": 14,
-      "pointsChange": 1
-    }
-  ],
-  "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
@@ -154,8 +113,8 @@
     "attendance": [
       {
         "team": "Dalian Yingbo",
-        "averageAttendance": 56725,
-        "occupancyRate": 0.8689890773166659
+        "averageAttendance": 61032,
+        "occupancyRate": 0.9349694379337286
       },
       {
         "team": "Beijing Guoan",
@@ -178,14 +137,14 @@
         "occupancyRate": 0.5872039328796124
       },
       {
+        "team": "Qingdao Hainiu",
+        "averageAttendance": 28469,
+        "occupancyRate": 0.5339572744152897
+      },
+      {
         "team": "Liaoning Tieren",
         "averageAttendance": 28082,
         "occupancyRate": 0.70205
-      },
-      {
-        "team": "Qingdao Hainiu",
-        "averageAttendance": 28239,
-        "occupancyRate": 0.5296434533075755
       },
       {
         "team": "Shandong Taishan",
