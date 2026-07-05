@@ -8,7 +8,7 @@
   "source": "mock fixture fallback",
   "sourceUrl": "",
   "isOfficial": false,
-  "fetchedAt": "2026-07-05T08:52:32.561Z",
+  "fetchedAt": "2026-07-05T13:39:08.267Z",
   "schemaVersion": 1,
   "data": [
     {
@@ -25,7 +25,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-05T08:52:32.561Z"
+      "fetchedAt": "2026-07-05T13:39:08.267Z"
     },
     {
       "id": "csl-fixture-02",
@@ -41,7 +41,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-05T08:52:32.561Z"
+      "fetchedAt": "2026-07-05T13:39:08.267Z"
     },
     {
       "id": "csl-fixture-03",
@@ -57,7 +57,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-05T08:52:32.561Z"
+      "fetchedAt": "2026-07-05T13:39:08.267Z"
     },
     {
       "id": "csl-fixture-04",
@@ -65,7 +65,7 @@
       "round": 14,
       "date": "2026-05-13T14:30:00.000Z",
       "homeTeam": "云南玉昆",
-      "awayTeam": "浙江队",
+      "awayTeam": "上海申花",
       "homeScore": 3,
       "awayScore": 1,
       "status": "finished",
@@ -73,7 +73,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-05T08:52:32.561Z"
+      "fetchedAt": "2026-07-05T13:39:08.267Z"
     },
     {
       "id": "csl-fixture-05",
@@ -81,7 +81,7 @@
       "round": 15,
       "date": "2026-05-14T15:35:00.000Z",
       "homeTeam": "青岛西海岸",
-      "awayTeam": "深圳新鵬城",
+      "awayTeam": "浙江队",
       "homeScore": 1,
       "awayScore": 2,
       "status": "finished",
@@ -89,7 +89,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-05T08:52:32.561Z"
+      "fetchedAt": "2026-07-05T13:39:08.267Z"
     },
     {
       "id": "csl-fixture-06",
@@ -97,7 +97,7 @@
       "round": 15,
       "date": "2026-05-15T11:30:00.000Z",
       "homeTeam": "北京国安",
-      "awayTeam": "上海申花",
+      "awayTeam": "深圳新鵬城",
       "homeScore": 3,
       "awayScore": 0,
       "status": "live",
@@ -105,7 +105,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-05T08:52:32.561Z"
+      "fetchedAt": "2026-07-05T13:39:08.267Z"
     },
     {
       "id": "csl-fixture-07",
@@ -121,7 +121,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-05T08:52:32.561Z"
+      "fetchedAt": "2026-07-05T13:39:08.267Z"
     },
     {
       "id": "csl-fixture-08",
@@ -137,47 +137,15 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-05T08:52:32.561Z"
+      "fetchedAt": "2026-07-05T13:39:08.267Z"
     },
     {
       "id": "csl-fixture-09",
       "league": "csl",
       "round": 17,
       "date": "2026-05-18T14:35:00.000Z",
-      "homeTeam": "浙江队",
-      "awayTeam": "青岛海牛",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "scheduled",
-      "venue": "杭州体育中心",
-      "source": "mock",
-      "sourceUrl": "",
-      "isOfficial": false,
-      "fetchedAt": "2026-07-05T08:52:32.561Z"
-    },
-    {
-      "id": "csl-fixture-10",
-      "league": "csl",
-      "round": 17,
-      "date": "2026-05-19T15:30:00.000Z",
-      "homeTeam": "深圳新鵬城",
-      "awayTeam": "天津津门虎",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "postponed",
-      "venue": "未标注体育中心",
-      "source": "mock",
-      "sourceUrl": "",
-      "isOfficial": false,
-      "fetchedAt": "2026-07-05T08:52:32.561Z"
-    },
-    {
-      "id": "csl-fixture-11",
-      "league": "csl",
-      "round": 18,
-      "date": "2026-05-20T11:35:00.000Z",
       "homeTeam": "上海申花",
-      "awayTeam": "武汉三镇",
+      "awayTeam": "青岛海牛",
       "homeScore": null,
       "awayScore": null,
       "status": "scheduled",
@@ -185,7 +153,39 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-05T08:52:32.561Z"
+      "fetchedAt": "2026-07-05T13:39:08.267Z"
+    },
+    {
+      "id": "csl-fixture-10",
+      "league": "csl",
+      "round": 17,
+      "date": "2026-05-19T15:30:00.000Z",
+      "homeTeam": "浙江队",
+      "awayTeam": "天津津门虎",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "postponed",
+      "venue": "杭州体育中心",
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "fetchedAt": "2026-07-05T13:39:08.267Z"
+    },
+    {
+      "id": "csl-fixture-11",
+      "league": "csl",
+      "round": 18,
+      "date": "2026-05-20T11:35:00.000Z",
+      "homeTeam": "深圳新鵬城",
+      "awayTeam": "武汉三镇",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "scheduled",
+      "venue": "未标注体育中心",
+      "source": "mock",
+      "sourceUrl": "",
+      "isOfficial": false,
+      "fetchedAt": "2026-07-05T13:39:08.267Z"
     },
     {
       "id": "csl-fixture-12",
@@ -201,7 +201,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-05T08:52:32.561Z"
+      "fetchedAt": "2026-07-05T13:39:08.267Z"
     },
     {
       "id": "csl-fixture-13",
@@ -217,7 +217,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-05T08:52:32.561Z"
+      "fetchedAt": "2026-07-05T13:39:08.267Z"
     },
     {
       "id": "csl-fixture-14",
@@ -233,7 +233,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-05T08:52:32.561Z"
+      "fetchedAt": "2026-07-05T13:39:08.267Z"
     }
   ]
 }
