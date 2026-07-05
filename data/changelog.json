@@ -1,79 +1,134 @@
 {
-  "generatedAt": "2026-07-04T13:26:00.447Z",
+  "generatedAt": "2026-07-05T08:52:39.947Z",
   "summary": {
-    "rankingChanges": 7,
-    "pointsChanges": 2,
-    "attendanceChanges": 0,
+    "rankingChanges": 8,
+    "pointsChanges": 3,
+    "attendanceChanges": 5,
     "anomalyChanges": 0
   },
   "rankingChanges": [
     {
-      "team": "青岛西海岸",
-      "rank": 4,
+      "team": "大连英博",
+      "rank": 3,
       "rankChange": 2,
-      "points": 24,
+      "points": 25,
       "pointsChange": 3
     },
     {
-      "team": "大连英博",
-      "rank": 5,
+      "team": "云南玉昆",
+      "rank": 4,
       "rankChange": -1,
-      "points": 22,
+      "points": 24,
       "pointsChange": 0
     },
     {
-      "team": "山东泰山",
+      "team": "青岛西海岸",
+      "rank": 5,
+      "rankChange": -1,
+      "points": 24,
+      "pointsChange": 0
+    },
+    {
+      "team": "北京国安",
       "rank": 6,
+      "rankChange": 2,
+      "points": 21,
+      "pointsChange": 3
+    },
+    {
+      "team": "山东泰山",
+      "rank": 7,
       "rankChange": -1,
       "points": 21,
       "pointsChange": 0
     },
     {
       "team": "辽宁铁人",
-      "rank": 7,
-      "rankChange": 3,
+      "rank": 8,
+      "rankChange": -1,
       "points": 20,
+      "pointsChange": 0
+    },
+    {
+      "team": "天津津门虎",
+      "rank": 15,
+      "rankChange": 1,
+      "points": 8,
       "pointsChange": 3
     },
     {
-      "team": "北京国安",
-      "rank": 8,
+      "team": "武汉三镇",
+      "rank": 16,
       "rankChange": -1,
-      "points": 18,
-      "pointsChange": 0
-    },
-    {
-      "team": "浙江队",
-      "rank": 9,
-      "rankChange": -1,
-      "points": 17,
-      "pointsChange": 0
-    },
-    {
-      "team": "深圳新鵬城",
-      "rank": 10,
-      "rankChange": -1,
-      "points": 17,
+      "points": 8,
       "pointsChange": 0
     }
   ],
   "pointsChanges": [
     {
-      "team": "青岛西海岸",
-      "rank": 4,
+      "team": "大连英博",
+      "rank": 3,
       "rankChange": 2,
-      "points": 24,
+      "points": 25,
       "pointsChange": 3
     },
     {
-      "team": "辽宁铁人",
-      "rank": 7,
-      "rankChange": 3,
-      "points": 20,
+      "team": "北京国安",
+      "rank": 6,
+      "rankChange": 2,
+      "points": 21,
+      "pointsChange": 3
+    },
+    {
+      "team": "天津津门虎",
+      "rank": 15,
+      "rankChange": 1,
+      "points": 8,
       "pointsChange": 3
     }
   ],
-  "attendanceChanges": [],
+  "attendanceChanges": [
+    {
+      "team": "Dalian Yingbo",
+      "teamCn": "大连英博",
+      "averageAttendance": 56725,
+      "averageAttendanceChange": -4421,
+      "occupancyRate": 0.8689890773166659,
+      "occupancyRateChange": -0.0677267644040015
+    },
+    {
+      "team": "Beijing Guoan",
+      "teamCn": "北京国安",
+      "averageAttendance": 49288,
+      "averageAttendanceChange": 924,
+      "occupancyRate": 0.7248235294117648,
+      "occupancyRateChange": 0.013588235294117679
+    },
+    {
+      "team": "Liaoning Tieren",
+      "teamCn": "辽宁铁人",
+      "averageAttendance": 28082,
+      "averageAttendanceChange": -759,
+      "occupancyRate": 0.70205,
+      "occupancyRateChange": -0.018975000000000075
+    },
+    {
+      "team": "Tianjin Jinmen Tiger",
+      "teamCn": "天津津门虎",
+      "averageAttendance": 24713,
+      "averageAttendanceChange": -418,
+      "occupancyRate": 0.6926289237668162,
+      "occupancyRateChange": -0.01171524663677126
+    },
+    {
+      "team": "Qingdao West Coast",
+      "teamCn": "青岛西海岸",
+      "averageAttendance": 15626,
+      "averageAttendanceChange": 86,
+      "occupancyRate": 0.7813,
+      "occupancyRateChange": 0.0042999999999999705
+    }
+  ],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
@@ -88,34 +143,34 @@
         "points": 27
       },
       {
-        "team": "云南玉昆",
+        "team": "大连英博",
         "rank": 3,
-        "points": 24
+        "points": 25
       },
       {
-        "team": "青岛西海岸",
+        "team": "云南玉昆",
         "rank": 4,
         "points": 24
       },
       {
-        "team": "大连英博",
+        "team": "青岛西海岸",
         "rank": 5,
-        "points": 22
+        "points": 24
       },
       {
-        "team": "山东泰山",
+        "team": "北京国安",
         "rank": 6,
         "points": 21
       },
       {
-        "team": "辽宁铁人",
+        "team": "山东泰山",
         "rank": 7,
-        "points": 20
+        "points": 21
       },
       {
-        "team": "北京国安",
+        "team": "辽宁铁人",
         "rank": 8,
-        "points": 18
+        "points": 20
       },
       {
         "team": "浙江队",
@@ -148,26 +203,26 @@
         "points": 13
       },
       {
-        "team": "武汉三镇",
+        "team": "天津津门虎",
         "rank": 15,
         "points": 8
       },
       {
-        "team": "天津津门虎",
+        "team": "武汉三镇",
         "rank": 16,
-        "points": 5
+        "points": 8
       }
     ],
     "attendance": [
       {
         "team": "Dalian Yingbo",
-        "averageAttendance": 61146,
-        "occupancyRate": 0.9367158417206674
+        "averageAttendance": 56725,
+        "occupancyRate": 0.8689890773166659
       },
       {
         "team": "Beijing Guoan",
-        "averageAttendance": 48364,
-        "occupancyRate": 0.7112352941176471
+        "averageAttendance": 49288,
+        "occupancyRate": 0.7248235294117648
       },
       {
         "team": "Chongqing Tonglianglong",
@@ -186,8 +241,8 @@
       },
       {
         "team": "Liaoning Tieren",
-        "averageAttendance": 28841,
-        "occupancyRate": 0.721025
+        "averageAttendance": 28082,
+        "occupancyRate": 0.70205
       },
       {
         "team": "Qingdao Hainiu",
@@ -201,8 +256,8 @@
       },
       {
         "team": "Tianjin Jinmen Tiger",
-        "averageAttendance": 25131,
-        "occupancyRate": 0.7043441704035874
+        "averageAttendance": 24713,
+        "occupancyRate": 0.6926289237668162
       },
       {
         "team": "Zhejiang FC",
@@ -230,14 +285,14 @@
         "occupancyRate": 0.6900714285714286
       },
       {
+        "team": "Qingdao West Coast",
+        "averageAttendance": 15626,
+        "occupancyRate": 0.7813
+      },
+      {
         "team": "Wuhan Three Towns",
         "averageAttendance": 18942,
         "occupancyRate": 0.4209333333333333
-      },
-      {
-        "team": "Qingdao West Coast",
-        "averageAttendance": 15540,
-        "occupancyRate": 0.777
       }
     ]
   }
