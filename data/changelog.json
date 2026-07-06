@@ -1,31 +1,14 @@
 {
-  "generatedAt": "2026-07-05T19:17:52.373Z",
+  "generatedAt": "2026-07-06T03:33:15.771Z",
   "summary": {
     "rankingChanges": 0,
     "pointsChanges": 0,
-    "attendanceChanges": 2,
+    "attendanceChanges": 0,
     "anomalyChanges": 0
   },
   "rankingChanges": [],
   "pointsChanges": [],
-  "attendanceChanges": [
-    {
-      "team": "Dalian Yingbo",
-      "teamCn": "大连英博",
-      "averageAttendance": 61032,
-      "averageAttendanceChange": 4307,
-      "occupancyRate": 0.9349694379337286,
-      "occupancyRateChange": 0.0659803606170627
-    },
-    {
-      "team": "Qingdao Hainiu",
-      "teamCn": "青岛海牛",
-      "averageAttendance": 28469,
-      "averageAttendanceChange": 230,
-      "occupancyRate": 0.5339572744152897,
-      "occupancyRateChange": 0.004313821107714277
-    }
-  ],
+  "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
