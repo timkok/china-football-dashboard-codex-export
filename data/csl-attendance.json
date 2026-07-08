@@ -7,7 +7,7 @@
   "sourceUrl": "https://www.transfermarkt.com/chinese-super-league/besucherzahlen/wettbewerb/CSL",
   "isOfficial": false,
   "mode": "third_party",
-  "fetchedAt": "2026-07-08T09:07:19.248Z",
+  "fetchedAt": "2026-07-08T14:56:35.731Z",
   "schemaVersion": 1,
   "summary": {
     "matches": 135,
@@ -280,8 +280,8 @@
     {
       "season": "21/22",
       "matches": 306,
-      "totalAttendance": 208090,
-      "averageAttendance": 4427,
+      "totalAttendance": 208140,
+      "averageAttendance": 4429,
       "highestAverageTeam": "Dalian Professional",
       "highestAverageAttendance": 5442
     },
