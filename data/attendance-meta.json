@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10T15:13:32.368Z",
+  "updatedAt": "2026-07-10T19:59:58.734Z",
   "status": "ok",
   "mode": "third_party",
   "source": "Transfermarkt",
@@ -13,9 +13,9 @@
       "message": "Fetched 16 attendance rows from https://www.transfermarkt.com/chinese-super-league/besucherzahlen/wettbewerb/CSL"
     },
     {
-      "level": "info",
+      "level": "warning",
       "source": "tm-com-development",
-      "message": "Fetched 29 attendance trend rows"
+      "message": "Attendance trend unavailable: https://www.transfermarkt.com/chinese-super-league/besucherzahlenentwicklung/wettbewerb/CSL returned 502"
     }
   ]
 }
