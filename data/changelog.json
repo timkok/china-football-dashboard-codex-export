@@ -1,13 +1,50 @@
 {
-  "generatedAt": "2026-07-09T19:46:29.456Z",
+  "generatedAt": "2026-07-10T14:27:02.847Z",
   "summary": {
-    "rankingChanges": 0,
-    "pointsChanges": 0,
+    "rankingChanges": 4,
+    "pointsChanges": 1,
     "attendanceChanges": 0,
     "anomalyChanges": 0
   },
-  "rankingChanges": [],
-  "pointsChanges": [],
+  "rankingChanges": [
+    {
+      "team": "山东泰山",
+      "rank": 4,
+      "rankChange": 3,
+      "points": 24,
+      "pointsChange": 3
+    },
+    {
+      "team": "云南玉昆",
+      "rank": 5,
+      "rankChange": -1,
+      "points": 24,
+      "pointsChange": 0
+    },
+    {
+      "team": "青岛西海岸",
+      "rank": 6,
+      "rankChange": -1,
+      "points": 24,
+      "pointsChange": 0
+    },
+    {
+      "team": "北京国安",
+      "rank": 7,
+      "rankChange": -1,
+      "points": 21,
+      "pointsChange": 0
+    }
+  ],
+  "pointsChanges": [
+    {
+      "team": "山东泰山",
+      "rank": 4,
+      "rankChange": 3,
+      "points": 24,
+      "pointsChange": 3
+    }
+  ],
   "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
@@ -28,22 +65,22 @@
         "points": 25
       },
       {
-        "team": "云南玉昆",
+        "team": "山东泰山",
         "rank": 4,
         "points": 24
       },
       {
-        "team": "青岛西海岸",
+        "team": "云南玉昆",
         "rank": 5,
         "points": 24
       },
       {
-        "team": "北京国安",
+        "team": "青岛西海岸",
         "rank": 6,
-        "points": 21
+        "points": 24
       },
       {
-        "team": "山东泰山",
+        "team": "北京国安",
         "rank": 7,
         "points": 21
       },
@@ -100,7 +137,7 @@
         "occupancyRate": 0.9349694379337286
       },
       {
-        "team": "Beijing Guoan",
+        "team": "北京国安足球倶楽部",
         "averageAttendance": 49288,
         "occupancyRate": 0.7248235294117648
       },
@@ -110,42 +147,42 @@
         "occupancyRate": 0.6636166666666666
       },
       {
-        "team": "Chengdu Rongcheng",
+        "team": "成都蓉城足球倶楽部",
         "averageAttendance": 41361,
         "occupancyRate": 0.8158792780353092
       },
       {
-        "team": "Shanghai Shenhua",
+        "team": "上海申花足球倶楽部",
         "averageAttendance": 41328,
         "occupancyRate": 0.5872039328796124
       },
       {
-        "team": "Qingdao Hainiu",
+        "team": "青島海牛足球倶楽部",
         "averageAttendance": 28469,
         "occupancyRate": 0.5339572744152897
       },
       {
-        "team": "Liaoning Tieren",
+        "team": "遼寧鉄人足球倶楽部",
         "averageAttendance": 28082,
         "occupancyRate": 0.70205
       },
       {
-        "team": "Shandong Taishan",
+        "team": "山東泰山足球倶楽部",
         "averageAttendance": 27872,
         "occupancyRate": 0.490635121813829
       },
       {
-        "team": "Tianjin Jinmen Tiger",
+        "team": "天津津門虎足球倶楽部",
         "averageAttendance": 24713,
         "occupancyRate": 0.6926289237668162
       },
       {
-        "team": "Zhejiang FC",
+        "team": "浙江職業足球倶楽部",
         "averageAttendance": 24298,
         "occupancyRate": 0.46726923076923077
       },
       {
-        "team": "Shenzhen Peng City",
+        "team": "深圳新鹏城足球倶楽部",
         "averageAttendance": 20710,
         "occupancyRate": 0.4602222222222222
       },
@@ -155,22 +192,22 @@
         "occupancyRate": 0.6979333333333333
       },
       {
-        "team": "Shanghai Port",
+        "team": "上海海港足球倶楽部",
         "averageAttendance": 19563,
         "occupancyRate": 0.5793869391381609
       },
       {
-        "team": "Henan FC",
+        "team": "河南FC",
         "averageAttendance": 19322,
         "occupancyRate": 0.6900714285714286
       },
       {
-        "team": "Qingdao West Coast",
+        "team": "青島西海岸足球倶楽部",
         "averageAttendance": 15626,
         "occupancyRate": 0.7813
       },
       {
-        "team": "Wuhan Three Towns",
+        "team": "武漢三鎮足球倶楽部",
         "averageAttendance": 18942,
         "occupancyRate": 0.4209333333333333
       }

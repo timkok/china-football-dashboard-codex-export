@@ -8,7 +8,7 @@
   "source": "mock fixture fallback",
   "sourceUrl": "",
   "isOfficial": false,
-  "fetchedAt": "2026-07-09T19:46:12.331Z",
+  "fetchedAt": "2026-07-10T14:26:20.127Z",
   "schemaVersion": 1,
   "data": [
     {
@@ -17,7 +17,7 @@
       "round": 13,
       "date": "2026-05-10T11:35:00.000Z",
       "homeTeam": "成都蓉城",
-      "awayTeam": "北京国安",
+      "awayTeam": "青岛西海岸",
       "homeScore": 1,
       "awayScore": 1,
       "status": "finished",
@@ -25,7 +25,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-09T19:46:12.331Z"
+      "fetchedAt": "2026-07-10T14:26:20.127Z"
     },
     {
       "id": "csl-fixture-02",
@@ -33,7 +33,7 @@
       "round": 13,
       "date": "2026-05-11T12:30:00.000Z",
       "homeTeam": "重庆铜梁龙",
-      "awayTeam": "山东泰山",
+      "awayTeam": "北京国安",
       "homeScore": 3,
       "awayScore": 2,
       "status": "finished",
@@ -41,7 +41,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-09T19:46:12.331Z"
+      "fetchedAt": "2026-07-10T14:26:20.127Z"
     },
     {
       "id": "csl-fixture-03",
@@ -57,71 +57,71 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-09T19:46:12.331Z"
+      "fetchedAt": "2026-07-10T14:26:20.127Z"
     },
     {
       "id": "csl-fixture-04",
       "league": "csl",
       "round": 14,
       "date": "2026-05-13T14:30:00.000Z",
-      "homeTeam": "云南玉昆",
+      "homeTeam": "山东泰山",
       "awayTeam": "上海申花",
       "homeScore": 3,
       "awayScore": 1,
       "status": "finished",
-      "venue": "玉溪体育中心",
+      "venue": "济南体育中心",
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-09T19:46:12.331Z"
+      "fetchedAt": "2026-07-10T14:26:20.127Z"
     },
     {
       "id": "csl-fixture-05",
       "league": "csl",
       "round": 15,
       "date": "2026-05-14T15:35:00.000Z",
-      "homeTeam": "青岛西海岸",
+      "homeTeam": "云南玉昆",
       "awayTeam": "浙江队",
       "homeScore": 1,
       "awayScore": 2,
       "status": "finished",
-      "venue": "青岛体育中心",
+      "venue": "玉溪体育中心",
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-09T19:46:12.331Z"
+      "fetchedAt": "2026-07-10T14:26:20.127Z"
     },
     {
       "id": "csl-fixture-06",
       "league": "csl",
       "round": 15,
       "date": "2026-05-15T11:30:00.000Z",
-      "homeTeam": "北京国安",
+      "homeTeam": "青岛西海岸",
       "awayTeam": "深圳新鵬城",
       "homeScore": 3,
       "awayScore": 0,
       "status": "live",
-      "venue": "北京体育中心",
+      "venue": "青岛体育中心",
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-09T19:46:12.331Z"
+      "fetchedAt": "2026-07-10T14:26:20.127Z"
     },
     {
       "id": "csl-fixture-07",
       "league": "csl",
       "round": 16,
       "date": "2026-05-16T12:35:00.000Z",
-      "homeTeam": "山东泰山",
+      "homeTeam": "北京国安",
       "awayTeam": "上海海港",
       "homeScore": null,
       "awayScore": null,
       "status": "scheduled",
-      "venue": "济南体育中心",
+      "venue": "北京体育中心",
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-09T19:46:12.331Z"
+      "fetchedAt": "2026-07-10T14:26:20.127Z"
     },
     {
       "id": "csl-fixture-08",
@@ -137,7 +137,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-09T19:46:12.331Z"
+      "fetchedAt": "2026-07-10T14:26:20.127Z"
     },
     {
       "id": "csl-fixture-09",
@@ -153,7 +153,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-09T19:46:12.331Z"
+      "fetchedAt": "2026-07-10T14:26:20.127Z"
     },
     {
       "id": "csl-fixture-10",
@@ -169,7 +169,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-09T19:46:12.331Z"
+      "fetchedAt": "2026-07-10T14:26:20.127Z"
     },
     {
       "id": "csl-fixture-11",
@@ -185,7 +185,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-09T19:46:12.331Z"
+      "fetchedAt": "2026-07-10T14:26:20.127Z"
     },
     {
       "id": "csl-fixture-12",
@@ -201,7 +201,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-09T19:46:12.331Z"
+      "fetchedAt": "2026-07-10T14:26:20.127Z"
     },
     {
       "id": "csl-fixture-13",
@@ -217,7 +217,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-09T19:46:12.331Z"
+      "fetchedAt": "2026-07-10T14:26:20.127Z"
     },
     {
       "id": "csl-fixture-14",
@@ -233,7 +233,7 @@
       "source": "mock",
       "sourceUrl": "",
       "isOfficial": false,
-      "fetchedAt": "2026-07-09T19:46:12.331Z"
+      "fetchedAt": "2026-07-10T14:26:20.127Z"
     }
   ]
 }
