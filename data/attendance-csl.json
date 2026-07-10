@@ -4,16 +4,16 @@
   "season": 2026,
   "type": "attendance",
   "source": "Transfermarkt",
-  "sourceUrl": "https://www.transfermarkt.jp/chinese-super-league/besucherzahlen/wettbewerb/CSL",
+  "sourceUrl": "https://www.transfermarkt.com/chinese-super-league/besucherzahlen/wettbewerb/CSL",
   "isOfficial": false,
   "mode": "third_party",
-  "fetchedAt": "2026-07-10T14:26:32.715Z",
+  "fetchedAt": "2026-07-10T15:13:32.368Z",
   "schemaVersion": 1,
   "summary": {
-    "matches": 135,
-    "totalAttendance": 4099669,
-    "averageAttendance": 30367,
-    "averageOccupancyRate": 0.6401800407681704,
+    "matches": 136,
+    "totalAttendance": 4123388,
+    "averageAttendance": 30319,
+    "averageOccupancyRate": 0.6396717496824078,
     "highestAverageTeam": "Dalian Yingbo",
     "highestAverageAttendance": 61032
   },
@@ -30,12 +30,12 @@
       "averageAttendance": 61032,
       "occupancyRate": 0.9349694379337286,
       "heatLabel": "爆满",
-      "source": "Transfermarkt JP"
+      "source": "Transfermarkt"
     },
     {
       "rank": 2,
-      "team": "北京国安足球倶楽部",
-      "teamCn": "北京国安足球倶楽部",
+      "team": "Beijing Guoan",
+      "teamCn": "北京国安",
       "stadium": "Workers Stadium",
       "stadiumCn": "北京工人体育场",
       "capacity": 68000,
@@ -44,7 +44,7 @@
       "averageAttendance": 49288,
       "occupancyRate": 0.7248235294117648,
       "heatLabel": "高热度",
-      "source": "Transfermarkt JP"
+      "source": "Transfermarkt"
     },
     {
       "rank": 3,
@@ -58,12 +58,12 @@
       "averageAttendance": 39817,
       "occupancyRate": 0.6636166666666666,
       "heatLabel": "正常",
-      "source": "Transfermarkt JP"
+      "source": "Transfermarkt"
     },
     {
       "rank": 4,
-      "team": "成都蓉城足球倶楽部",
-      "teamCn": "成都蓉城足球倶楽部",
+      "team": "Chengdu Rongcheng",
+      "teamCn": "成都蓉城",
       "stadium": "Phoenix Hill Sports Park Football Stadium",
       "stadiumCn": "凤凰山体育公园专业足球场",
       "capacity": 50695,
@@ -72,12 +72,12 @@
       "averageAttendance": 41361,
       "occupancyRate": 0.8158792780353092,
       "heatLabel": "高热度",
-      "source": "Transfermarkt JP"
+      "source": "Transfermarkt"
     },
     {
       "rank": 5,
-      "team": "上海申花足球倶楽部",
-      "teamCn": "上海申花足球倶楽部",
+      "team": "Shanghai Shenhua",
+      "teamCn": "上海申花",
       "stadium": "Shanghai Stadium",
       "stadiumCn": "上海体育场",
       "capacity": 70381,
@@ -86,12 +86,12 @@
       "averageAttendance": 41328,
       "occupancyRate": 0.5872039328796124,
       "heatLabel": "正常",
-      "source": "Transfermarkt JP"
+      "source": "Transfermarkt"
     },
     {
       "rank": 6,
-      "team": "青島海牛足球倶楽部",
-      "teamCn": "青島海牛足球倶楽部",
+      "team": "Qingdao Hainiu",
+      "teamCn": "青岛海牛",
       "stadium": "Qingdao Youth Football Stadium",
       "stadiumCn": "青岛青春足球场",
       "capacity": 53317,
@@ -100,12 +100,12 @@
       "averageAttendance": 28469,
       "occupancyRate": 0.5339572744152897,
       "heatLabel": "正常",
-      "source": "Transfermarkt JP"
+      "source": "Transfermarkt"
     },
     {
       "rank": 7,
-      "team": "遼寧鉄人足球倶楽部",
-      "teamCn": "遼寧鉄人足球倶楽部",
+      "team": "Liaoning Tieren",
+      "teamCn": "辽宁铁人",
       "stadium": "Tiexi New District Sports Center Stadium",
       "stadiumCn": "铁西体育场",
       "capacity": 40000,
@@ -114,26 +114,26 @@
       "averageAttendance": 28082,
       "occupancyRate": 0.70205,
       "heatLabel": "高热度",
-      "source": "Transfermarkt JP"
+      "source": "Transfermarkt"
     },
     {
       "rank": 8,
-      "team": "山東泰山足球倶楽部",
-      "teamCn": "山東泰山足球倶楽部",
+      "team": "Shandong Taishan",
+      "teamCn": "山东泰山",
       "stadium": "Ji'nan Olympic Sports Center",
       "stadiumCn": "济南奥体中心",
       "capacity": 56808,
-      "matches": 8,
-      "totalAttendance": 222974,
-      "averageAttendance": 27872,
-      "occupancyRate": 0.490635121813829,
+      "matches": 9,
+      "totalAttendance": 246693,
+      "averageAttendance": 27410,
+      "occupancyRate": 0.4825024644416279,
       "heatLabel": "正常",
-      "source": "Transfermarkt JP"
+      "source": "Transfermarkt"
     },
     {
       "rank": 9,
-      "team": "天津津門虎足球倶楽部",
-      "teamCn": "天津津門虎足球倶楽部",
+      "team": "Tianjin Jinmen Tiger",
+      "teamCn": "天津津门虎",
       "stadium": "TEDA Football Stadium",
       "stadiumCn": "泰达足球场",
       "capacity": 35680,
@@ -142,12 +142,12 @@
       "averageAttendance": 24713,
       "occupancyRate": 0.6926289237668162,
       "heatLabel": "正常",
-      "source": "Transfermarkt JP"
+      "source": "Transfermarkt"
     },
     {
       "rank": 10,
-      "team": "浙江職業足球倶楽部",
-      "teamCn": "浙江職業足球倶楽部",
+      "team": "Zhejiang FC",
+      "teamCn": "浙江队",
       "stadium": "Huanglong Sports Centre Stadium",
       "stadiumCn": "黄龙体育中心",
       "capacity": 52000,
@@ -156,12 +156,12 @@
       "averageAttendance": 24298,
       "occupancyRate": 0.46726923076923077,
       "heatLabel": "正常",
-      "source": "Transfermarkt JP"
+      "source": "Transfermarkt"
     },
     {
       "rank": 11,
-      "team": "深圳新鹏城足球倶楽部",
-      "teamCn": "深圳新鹏城足球倶楽部",
+      "team": "Shenzhen Peng City",
+      "teamCn": "深圳新鹏城",
       "stadium": "Shenzhen Sports Center Stadium",
       "stadiumCn": "Shenzhen Sports Center Stadium",
       "capacity": 45000,
@@ -170,7 +170,7 @@
       "averageAttendance": 20710,
       "occupancyRate": 0.4602222222222222,
       "heatLabel": "正常",
-      "source": "Transfermarkt JP"
+      "source": "Transfermarkt"
     },
     {
       "rank": 12,
@@ -184,12 +184,12 @@
       "averageAttendance": 20938,
       "occupancyRate": 0.6979333333333333,
       "heatLabel": "正常",
-      "source": "Transfermarkt JP"
+      "source": "Transfermarkt"
     },
     {
       "rank": 13,
-      "team": "上海海港足球倶楽部",
-      "teamCn": "上海海港足球倶楽部",
+      "team": "Shanghai Port",
+      "teamCn": "上海海港",
       "stadium": "SAIC Motor Pudong Arena",
       "stadiumCn": "SAIC Motor Pudong Arena",
       "capacity": 33765,
@@ -198,12 +198,12 @@
       "averageAttendance": 19563,
       "occupancyRate": 0.5793869391381609,
       "heatLabel": "正常",
-      "source": "Transfermarkt JP"
+      "source": "Transfermarkt"
     },
     {
       "rank": 14,
-      "team": "河南FC",
-      "teamCn": "河南FC",
+      "team": "Henan FC",
+      "teamCn": "河南队",
       "stadium": "Zhengzhou Hanghai Stadium",
       "stadiumCn": "郑州航海体育场",
       "capacity": 28000,
@@ -212,12 +212,12 @@
       "averageAttendance": 19322,
       "occupancyRate": 0.6900714285714286,
       "heatLabel": "正常",
-      "source": "Transfermarkt JP"
+      "source": "Transfermarkt"
     },
     {
       "rank": 15,
-      "team": "青島西海岸足球倶楽部",
-      "teamCn": "青島西海岸足球倶楽部",
+      "team": "Qingdao West Coast",
+      "teamCn": "青岛西海岸",
       "stadium": "West Coast University City Sports Center Stadium",
       "stadiumCn": "西海岸大学城体育中心",
       "capacity": 20000,
@@ -226,12 +226,12 @@
       "averageAttendance": 15626,
       "occupancyRate": 0.7813,
       "heatLabel": "高热度",
-      "source": "Transfermarkt JP"
+      "source": "Transfermarkt"
     },
     {
       "rank": 16,
-      "team": "武漢三鎮足球倶楽部",
-      "teamCn": "武漢三鎮足球倶楽部",
+      "team": "Wuhan Three Towns",
+      "teamCn": "武汉三镇",
       "stadium": "Wuhan Sports Centre Stadium",
       "stadiumCn": "Wuhan Sports Centre Stadium",
       "capacity": 45000,
@@ -240,7 +240,7 @@
       "averageAttendance": 18942,
       "occupancyRate": 0.4209333333333333,
       "heatLabel": "正常",
-      "source": "Transfermarkt JP"
+      "source": "Transfermarkt"
     }
   ],
   "matches": [],
@@ -248,8 +248,8 @@
     {
       "season": "25/26",
       "matches": 136,
-      "totalAttendance": 4099669,
-      "averageAttendance": 30368,
+      "totalAttendance": 4123388,
+      "averageAttendance": 30319,
       "highestAverageTeam": "Dalian Yingbo",
       "highestAverageAttendance": 61032
     },
