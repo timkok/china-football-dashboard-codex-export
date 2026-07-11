@@ -1,47 +1,68 @@
 {
-  "generatedAt": "2026-07-10T14:27:02.847Z",
+  "generatedAt": "2026-07-11T19:03:04.666Z",
   "summary": {
-    "rankingChanges": 4,
-    "pointsChanges": 1,
+    "rankingChanges": 5,
+    "pointsChanges": 3,
     "attendanceChanges": 0,
     "anomalyChanges": 0
   },
   "rankingChanges": [
     {
-      "team": "山东泰山",
-      "rank": 4,
-      "rankChange": 3,
-      "points": 24,
+      "team": "成都蓉城",
+      "rank": 1,
+      "rankChange": 0,
+      "points": 42,
+      "pointsChange": 1
+    },
+    {
+      "team": "重庆铜梁龙",
+      "rank": 2,
+      "rankChange": 0,
+      "points": 28,
+      "pointsChange": 1
+    },
+    {
+      "team": "深圳新鵬城",
+      "rank": 9,
+      "rankChange": 2,
+      "points": 20,
       "pointsChange": 3
     },
     {
-      "team": "云南玉昆",
-      "rank": 5,
+      "team": "上海申花",
+      "rank": 10,
       "rankChange": -1,
-      "points": 24,
+      "points": 19,
       "pointsChange": 0
     },
     {
-      "team": "青岛西海岸",
-      "rank": 6,
+      "team": "浙江队",
+      "rank": 11,
       "rankChange": -1,
-      "points": 24,
-      "pointsChange": 0
-    },
-    {
-      "team": "北京国安",
-      "rank": 7,
-      "rankChange": -1,
-      "points": 21,
+      "points": 17,
       "pointsChange": 0
     }
   ],
   "pointsChanges": [
     {
-      "team": "山东泰山",
-      "rank": 4,
-      "rankChange": 3,
-      "points": 24,
+      "team": "成都蓉城",
+      "rank": 1,
+      "rankChange": 0,
+      "points": 42,
+      "pointsChange": 1
+    },
+    {
+      "team": "重庆铜梁龙",
+      "rank": 2,
+      "rankChange": 0,
+      "points": 28,
+      "pointsChange": 1
+    },
+    {
+      "team": "深圳新鵬城",
+      "rank": 9,
+      "rankChange": 2,
+      "points": 20,
       "pointsChange": 3
     }
   ],
@@ -52,12 +73,12 @@
       {
         "team": "成都蓉城",
         "rank": 1,
-        "points": 41
+        "points": 42
       },
       {
         "team": "重庆铜梁龙",
         "rank": 2,
-        "points": 27
+        "points": 28
       },
       {
         "team": "大连英博",
@@ -90,17 +111,17 @@
         "points": 20
       },
       {
-        "team": "上海申花",
+        "team": "深圳新鵬城",
         "rank": 9,
+        "points": 20
+      },
+      {
+        "team": "上海申花",
+        "rank": 10,
         "points": 19
       },
       {
         "team": "浙江队",
-        "rank": 10,
-        "points": 17
-      },
-      {
-        "team": "深圳新鵬城",
         "rank": 11,
         "points": 17
       },
@@ -137,9 +158,14 @@
         "occupancyRate": 0.9349694379337286
       },
       {
-        "team": "北京国安足球倶楽部",
+        "team": "Beijing Guoan",
         "averageAttendance": 49288,
         "occupancyRate": 0.7248235294117648
+      },
+      {
+        "team": "Chengdu Rongcheng",
+        "averageAttendance": 41363,
+        "occupancyRate": 0.8159187296577571
       },
       {
         "team": "Chongqing Tonglianglong",
@@ -147,44 +173,39 @@
         "occupancyRate": 0.6636166666666666
       },
       {
-        "team": "成都蓉城足球倶楽部",
-        "averageAttendance": 41361,
-        "occupancyRate": 0.8158792780353092
-      },
-      {
-        "team": "上海申花足球倶楽部",
+        "team": "Shanghai Shenhua",
         "averageAttendance": 41328,
         "occupancyRate": 0.5872039328796124
       },
       {
-        "team": "青島海牛足球倶楽部",
+        "team": "Qingdao Hainiu",
         "averageAttendance": 28469,
         "occupancyRate": 0.5339572744152897
       },
       {
-        "team": "遼寧鉄人足球倶楽部",
+        "team": "Liaoning Tieren",
         "averageAttendance": 28082,
         "occupancyRate": 0.70205
       },
       {
-        "team": "山東泰山足球倶楽部",
-        "averageAttendance": 27872,
-        "occupancyRate": 0.490635121813829
+        "team": "Shandong Taishan",
+        "averageAttendance": 27410,
+        "occupancyRate": 0.4825024644416279
       },
       {
-        "team": "天津津門虎足球倶楽部",
+        "team": "Tianjin Jinmen Tiger",
         "averageAttendance": 24713,
         "occupancyRate": 0.6926289237668162
       },
       {
-        "team": "浙江職業足球倶楽部",
-        "averageAttendance": 24298,
-        "occupancyRate": 0.46726923076923077
+        "team": "Shenzhen Peng City",
+        "averageAttendance": 20437,
+        "occupancyRate": 0.45415555555555553
       },
       {
-        "team": "深圳新鹏城足球倶楽部",
-        "averageAttendance": 20710,
-        "occupancyRate": 0.4602222222222222
+        "team": "Zhejiang FC",
+        "averageAttendance": 24298,
+        "occupancyRate": 0.46726923076923077
       },
       {
         "team": "Yunnan Yukun",
@@ -192,22 +213,22 @@
         "occupancyRate": 0.6979333333333333
       },
       {
-        "team": "上海海港足球倶楽部",
+        "team": "Shanghai Port",
         "averageAttendance": 19563,
         "occupancyRate": 0.5793869391381609
       },
       {
-        "team": "河南FC",
+        "team": "Henan FC",
         "averageAttendance": 19322,
         "occupancyRate": 0.6900714285714286
       },
       {
-        "team": "青島西海岸足球倶楽部",
+        "team": "Qingdao West Coast",
         "averageAttendance": 15626,
         "occupancyRate": 0.7813
       },
       {
-        "team": "武漢三鎮足球倶楽部",
+        "team": "Wuhan Three Towns",
         "averageAttendance": 18942,
         "occupancyRate": 0.4209333333333333
       }
