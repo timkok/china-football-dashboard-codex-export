@@ -7,13 +7,13 @@
   "sourceUrl": "https://www.transfermarkt.com/chinese-super-league/besucherzahlen/wettbewerb/CSL",
   "isOfficial": false,
   "mode": "third_party",
-  "fetchedAt": "2026-07-14T14:25:19.299Z",
+  "fetchedAt": "2026-07-14T19:19:40.821Z",
   "schemaVersion": 1,
   "summary": {
-    "matches": 138,
-    "totalAttendance": 4182742,
-    "averageAttendance": 30309,
-    "averageOccupancyRate": 0.639295048742144,
+    "matches": 139,
+    "totalAttendance": 4203753,
+    "averageAttendance": 30242,
+    "averageOccupancyRate": 0.6388563468190672,
     "highestAverageTeam": "Dalian Yingbo",
     "highestAverageAttendance": 61032
   },
@@ -146,6 +146,20 @@
     },
     {
       "rank": 10,
+      "team": "Zhejiang FC",
+      "teamCn": "浙江队",
+      "stadium": "Huanglong Sports Centre Stadium",
+      "stadiumCn": "黄龙体育中心",
+      "capacity": 52000,
+      "matches": 9,
+      "totalAttendance": 215397,
+      "averageAttendance": 23933,
+      "occupancyRate": 0.46025,
+      "heatLabel": "正常",
+      "source": "Transfermarkt"
+    },
+    {
+      "rank": 11,
       "team": "Shenzhen Peng City",
       "teamCn": "深圳新鹏城",
       "stadium": "Shenzhen Sports Center Stadium",
@@ -155,20 +169,6 @@
       "totalAttendance": 204366,
       "averageAttendance": 20437,
       "occupancyRate": 0.45415555555555553,
-      "heatLabel": "正常",
-      "source": "Transfermarkt"
-    },
-    {
-      "rank": 11,
-      "team": "Zhejiang FC",
-      "teamCn": "浙江队",
-      "stadium": "Huanglong Sports Centre Stadium",
-      "stadiumCn": "黄龙体育中心",
-      "capacity": 52000,
-      "matches": 8,
-      "totalAttendance": 194386,
-      "averageAttendance": 24298,
-      "occupancyRate": 0.46726923076923077,
       "heatLabel": "正常",
       "source": "Transfermarkt"
     },
@@ -248,8 +248,8 @@
     {
       "season": "25/26",
       "matches": 139,
-      "totalAttendance": 4182742,
-      "averageAttendance": 30310,
+      "totalAttendance": 4203753,
+      "averageAttendance": 30243,
       "highestAverageTeam": "Dalian Yingbo",
       "highestAverageAttendance": 61032
     },

@@ -1,51 +1,23 @@
 {
-  "generatedAt": "2026-07-14T13:43:08.293Z",
+  "generatedAt": "2026-07-14T19:19:51.044Z",
   "summary": {
-    "rankingChanges": 4,
-    "pointsChanges": 1,
-    "attendanceChanges": 0,
+    "rankingChanges": 0,
+    "pointsChanges": 0,
+    "attendanceChanges": 1,
     "anomalyChanges": 0
   },
-  "rankingChanges": [
+  "rankingChanges": [],
+  "pointsChanges": [],
+  "attendanceChanges": [
     {
-      "team": "浙江队",
-      "rank": 8,
-      "rankChange": 3,
-      "points": 20,
-      "pointsChange": 3
-    },
-    {
-      "team": "辽宁铁人",
-      "rank": 9,
-      "rankChange": -1,
-      "points": 20,
-      "pointsChange": 0
-    },
-    {
-      "team": "深圳新鵬城",
-      "rank": 10,
-      "rankChange": -1,
-      "points": 20,
-      "pointsChange": 0
-    },
-    {
-      "team": "上海申花",
-      "rank": 11,
-      "rankChange": -1,
-      "points": 19,
-      "pointsChange": 0
+      "team": "Zhejiang FC",
+      "teamCn": "浙江队",
+      "averageAttendance": 23933,
+      "averageAttendanceChange": -365,
+      "occupancyRate": 0.46025,
+      "occupancyRateChange": -0.007019230769230778
     }
   ],
-  "pointsChanges": [
-    {
-      "team": "浙江队",
-      "rank": 8,
-      "rankChange": 3,
-      "points": 20,
-      "pointsChange": 3
-    }
-  ],
-  "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
     "standings": [
@@ -177,14 +149,14 @@
         "occupancyRate": 0.6926289237668162
       },
       {
+        "team": "Zhejiang FC",
+        "averageAttendance": 23933,
+        "occupancyRate": 0.46025
+      },
+      {
         "team": "Shenzhen Peng City",
         "averageAttendance": 20437,
         "occupancyRate": 0.45415555555555553
-      },
-      {
-        "team": "Zhejiang FC",
-        "averageAttendance": 24298,
-        "occupancyRate": 0.46726923076923077
       },
       {
         "team": "Yunnan Yukun",
