@@ -1,13 +1,50 @@
 {
-  "generatedAt": "2026-07-14T08:04:48.575Z",
+  "generatedAt": "2026-07-14T13:43:08.293Z",
   "summary": {
-    "rankingChanges": 0,
-    "pointsChanges": 0,
+    "rankingChanges": 4,
+    "pointsChanges": 1,
     "attendanceChanges": 0,
     "anomalyChanges": 0
   },
-  "rankingChanges": [],
-  "pointsChanges": [],
+  "rankingChanges": [
+    {
+      "team": "浙江队",
+      "rank": 8,
+      "rankChange": 3,
+      "points": 20,
+      "pointsChange": 3
+    },
+    {
+      "team": "辽宁铁人",
+      "rank": 9,
+      "rankChange": -1,
+      "points": 20,
+      "pointsChange": 0
+    },
+    {
+      "team": "深圳新鵬城",
+      "rank": 10,
+      "rankChange": -1,
+      "points": 20,
+      "pointsChange": 0
+    },
+    {
+      "team": "上海申花",
+      "rank": 11,
+      "rankChange": -1,
+      "points": 19,
+      "pointsChange": 0
+    }
+  ],
+  "pointsChanges": [
+    {
+      "team": "浙江队",
+      "rank": 8,
+      "rankChange": 3,
+      "points": 20,
+      "pointsChange": 3
+    }
+  ],
   "attendanceChanges": [],
   "anomalyChanges": [],
   "snapshot": {
@@ -48,24 +85,24 @@
         "points": 21
       },
       {
-        "team": "辽宁铁人",
+        "team": "浙江队",
         "rank": 8,
         "points": 20
       },
       {
-        "team": "深圳新鵬城",
+        "team": "辽宁铁人",
         "rank": 9,
         "points": 20
       },
       {
-        "team": "上海申花",
+        "team": "深圳新鵬城",
         "rank": 10,
-        "points": 19
+        "points": 20
       },
       {
-        "team": "浙江队",
+        "team": "上海申花",
         "rank": 11,
-        "points": 17
+        "points": 19
       },
       {
         "team": "上海海港",
