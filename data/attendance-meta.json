@@ -1,21 +1,31 @@
 {
-  "updatedAt": "2026-07-14T19:51:48.057Z",
-  "status": "ok",
-  "mode": "third_party",
-  "source": "Transfermarkt",
-  "sourceUrl": "https://www.transfermarkt.com/chinese-super-league/besucherzahlen/wettbewerb/CSL",
+  "updatedAt": "2026-07-15T03:45:12.694Z",
+  "status": "error",
+  "mode": "mock",
+  "source": "none",
+  "sourceUrl": "",
   "isOfficial": false,
-  "teamsCount": 16,
+  "preservedPreviousData": true,
   "logs": [
     {
-      "level": "info",
+      "level": "warning",
       "source": "tm-com-attendance",
-      "message": "Fetched 16 attendance rows from https://www.transfermarkt.com/chinese-super-league/besucherzahlen/wettbewerb/CSL"
+      "message": "Transfermarkt attendance table not found"
     },
     {
-      "level": "info",
+      "level": "warning",
       "source": "tm-com-development",
-      "message": "Fetched 29 attendance trend rows"
+      "message": "Transfermarkt attendance table not found"
+    },
+    {
+      "level": "warning",
+      "source": "tm-uk-development",
+      "message": "Transfermarkt attendance table not found"
+    },
+    {
+      "level": "warning",
+      "source": "tm-jp-attendance",
+      "message": "Transfermarkt attendance table not found"
     }
   ]
 }
