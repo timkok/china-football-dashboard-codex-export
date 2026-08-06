@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-06T03:50:40.638Z",
+  "updatedAt": "2026-08-06T09:23:04.342Z",
   "status": "error",
   "mode": "mock",
   "source": "none",
@@ -10,12 +10,12 @@
     {
       "level": "warning",
       "source": "tm-com-attendance",
-      "message": "Transfermarkt attendance table not found"
+      "message": "fetch failed"
     },
     {
       "level": "warning",
       "source": "tm-com-development",
-      "message": "Transfermarkt attendance table not found"
+      "message": "fetch failed"
     },
     {
       "level": "warning",
