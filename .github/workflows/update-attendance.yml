@@ -27,12 +27,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Test match attendance parser
+        run: npm test
+
       - name: Fetch attendance data
         run: npm run fetch:attendance
 
       - name: Fetch attendance history
         if: always()
         run: npm run fetch:attendance-history
+
+      - name: Fetch individual match attendance
+        if: always()
+        run: npm run fetch:match-attendance
 
       - name: Rebuild offline snapshot
         if: always()
@@ -41,10 +48,11 @@ jobs:
       - name: Commit attendance updates
         if: always()
         run: |
-          if [[ -n "$(git status --porcelain data/csl-attendance.json data/csl-attendance-history.json data/attendance-csl.json data/attendance-history-csl.json data/attendance-meta.json standalone.html)" ]]; then
+          if [[ -n "$(git status --porcelain data/csl-attendance.json data/csl-attendance-history.json data/attendance-csl.json data/attendance-history-csl.json data/attendance-meta.json data/csl-match-attendance.json data/match-attendance-meta.json standalone.html)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add data/csl-attendance.json data/csl-attendance-history.json data/attendance-csl.json data/attendance-history-csl.json data/attendance-meta.json standalone.html
+            git add --ignore-errors data/csl-match-attendance.json data/match-attendance-meta.json || true
             git commit -m "Update attendance data"
             git push
           else

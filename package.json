@@ -5,13 +5,15 @@
   "description": "Static China football league dashboard with GitHub Actions data refresh.",
   "type": "module",
   "scripts": {
+    "test": "node --test scripts/*.test.js",
     "build:standalone": "node scripts/build-standalone.js",
     "fetch:data": "node scripts/fetch-data.js",
     "fetch:attendance": "node scripts/fetch-attendance.js",
+    "fetch:match-attendance": "node scripts/fetch-match-attendance.js",
     "fetch:attendance-history": "node scripts/fetch-attendance-history.js",
     "validate:data": "node scripts/validate-data.js",
     "generate:changelog": "node scripts/generate-changelog.js",
-    "fetch:all": "npm run fetch:data && npm run fetch:attendance && npm run fetch:attendance-history && npm run validate:data && npm run generate:changelog"
+    "fetch:all": "npm run fetch:data && npm run fetch:attendance && npm run fetch:match-attendance && npm run fetch:attendance-history && npm run validate:data && npm run generate:changelog"
   },
   "dependencies": {
     "cheerio": "^1.2.0"

@@ -618,7 +618,7 @@
       <div>
         <div class="eyebrow"><span class="status-dot"></span>CFL Monitor · JSON-first Static Dashboard</div>
         <h1>中国足球职业联赛监测 Dashboard</h1>
-        <p class="subtitle">中超 / 中甲 / 中乙 · 积分榜、球市观众与数据质量监测 · 实验版</p>
+        <p class="subtitle">逐场上座率 · 实际观众人数 · 球场容量 · 联赛数据监测</p>
         <p id="dataNotice" class="notice">正在检查真实 JSON 数据；缺失数据不会替换为示例数据。</p>
       </div>
       <div class="hero-side">
@@ -636,12 +636,37 @@
       </div>
     </section>
 
+    <section class="panel" style="margin-top:14px;margin-bottom:14px;" aria-labelledby="matchAttendanceTitle">
+      <div class="panel-header">
+        <div><h2 id="matchAttendanceTitle" class="panel-title">中超 · 每场比赛上座率</h2>
+          <p class="panel-subtitle">单场实际观众 ÷ 对应球场标称容量。非当场可售座位售票率；缺失值不使用球队场均补齐。</p>
+        </div>
+        <span class="badge third_party">Transfermarkt · 非官方</span>
+      </div>
+      <div class="panel-body">
+        <p id="matchAttendanceSource" class="panel-subtitle" role="status">正在读取单场观众数据。</p>
+        <div id="matchAttendanceMetrics" class="metrics"></div>
+        <div class="filters" style="flex-wrap:wrap;margin-bottom:14px;">
+          <label>主场球队 <select id="matchHomeFilter" class="select"><option value="all">全部球队</option></select></label>
+          <label>轮次 <select id="matchRoundFilter" class="select"><option value="all">全部轮次</option></select></label>
+          <label>数据 <select id="matchCoverageFilter" class="select"><option value="all">全部比赛</option><option value="available">有上座率</option><option value="missing">缺少上座率</option><option value="conflict">容量口径待核对</option></select></label>
+          <label>排序 <select id="matchSort" class="select"><option value="date">最近比赛</option><option value="occupancy">上座率最高</option><option value="attendance">观众最多</option></select></label>
+        </div>
+        <p id="matchAttendanceCount" class="panel-subtitle"></p>
+        <div class="table-wrap" style="max-height:620px;">
+          <table><thead><tr><th>日期 / 轮次</th><th>主队</th><th>比分</th><th>客队</th><th>实际球场</th><th>实际观众</th><th>标称容量</th><th>单场上座率</th><th>数据来源 / 抓取时间</th></tr></thead><tbody id="matchAttendanceBody"></tbody></table>
+        </div>
+        <h3 class="panel-title" style="margin-top:18px;">近期比赛上座率</h3>
+        <div id="matchOccupancyChart" class="chart"></div><div class="chart-fallback"></div>
+      </div>
+    </section>
+
     <section id="metrics" class="metrics" aria-label="核心指标"></section>
 
     <section class="panel" style="margin-bottom: 14px;">
       <div class="panel-header">
         <div>
-          <h2 class="panel-title">球市与观众人数监测</h2>
+          <h2 class="panel-title">球队赛季场均 · 辅助统计</h2>
           <p class="panel-subtitle">观众人数数据来自第三方公开来源 Transfermarkt，非官方数据，仅供趋势分析参考；如与官方公告不一致，以官方发布为准。</p>
         </div>
         <span id="attendanceSourceBadge" class="badge fallback">loading</span>
@@ -864,6 +889,8 @@
       cl1: { standings: null, fixtures: null },
       cl2: { standings: null, fixtures: null },
       attendance: "./data/csl-attendance.json",
+      matchAttendance: "./data/csl-match-attendance.json",
+      matchAttendanceMeta: "./data/match-attendance-meta.json",
       attendanceMeta: "./data/attendance-meta.json",
       attendanceHistory: "./data/csl-attendance-history.json",
       changelog: "./data/changelog.json",
@@ -1123,6 +1150,8 @@
       sourceComparison: null,
       dataQuality: null,
       fileResults: {},
+      matchAttendance: null,
+      matchAttendanceMeta: null,
       missingFiles: [],
       attendanceMode: "missing",
       attendanceWarning: "暂无真实观众数据。",
@@ -1155,6 +1184,7 @@
 
     function formatDateTime(value) {
       if (!value || !Number.isFinite(Date.parse(value))) return "暂无";
+      if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return `${value}（时间暂无）`;
       return new Intl.DateTimeFormat("zh-CN", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" }).format(new Date(value));
     }
 
@@ -1357,6 +1387,8 @@
         ["csl-standings.json", DATA_FILES.csl.standings],
         ["csl-fixtures.json", DATA_FILES.csl.fixtures],
         ["csl-attendance.json", DATA_FILES.attendance],
+        ["csl-match-attendance.json", DATA_FILES.matchAttendance],
+        ["match-attendance-meta.json", DATA_FILES.matchAttendanceMeta],
         ["csl-attendance-history.json", DATA_FILES.attendanceHistory],
         ["attendance-meta.json", DATA_FILES.attendanceMeta],
         ["data-quality.json", DATA_FILES.dataQuality],
@@ -1376,6 +1408,7 @@
             if (!payload || typeof payload !== "object") throw new Error("Invalid JSON object");
             if (key === "csl-standings.json") validateLoadedData(payload);
             if (key === "csl-attendance.json") validateAttendanceData(payload);
+            if (key === "csl-match-attendance.json" && (!Array.isArray(payload.matches) || payload.matches.some(row => !row || !row.id || !row.homeTeam || !row.awayTeam || (row.attendance !== null && !Number.isFinite(row.attendance)) || (row.occupancyRate !== null && (!Number.isFinite(row.occupancyRate) || row.occupancyRate < 0 || row.occupancyRate > 1.2))))) throw new Error("Invalid match attendance rows");
             if (["csl-fixtures.json", "csl-attendance-history.json"].includes(key) && !Array.isArray(payload.data)) throw new Error("Missing data array");
             if (key === "csl-attendance-history.json" && payload.data.some(row => !row || !Number.isFinite(row.averageAttendance))) throw new Error("Invalid history row");
             if (key === "csl-fixtures.json" && payload.data.some(row => !row || !row.homeTeam || !row.awayTeam || !["scheduled", "live", "finished", "postponed"].includes(row.status))) throw new Error("Invalid fixture row");
@@ -1390,8 +1423,15 @@
       state.missingFiles = Object.entries(results).filter(([, result]) => !result.ok).map(([key, result]) => `${key} (${result.error})`);
 
       state.meta = results["meta.json"].ok ? results["meta.json"].data : null;
+      state.matchAttendance = results["csl-match-attendance.json"].ok ? results["csl-match-attendance.json"].data : null;
+      state.matchAttendanceMeta = results["match-attendance-meta.json"].ok ? results["match-attendance-meta.json"].data : null;
       const standingsPayload = results["csl-standings.json"].ok ? results["csl-standings.json"].data : null;
-      const fixturesPayload = results["csl-fixtures.json"].ok ? results["csl-fixtures.json"].data : null;
+      const fixturesPayload = results["csl-fixtures.json"].ok ? results["csl-fixtures.json"].data : state.matchAttendance ? {
+        ...state.matchAttendance, type: "fixtures", data: state.matchAttendance.matches.map(row => ({
+          ...row, homeTeam: row.homeTeamCn || row.homeTeam, awayTeam: row.awayTeamCn || row.awayTeam,
+          venue: row.stadiumCn || row.stadium || "暂无", status: "finished"
+        }))
+      } : null;
       applyPayloadsToLeague("csl", standingsPayload, fixturesPayload);
       state.leagues.cl1 = emptyLeague("cl1", "中甲 China League One", "中甲");
       state.leagues.cl1.loadErrors = ["未配置真实 JSON。"];
@@ -1627,7 +1667,7 @@
     }
 
     function fixtureAttendance(match) {
-      return (state.attendance.matches || []).find(item =>
+      return (state.matchAttendance?.matches || state.attendance.matches || []).find(item =>
         (item.homeTeamCn === match.homeTeam || item.homeTeam === match.homeTeam) &&
         (item.awayTeamCn === match.awayTeam || item.awayTeam === match.awayTeam) &&
         item.date?.slice(0, 10) === match.date?.slice(0, 10)
@@ -1720,6 +1760,18 @@
       };
     }
 
+    function currentScheduleQuality() {
+      if (!league().fixtures.length) return null;
+      const rounds = new Set(league().fixtures.map(row=>Number(row.round)).filter(round=>round>=1 && round<=30));
+      const seen = new Set();
+      const anomalies = [];
+      for (const row of league().fixtures) {
+        if (!row.date || (row.status === "finished" && (row.homeScore === null || row.awayScore === null)) || seen.has(row.id)) anomalies.push({type:"Fixture Incomplete",match:`${row.homeTeam} vs ${row.awayTeam}`});
+        seen.add(row.id);
+      }
+      return {expectedRounds:30,fetchedRoundsCount:rounds.size,missingRounds:Array.from({length:30},(_,i)=>i+1).filter(round=>!rounds.has(round)),anomalyCount:anomalies.length,anomalies};
+    }
+
     function hasConsecutiveNoWin(form) {
       return form.some((_, index) => index <= form.length - 3 && form.slice(index, index + 3).every(result => result !== "W"));
     }
@@ -1728,6 +1780,9 @@
       const data = league();
       const validation = validateLeagueData(data);
       const alerts = [];
+      for (const row of state.matchAttendance?.matches || []) {
+        if (row.qualityNote) alerts.push({ level:"warning", type:"Match Capacity Conflict", target:`${row.date} ${row.homeTeamCn || row.homeTeam} vs ${row.awayTeamCn || row.awayTeam}`, message:"单场观众超过来源标称容量，比例待核验，已排除汇总。", action:"核对实际举办球场、扩容情况和比赛日开放座位。" });
+      }
       Object.entries(state.fileResults || {}).forEach(([name, result]) => {
         if (!result.ok) {
           alerts.push({ level: "critical", type: "Data Missing", target: name, message: result.error || "真实 JSON 不可用。", action: "检查 data 目录、GitHub Actions 产物和文件名。" });
@@ -1767,7 +1822,7 @@
         alerts.push({ level: "critical", type: "Data Completeness Alert", target: data.name, message: `球队完整度 ${validation.teamCount}/${data.targetTeams}，赛程完整度 ${validation.fixtureCount}/${data.targetFixtures}。`, action: "检查数据源映射、字段标准化和 fallback 数据。" });
       }
 
-      const schedule = league().fixtures.length ? state.dataQuality?.leagues?.[state.activeLeague]?.scheduleCompleteness : null;
+      const schedule = currentScheduleQuality();
       if (schedule?.anomalyCount) {
         alerts.push({ level: "warning", type: "Schedule Quality Alert", target: data.name, message: `赛程存在 ${schedule.anomalyCount} 个异常。`, action: "检查空时间、完赛比分缺失或重复比赛。" });
       }
@@ -1989,7 +2044,7 @@
 
     function renderDataHealth() {
       const health = updateDataHealth(league());
-      const required = ["meta.json", "csl-standings.json", "csl-fixtures.json", "csl-attendance.json", "csl-attendance-history.json"];
+      const required = ["meta.json", "csl-standings.json", "csl-fixtures.json", "csl-match-attendance.json", "match-attendance-meta.json", "csl-attendance.json", "csl-attendance-history.json"];
       const fileValues = Object.values(state.fileResults || {});
       const mockCount = IS_DEMO_MODE ? 3 : 0;
       const staleCount = fileValues.filter(result => {
@@ -2039,7 +2094,7 @@
     }
 
     function renderQualityPanels() {
-      const schedule = league().fixtures.length ? state.dataQuality?.leagues?.[state.activeLeague]?.scheduleCompleteness : null;
+      const schedule = currentScheduleQuality();
       const missingPreview = schedule?.missingRounds?.slice(0, 10).join("、") || "无";
       document.getElementById("scheduleQuality").innerHTML = schedule ? `
         <div class="compact-list">
@@ -2195,11 +2250,102 @@
       `).join("");
     }
 
+    function escapeText(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+    }
+
+    function selectedMatchRows() {
+      const home = document.getElementById("matchHomeFilter").value;
+      const round = document.getElementById("matchRoundFilter").value;
+      const coverage = document.getElementById("matchCoverageFilter").value;
+      const sort = document.getElementById("matchSort").value;
+      return (state.matchAttendance?.matches || []).filter(row =>
+        (home === "all" || row.homeTeam === home) && (round === "all" || String(row.round) === round) &&
+        (coverage === "all" || (coverage === "available" ? row.occupancyRate !== null : coverage === "conflict" ? Boolean(row.qualityNote) : row.occupancyRate === null))
+      ).sort((a, b) => sort === "occupancy" ? (b.occupancyRate ?? -1) - (a.occupancyRate ?? -1) : sort === "attendance" ? (b.attendance ?? -1) - (a.attendance ?? -1) : b.date.localeCompare(a.date));
+    }
+
+    function renderMatchAttendance() {
+      const payload = state.matchAttendance;
+      const all = payload?.matches || [];
+      for (const [id, pairs, label] of [
+        ["matchHomeFilter", [...new Map(all.map(row => [row.homeTeam, row.homeTeamCn || row.homeTeam])).entries()], "全部球队"],
+        ["matchRoundFilter", [...new Set(all.map(row => row.round))].sort((a, b) => a - b).map(round => [String(round), `第 ${round} 轮`]), "全部轮次"]
+      ]) {
+        const element = document.getElementById(id);
+        const previous = element.value;
+        element.innerHTML = `<option value="all">${label}</option>` + pairs.map(([value, name]) => `<option value="${escapeText(value)}">${escapeText(name)}</option>`).join("");
+        element.value = pairs.some(([value]) => value === previous) ? previous : "all";
+      }
+      const status = document.getElementById("matchAttendanceSource");
+      if (!all.length) {
+        status.textContent = `暂无真实单场观众数据。${state.fileResults["csl-match-attendance.json"]?.error || "尚未抓取单场报告；球队场均不能代替每场人数。"}`;
+        document.getElementById("matchAttendanceMetrics").innerHTML = "";
+        document.getElementById("matchAttendanceCount").textContent = "";
+        document.getElementById("matchAttendanceBody").innerHTML = '<tr><td colspan="9">暂无真实数据</td></tr>';
+        return;
+      }
+      const stale = Date.now() - Date.parse(payload.fetchedAt) > 7 * 86400000;
+      status.textContent = `来源：${payload.source}（非官方） · mode: ${stale ? "stale" : payload.mode} · 最近成功抓取：${formatFullDateTime(payload.fetchedAt)} · ${formatAge(payload.fetchedAt)}。如与官方公告不一致，以官方发布为准。${state.matchAttendanceMeta?.status === "partial" ? " 本次部分抓取失败，已保留旧记录。" : ""}`;
+      const rows = selectedMatchRows();
+      const observed = rows.filter(row => row.occupancyRate !== null);
+      const comparable = observed.filter(row => !row.qualityNote);
+      const total = comparable.reduce((sum, row) => sum + row.attendance, 0);
+      const seats = comparable.reduce((sum, row) => sum + row.capacity, 0);
+      const highest = [...comparable].sort((a,b) => b.occupancyRate - a.occupancyRate)[0];
+      const metrics = [
+        ["已收录完赛", `${rows.length} 场`, "当前筛选；不代表全赛季完整覆盖"],
+        ["可计算单场比例", `${observed.length} / ${rows.length}`, "含容量口径待核对记录"],
+        ["缺失 / 暂缓计算", `${rows.length - observed.length} 场`, "缺人数、容量或严重冲突"],
+        ["加权上座率", seats ? formatPercent(total / seats) : "暂无", "观众总数 ÷ 容量总和；排除冲突"],
+        ["容量口径待核对", `${rows.filter(row=>row.qualityNote).length} 场`, "实际人数超过来源标称容量"],
+        ["最高单场上座率", highest ? formatPercent(highest.occupancyRate) : "暂无", highest ? `${highest.date} ${highest.homeTeamCn || highest.homeTeam}` : "暂无可比数据"]
+      ];
+      document.getElementById("matchAttendanceMetrics").innerHTML = metrics.map(([label,value,foot]) => `<article class="metric"><div class="metric-top">${label}</div><div class="metric-value">${escapeText(value)}</div><div class="metric-foot">${escapeText(foot)}</div></article>`).join("");
+      document.getElementById("matchAttendanceCount").textContent = `当前 ${rows.length} 场 / 已收录 ${all.length} 场。逐场日期、人数和球场来自比赛报告；容量采用同名球场标称容量。`;
+      document.getElementById("matchAttendanceBody").innerHTML = rows.map(row => {
+        const rate = row.occupancyRate;
+        const heat = row.qualityNote ? {label:"容量待核对",cls:"warning"} : attendanceHeatLabel(rate);
+        const validUrl = /^https:\/\//.test(row.sourceUrl || "");
+        const rowStale = row.fetchedAt && Date.now() - Date.parse(row.fetchedAt) > 7 * 86400000;
+        return `<tr><td>${escapeText(row.date)}<br><span class="muted">第 ${row.round} 轮</span></td><td>${escapeText(row.homeTeamCn || row.homeTeam)}</td><td>${row.homeScore} : ${row.awayScore}</td><td>${escapeText(row.awayTeamCn || row.awayTeam)}</td><td>${escapeText(row.stadiumCn || row.stadium || "暂无")}</td><td>${row.attendance === null ? "暂无" : formatInteger(row.attendance)}</td><td>${row.capacity === null ? "暂无" : formatInteger(row.capacity)}</td><td style="min-width:140px;"><strong>${formatPercent(rate)}</strong> <span class="badge ${heat.cls}">${heat.label}</span>${rate === null ? '<div class="muted">缺少人数或容量</div>' : `<div class="progress"><i style="width:${Math.min(100,rate*100)}%"></i></div>`}</td><td>${validUrl ? `<a href="${escapeText(row.sourceUrl)}" target="_blank" rel="noopener noreferrer">单场报告 ↗</a>` : "暂无来源"}<br><span class="muted">${formatFullDateTime(row.fetchedAt)}${rowStale ? " · Stale" : ""}</span></td></tr>`;
+      }).join("") || '<tr><td colspan="9">没有符合筛选条件的比赛。</td></tr>';
+    }
+
+    function annotateMatchRows() {
+      const elements = document.getElementById("matchAttendanceBody").rows;
+      selectedMatchRows().forEach((row, index) => {
+        const element = elements[index];
+        if (!element || element.cells.length < 9) return;
+        element.cells[6].title = `容量来源：${row.capacitySourceUrl || "暂无"}；抓取：${formatFullDateTime(row.capacityFetchedAt)}`;
+        const note = element.cells[7].querySelector(".muted");
+        if (note) note.textContent = row.qualityNote ? "人数/容量冲突，暂缓计算" : row.attendance === null ? "来源未报单场人数" : "未匹配实际球场容量";
+      });
+    }
+
+    function renderMatchOccupancyChart() {
+      annotateMatchRows();
+      const rows = selectedMatchRows().sort((a,b) => b.date.localeCompare(a.date)).slice(0,12).reverse();
+      const observed = rows.filter(row => row.occupancyRate !== null);
+      const base = chartBase();
+      renderChartSafely("matchOccupancyChart", observed, () => ({
+        ...base, grid: {left:54,right:24,top:26,bottom:70},
+        tooltip: { ...base.tooltip, trigger:"axis", formatter: params => {
+          const point = params[0]; const row = rows[point.dataIndex];
+          return `${escapeText(row.date)} ${escapeText(row.homeTeamCn || row.homeTeam)} vs ${escapeText(row.awayTeamCn || row.awayTeam)}<br>实际观众：${row.attendance === null ? "暂无" : formatInteger(row.attendance)}<br>上座率：${formatPercent(row.occupancyRate)}`;
+        }},
+        xAxis: {...base.xAxis,type:"category",data:rows.map(row=>`${row.date.slice(5)}\n${row.homeTeamCn || row.homeTeam}`),axisLabel:{color:"#9eb0c4",interval:"auto",fontSize:10}},
+        yAxis: {...base.yAxis,type:"value",axisLabel:{color:"#9eb0c4",formatter:value=>`${value}%`}},
+        series:[{type:"bar",name:"单场上座率",data:rows.map(row=>row.occupancyRate === null ? null : Math.round(row.occupancyRate*1000)/10),itemStyle:{color:params=>params.value>=90?"#facc15":"#22c55e"}}]
+      }));
+    }
+
     function renderAll() {
       ensureSelectedTeam();
       renderStatus();
       renderMetrics();
       renderAttendance();
+      renderMatchAttendance();
       renderStandings();
       renderFilters();
       renderFixtures();
@@ -2282,6 +2428,7 @@
     }
 
     function renderCharts() {
+        renderMatchOccupancyChart();
         const data = league().standings;
         const top8 = data.slice(0, 8).reverse();
         const names = data.map(team => team.shortName);
@@ -2435,6 +2582,9 @@
     }, 12000);
 
     // 7. Event Listeners
+    ["matchHomeFilter", "matchRoundFilter", "matchCoverageFilter", "matchSort"].forEach(id => {
+      document.getElementById(id).addEventListener("change", () => { renderMatchAttendance(); renderMatchOccupancyChart(); });
+    });
     document.querySelectorAll(".tab-button").forEach(button => {
       button.addEventListener("click", () => {
         state.activeLeague = button.dataset.league;
