@@ -621,6 +621,66 @@ if (location.protocol === 'file:') {
       .chart { height: 260px; }
       .table-wrap { max-height: none; }
     }
+    /* Workspace hierarchy: primary records, comparisons, competition, then diagnostics. */
+    :root { --bg:#111513; --panel:#171d1a; --panel-2:#202823; --muted:#a6b4ac; --line:rgba(173,194,181,.18); }
+    body { background:var(--bg); }
+    [hidden] { display:none !important; }
+    .shell { width:min(1480px,calc(100% - 40px)); }
+    .hero { padding:12px 0 20px; border:0; border-radius:0; background:none; box-shadow:none; align-items:start; }
+    h1 { font-size:25px; line-height:1.4; }
+    .hero-side { min-width:180px; }
+    .eyebrow { color:#91c9a8; }
+    .notice { max-width:880px; }
+    .workspace-nav { display:flex; gap:26px; border-bottom:1px solid var(--line); margin-bottom:22px; overflow-x:auto; }
+    .workspace-nav button { background:none; color:var(--muted); border:0; border-bottom:3px solid transparent; padding:13px 0; cursor:pointer; white-space:nowrap; }
+    .workspace-nav button[aria-pressed="true"] { color:#b7f1cc; border-bottom-color:#75d89b; font-weight:700; }
+    button:focus-visible,select:focus-visible,summary:focus-visible { outline:2px solid #75d89b; outline-offset:3px; }
+    .workspace-view > .panel { border:0; border-radius:0; background:none; box-shadow:none; margin-bottom:24px; }
+    .workspace-view > .panel > .panel-header { padding:0 0 14px; }
+    .workspace-view > .panel > .panel-body { padding:0; }
+    .workspace-view .chart-grid > .panel { border:0; border-top:1px solid var(--line); background:none; border-radius:0; box-shadow:none; }
+    .workspace-view .chart-grid { margin-top:24px; }
+    .panel, .metric, .health-item, .team-kpi, .status-box { border-radius:6px; box-shadow:none; }
+    .metric { background:#1c2520; }
+    .metric-value { font-size:27px; }
+    #matchAttendanceMetrics,#attendanceMetrics { grid-template-columns:repeat(4,minmax(0,1fr)); margin:18px 0; }
+    .filters { align-items:end; gap:16px; }
+    .filters label { display:grid; gap:7px; color:var(--muted); font-size:12px; }
+    .select { background:#1c2520; min-height:38px; }
+    .quiet-button { border:1px solid var(--line); background:#202923; color:var(--text); padding:9px 14px; border-radius:4px; cursor:pointer; }
+    .quiet-button:disabled { opacity:.35; cursor:default; }
+    .pagination { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 0; font-size:12px; color:var(--muted); }
+    .pagination button + button { margin-left:8px; }
+    .table-wrap { border:1px solid var(--line); border-radius:4px; }
+    th { background:#222c26; }
+    td { font-variant-numeric:tabular-nums; }
+    tbody tr:hover { background:rgba(117,216,155,.045); }
+    .row-source { white-space:normal; min-width:110px; max-width:270px; font-size:12px; }
+    .row-source summary { cursor:pointer; color:#99d8c7; }
+    .row-source p { line-height:1.7; overflow-wrap:anywhere; }
+    .progress { height:4px; }
+    #leagueScope { margin-bottom:18px; }
+    #view-quality .status-box { max-width:750px; margin-bottom:24px; }
+    #view-quality .status-row strong { overflow-wrap:anywhere; min-width:0; text-align:right; }
+    #standingsPanel:not(.expanded-columns) th:nth-child(3),#standingsPanel:not(.expanded-columns) td:nth-child(3),
+    #standingsPanel:not(.expanded-columns) th:nth-child(13),#standingsPanel:not(.expanded-columns) td:nth-child(13),
+    #standingsPanel:not(.expanded-columns) th:nth-child(14),#standingsPanel:not(.expanded-columns) td:nth-child(14),
+    #standingsPanel:not(.expanded-columns) th:nth-child(16),#standingsPanel:not(.expanded-columns) td:nth-child(16),
+    #standingsPanel:not(.expanded-columns) th:nth-child(17),#standingsPanel:not(.expanded-columns) td:nth-child(17) { display:none; }
+    #view-quality .panel-body,#view-competition .panel-body { overflow-wrap:anywhere; }
+    @media(max-width:700px) {
+      .shell { width:calc(100% - 24px); padding-top:12px; }
+      .hero { grid-template-columns:1fr; gap:12px; }
+      h1 { font-size:21px; }
+      .hero-side { min-width:0; justify-items:start; }
+      .workspace-nav { gap:22px; }
+      #matchAttendanceMetrics,#attendanceMetrics { grid-template-columns:1fr; }
+      .filters { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+      .filters .select { min-width:0; width:100%; }
+      .workspace-view .chart-grid { grid-template-columns:1fr; }
+      #matchPanel .table-wrap { max-height:560px !important; }
+      .status-row { align-items:start; }
+    }
   </style>
 </head>
 <body>
@@ -628,9 +688,9 @@ if (location.protocol === 'file:') {
   <main class="shell">
     <section class="hero">
       <div>
-        <div class="eyebrow"><span class="status-dot"></span>CFL Monitor · JSON-first Static Dashboard</div>
-        <h1>中国足球职业联赛监测 Dashboard</h1>
-        <p class="subtitle">逐场上座率 · 实际观众人数 · 球场容量 · 联赛数据监测</p>
+        <div class="eyebrow">CFL / 2026</div>
+        <h1>中国足球 · 观众与联赛监测</h1>
+        <p id="workspaceStatus" class="subtitle" aria-live="polite">正在读取本地数据快照</p>
         <p id="dataNotice" class="notice">正在检查真实 JSON 数据；缺失数据不会替换为示例数据。</p>
       </div>
       <div class="hero-side">
@@ -648,10 +708,22 @@ if (location.protocol === 'file:') {
       </div>
     </section>
 
-    <section class="panel" style="margin-top:14px;margin-bottom:14px;" aria-labelledby="matchAttendanceTitle">
+    <nav id="workspaceNav" class="workspace-nav" aria-label="监测视图">
+      <button type="button" data-view="matches" aria-pressed="true">逐场观众</button>
+      <button type="button" data-view="season" aria-pressed="false">赛季球市</button>
+      <button type="button" data-view="competition" aria-pressed="false">联赛与球队</button>
+      <button type="button" data-view="quality" aria-pressed="false">数据与口径</button>
+    </nav>
+    <div id="leagueScope" hidden></div>
+    <div id="view-matches" class="workspace-view"></div>
+    <div id="view-season" class="workspace-view" hidden></div>
+    <div id="view-competition" class="workspace-view" hidden></div>
+    <div id="view-quality" class="workspace-view" hidden></div>
+
+    <section id="matchPanel" class="panel" style="margin-top:14px;margin-bottom:14px;" aria-labelledby="matchAttendanceTitle">
       <div class="panel-header">
-        <div><h2 id="matchAttendanceTitle" class="panel-title">中超 · 每场比赛上座率</h2>
-          <p class="panel-subtitle">单场实际观众 ÷ 对应球场标称容量。非当场可售座位售票率；缺失值不使用球队场均补齐。</p>
+        <div><h2 id="matchAttendanceTitle" class="panel-title">中超 · 逐场观众</h2>
+          <p class="panel-subtitle">容量占比 = 实际观众 ÷ 来源标称容量。并非本场开放座位上座率；开放容量尚未核验。</p>
         </div>
         <span class="badge third_party">Transfermarkt · 非官方</span>
       </div>
@@ -661,24 +733,26 @@ if (location.protocol === 'file:') {
         <div class="filters" style="flex-wrap:wrap;margin-bottom:14px;">
           <label>主场球队 <select id="matchHomeFilter" class="select"><option value="all">全部球队</option></select></label>
           <label>轮次 <select id="matchRoundFilter" class="select"><option value="all">全部轮次</option></select></label>
-          <label>数据 <select id="matchCoverageFilter" class="select"><option value="all">全部比赛</option><option value="available">有上座率</option><option value="missing">缺少上座率</option><option value="conflict">容量口径待核对</option></select></label>
-          <label>排序 <select id="matchSort" class="select"><option value="date">最近比赛</option><option value="occupancy">上座率最高</option><option value="attendance">观众最多</option></select></label>
+          <label>数据 <select id="matchCoverageFilter" class="select"><option value="all">全部比赛</option><option value="available">可计算容量占比</option><option value="missing">缺少容量占比</option><option value="conflict">容量口径待核对</option></select></label>
+          <label>排序 <select id="matchSort" class="select"><option value="date">最近比赛</option><option value="occupancy">容量占比最高</option><option value="attendance">观众最多</option></select></label>
+          <button id="resetMatchFilters" type="button" class="quiet-button">重置筛选</button>
         </div>
         <p id="matchAttendanceCount" class="panel-subtitle"></p>
         <div class="table-wrap" style="max-height:620px;">
-          <table><thead><tr><th>日期 / 轮次</th><th>主队</th><th>比分</th><th>客队</th><th>实际球场</th><th>实际观众</th><th>标称容量</th><th>单场上座率</th><th>数据来源 / 抓取时间</th></tr></thead><tbody id="matchAttendanceBody"></tbody></table>
+          <table><thead><tr><th>日期 / 轮次</th><th>主队</th><th>比分</th><th>客队</th><th>实际球场</th><th>实际观众</th><th>标称容量</th><th>容量占比 · 参考</th><th>来源与口径</th></tr></thead><tbody id="matchAttendanceBody"></tbody></table>
         </div>
-        <h3 class="panel-title" style="margin-top:18px;">近期比赛上座率</h3>
+        <div class="pagination"><span id="matchPageInfo" aria-live="polite"></span><div><button id="matchPrevious" class="quiet-button" type="button" aria-label="上一页">←</button><button id="matchNext" class="quiet-button" type="button" aria-label="下一页">→</button></div></div>
+        <h3 class="panel-title" style="margin-top:18px;">最近 12 场 · 容量占比</h3>
         <div id="matchOccupancyChart" class="chart"></div><div class="chart-fallback"></div>
       </div>
     </section>
 
     <section id="metrics" class="metrics" aria-label="核心指标"></section>
 
-    <section class="panel" style="margin-bottom: 14px;">
+    <section id="seasonPanel" class="panel" style="margin-bottom: 14px;">
       <div class="panel-header">
         <div>
-          <h2 class="panel-title">球队赛季场均 · 辅助统计</h2>
+          <h2 class="panel-title">中超 · 球队赛季场均</h2>
           <p class="panel-subtitle">观众人数数据来自第三方公开来源 Transfermarkt，非官方数据，仅供趋势分析参考；如与官方公告不一致，以官方发布为准。</p>
         </div>
         <span id="attendanceSourceBadge" class="badge fallback">loading</span>
@@ -692,7 +766,7 @@ if (location.protocol === 'file:') {
             <div class="panel-body"><div id="attendanceAverageChart" class="chart small"></div><div class="chart-fallback">图表库加载失败，已保留观众表格数据。</div></div>
           </article>
           <article class="panel">
-            <div class="panel-header"><h2 class="panel-title">各队上座率排名</h2></div>
+            <div class="panel-header"><h2 class="panel-title">各队场均容量占比</h2></div>
             <div class="panel-body"><div id="occupancyChart" class="chart small"></div><div class="chart-fallback">图表库加载失败，已保留观众表格数据。</div></div>
           </article>
           <article class="panel">
@@ -704,12 +778,12 @@ if (location.protocol === 'file:') {
             <div class="panel-body"><div id="attendancePointsChart" class="chart small"></div><div class="chart-fallback">当前缺少可匹配积分或图表库加载失败，已保留表格数据。</div></div>
           </article>
         </div>
-        <div id="hotHomeTop5" class="health-grid" style="margin-bottom:14px;"></div>
+        <div id="hotHomeTop5" hidden></div>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>排名</th><th>球队</th><th>球场</th><th>容量</th><th>主场场次</th><th>总观众</th><th>场均观众</th><th>上座率</th><th>热度标签</th>
+                <th>排名</th><th>球队</th><th>球场</th><th>标称容量</th><th>主场场次</th><th>总观众</th><th>场均观众</th><th>场均容量占比</th><th>占比区间</th>
               </tr>
             </thead>
             <tbody id="attendanceBody"></tbody>
@@ -1572,10 +1646,11 @@ if (location.protocol === 'file:') {
 
     function attendanceHeatLabel(rate) {
       if (rate === null || rate === undefined) return { label: "暂无数据", cls: "warning" };
-      if (rate >= 0.9) return { label: "爆满", cls: "critical" };
-      if (rate >= 0.7) return { label: "高热度", cls: "warning" };
-      if (rate >= 0.4) return { label: "正常", cls: "info" };
-      return { label: "偏冷", cls: "warning" };
+      if (rate > 1) return { label: "超过标称容量", cls: "warning" };
+      if (rate >= 0.9) return { label: "≥90%", cls: "info" };
+      if (rate >= 0.7) return { label: "70–90%", cls: "info" };
+      if (rate >= 0.4) return { label: "40–70%", cls: "info" };
+      return { label: "<40%", cls: "info" };
     }
 
     function attendancePointsRows() {
@@ -1884,6 +1959,66 @@ if (location.protocol === 'file:') {
     }
 
     // 5. Rendering Functions
+    let workspaceView = "matches";
+    let matchPage = 1;
+    const MATCH_PAGE_SIZE = 20;
+
+    function initializeWorkspace() {
+      const movePanel = (contentId, view) => {
+        const panel = document.getElementById(contentId).closest(".panel");
+        document.getElementById(`view-${view}`).append(panel);
+        return panel;
+      };
+      document.getElementById("view-matches").append(document.getElementById("matchPanel"));
+      document.getElementById("view-season").append(document.getElementById("seasonPanel"));
+      const seasonBody = document.querySelector("#seasonPanel > .panel-body");
+      seasonBody.insertBefore(document.getElementById("attendanceBody").closest(".table-wrap"), seasonBody.querySelector(".chart-grid"));
+      document.getElementById("leagueScope").append(document.querySelector("nav.tabs"));
+      const competition = document.getElementById("view-competition");
+      competition.append(document.getElementById("metrics"));
+      const standings = movePanel("standingsBody", "competition");
+      standings.id = "standingsPanel";
+      const toggle = document.createElement("button");
+      toggle.type = "button";
+      toggle.className = "quiet-button";
+      toggle.textContent = "扩展字段";
+      toggle.setAttribute("aria-pressed", "false");
+      toggle.addEventListener("click", () => {
+        const expanded = standings.classList.toggle("expanded-columns");
+        toggle.setAttribute("aria-pressed", String(expanded));
+        toggle.textContent = expanded ? "精简字段" : "扩展字段";
+      });
+      standings.querySelector(".panel-header").append(toggle);
+      ["fixturesBody", "teamSummary", "focusMatches"].forEach(id => movePanel(id, "competition"));
+      competition.append(document.querySelector('[aria-label="图表区"]'));
+      document.getElementById("view-quality").append(document.querySelector(".status-box"));
+      ["dataHealth", "alertList", "scheduleQuality", "refreshLogs", "changeLogPanel", "sourceComparisonPanel", "sourceList"].forEach(id => movePanel(id, "quality"));
+      document.querySelectorAll("main > .top-grid, main > .layout, main > .chart-grid").forEach(el => el.remove());
+      document.querySelectorAll("[data-view]").forEach(button => button.addEventListener("click", () => {
+        workspaceView = button.dataset.view;
+        document.querySelectorAll(".workspace-view").forEach(el => { el.hidden = el.id !== `view-${workspaceView}`; });
+        document.querySelectorAll("[data-view]").forEach(el => el.setAttribute("aria-pressed", String(el === button)));
+        document.getElementById("leagueScope").hidden = ["matches", "season"].includes(workspaceView);
+        if (workspaceView === "season") {
+          state.activeLeague = "csl";
+          document.querySelectorAll(".tab-button").forEach(el => el.classList.toggle("active", el.dataset.league === "csl"));
+          renderAll();
+        }
+        renderStatus();
+        renderCharts();
+        requestAnimationFrame(() => Object.values(state.charts).forEach(chart => chart.resize()));
+      }));
+    }
+
+    function renderWorkspaceStatus() {
+      const payload = workspaceView === "matches" ? state.matchAttendance : workspaceView === "season" ? state.attendance : currentLeagueSourcePayload();
+      const available = workspaceView === "matches" ? payload?.matches?.length : workspaceView === "season" ? payload?.teams?.length : league().standings.length;
+      const scope = workspaceView === "matches" ? "中超 · 单场报告" : `${league().name} · ${workspaceView === "season" ? "赛季汇总" : "竞技数据"}`;
+      const stale = payload?.fetchedAt && Date.now() - Date.parse(payload.fetchedAt) > (workspaceView === "matches" || workspaceView === "season" ? 7 * 86400000 : 12 * 3600000);
+      document.getElementById("workspaceStatus").textContent = `${scope} · ${available ? `${payload.source || "JSON"} · ${formatFullDateTime(payload.fetchedAt)} · ${stale ? "已过期" : formatAge(payload.fetchedAt)}` : "暂无真实数据"}`;
+      document.getElementById("dataNotice").textContent = IS_DEMO_MODE ? "演示模式：示例数据不代表真实排名、赛果或观众人数。" : workspaceView === "matches" || workspaceView === "season" ? "第三方数据，非官方。标称容量仅供参考，不能据此断言本场实际售罄或球市冷淡。" : dataNoticeText();
+    }
+
     function renderStatus() {
       const source = activeSource();
       document.getElementById("mockGeneratedAt").parentElement.style.display = IS_DEMO_MODE ? "" : "none";
@@ -1898,6 +2033,7 @@ if (location.protocol === 'file:') {
       const pill = document.getElementById("dataModePill");
       pill.className = `pill ${modeClass()}`;
       pill.textContent = displayModeLabel();
+      renderWorkspaceStatus();
     }
 
     function renderMetrics() {
@@ -1924,19 +2060,14 @@ if (location.protocol === 'file:') {
         document.getElementById("attendanceBody").innerHTML = `<tr><td colspan="9" class="muted">暂无真实观众数据。请生成 data/csl-attendance.json。</td></tr>`;
         return;
       }
-      const sourceText = attendance.mode === "mock" ? attendance.source : `${attendance.source}${attendance.isOfficial ? "" : " · third-party"}`;
       const badge = document.getElementById("attendanceSourceBadge");
       badge.outerHTML = `<span class="badge ${attendance.mode === "mock" ? "mock" : "third_party"}" id="attendanceSourceBadge">${attendance.mode === "mock" ? "mock 示例" : "Transfermarkt 非官方，仅供参考"}</span>`;
-      const heatIndex = leagueHeatIndex();
 
       document.getElementById("attendanceMetrics").innerHTML = [
         { label: "本赛季总观众人数", value: formatInteger(summary.totalAttendance), foot: `${summary.matches || 0} 场样本`, color: "var(--blue)" },
         { label: "场均观众人数", value: formatInteger(summary.averageAttendance), foot: "Transfermarkt 统计口径", color: "var(--green)" },
-        { label: "联赛热度指数", value: heatIndex, foot: "观众 + 上座率 + 趋势 + 焦点战", color: "var(--red)" },
-        { label: "最高场均球队", value: summary.highestAverageTeam || "暂无", foot: `${formatInteger(summary.highestAverageAttendance)} 人/场`, color: "var(--yellow)" },
-        { label: "平均上座率", value: formatPercent(avgOcc), foot: "各队场均上座率均值", color: "var(--violet)" },
-        { label: "同比变化", value: latestYoYGrowth() === null ? "暂无" : formatPercent(latestYoYGrowth()), foot: "最近两季场均观众变化", color: "var(--orange)" },
-        { label: "数据源", value: sourceText, foot: formatAge(attendance.fetchedAt), color: "var(--red)" }
+        { label: "最高场均球队", value: attendance.teams.find(team => team.team === summary.highestAverageTeam)?.teamCn || summary.highestAverageTeam || "暂无", foot: `${formatInteger(summary.highestAverageAttendance)} 人/场`, color: "var(--yellow)" },
+        { label: "平均容量占比", value: formatPercent(avgOcc), foot: "各队场均 / 标称容量的算术均值", color: "var(--violet)" }
       ].map(metric => `
         <article class="metric">
           <div class="metric-top"><span class="metric-icon" style="background:${metric.color}"></span>${metric.label}</div>
@@ -2295,6 +2426,7 @@ if (location.protocol === 'file:') {
         document.getElementById("matchAttendanceMetrics").innerHTML = "";
         document.getElementById("matchAttendanceCount").textContent = "";
         document.getElementById("matchAttendanceBody").innerHTML = '<tr><td colspan="9">暂无真实数据</td></tr>';
+        updateMatchPagination(0);
         return;
       }
       const stale = Date.now() - Date.parse(payload.fetchedAt) > 7 * 86400000;
@@ -2304,29 +2436,36 @@ if (location.protocol === 'file:') {
       const comparable = observed.filter(row => !row.qualityNote);
       const total = comparable.reduce((sum, row) => sum + row.attendance, 0);
       const seats = comparable.reduce((sum, row) => sum + row.capacity, 0);
-      const highest = [...comparable].sort((a,b) => b.occupancyRate - a.occupancyRate)[0];
       const metrics = [
-        ["已收录完赛", `${rows.length} 场`, "当前筛选；不代表全赛季完整覆盖"],
-        ["可计算单场比例", `${observed.length} / ${rows.length}`, "含容量口径待核对记录"],
-        ["缺失 / 暂缓计算", `${rows.length - observed.length} 场`, "缺人数、容量或严重冲突"],
-        ["加权上座率", seats ? formatPercent(total / seats) : "暂无", "观众总数 ÷ 容量总和；排除冲突"],
-        ["容量口径待核对", `${rows.filter(row=>row.qualityNote).length} 场`, "实际人数超过来源标称容量"],
-        ["最高单场上座率", highest ? formatPercent(highest.occupancyRate) : "暂无", highest ? `${highest.date} ${highest.homeTeamCn || highest.homeTeam}` : "暂无可比数据"]
+        ["已收录比赛", `${rows.length} 场`, `观众人数已报 ${rows.filter(row => row.attendance !== null).length} 场`],
+        ["场均实际观众", rows.some(row => row.attendance !== null) ? formatInteger(rows.filter(row => row.attendance !== null).reduce((sum,row) => sum + row.attendance,0) / rows.filter(row => row.attendance !== null).length) : "暂无", "仅含已报人数场次；缺失不计零"],
+        ["加权容量占比", seats ? formatPercent(total / seats) : "暂无", `${comparable.length} 场；排除容量冲突，非开放座位上座率`],
+        ["待核对 / 缺失", `${rows.filter(row => row.qualityNote || row.occupancyRate === null).length} 场`, "人数缺失、容量缺失或口径冲突"]
       ];
       document.getElementById("matchAttendanceMetrics").innerHTML = metrics.map(([label,value,foot]) => `<article class="metric"><div class="metric-top">${label}</div><div class="metric-value">${escapeText(value)}</div><div class="metric-foot">${escapeText(foot)}</div></article>`).join("");
-      document.getElementById("matchAttendanceCount").textContent = `当前 ${rows.length} 场 / 已收录 ${all.length} 场。逐场日期、人数和球场来自比赛报告；容量采用同名球场标称容量。`;
-      document.getElementById("matchAttendanceBody").innerHTML = rows.map(row => {
+      document.getElementById("matchAttendanceCount").textContent = `筛选结果 ${rows.length} 场 / 全部 ${all.length} 场 · 指标与趋势按全部筛选结果计算`;
+      updateMatchPagination(rows.length);
+      document.getElementById("matchAttendanceBody").innerHTML = rows.slice((matchPage - 1) * MATCH_PAGE_SIZE, matchPage * MATCH_PAGE_SIZE).map(row => {
         const rate = row.occupancyRate;
-        const heat = row.qualityNote ? {label:"容量待核对",cls:"warning"} : attendanceHeatLabel(rate);
+        const heat = row.qualityNote ? {label:"待核对",cls:"warning"} : {label:rate === null ? "暂无" : "参考",cls:"info"};
         const validUrl = /^https:\/\//.test(row.sourceUrl || "");
         const rowStale = row.fetchedAt && Date.now() - Date.parse(row.fetchedAt) > 7 * 86400000;
-        return `<tr><td>${escapeText(row.date)}<br><span class="muted">第 ${row.round} 轮</span></td><td>${escapeText(row.homeTeamCn || row.homeTeam)}</td><td>${row.homeScore} : ${row.awayScore}</td><td>${escapeText(row.awayTeamCn || row.awayTeam)}</td><td>${escapeText(row.stadiumCn || row.stadium || "暂无")}</td><td>${row.attendance === null ? "暂无" : formatInteger(row.attendance)}</td><td>${row.capacity === null ? "暂无" : formatInteger(row.capacity)}</td><td style="min-width:140px;"><strong>${formatPercent(rate)}</strong> <span class="badge ${heat.cls}">${heat.label}</span>${rate === null ? '<div class="muted">缺少人数或容量</div>' : `<div class="progress"><i style="width:${Math.min(100,rate*100)}%"></i></div>`}</td><td>${validUrl ? `<a href="${escapeText(row.sourceUrl)}" target="_blank" rel="noopener noreferrer">单场报告 ↗</a>` : "暂无来源"}<br><span class="muted">${formatFullDateTime(row.fetchedAt)}${rowStale ? " · Stale" : ""}</span></td></tr>`;
+        const capacityLink = /^https:\/\//.test(row.capacitySourceUrl || "") ? `<a href="${escapeText(row.capacitySourceUrl)}" target="_blank" rel="noopener noreferrer">容量来源</a>` : "容量来源缺失";
+        return `<tr><td>${escapeText(row.date)}<br><span class="muted">第 ${row.round} 轮</span></td><td>${escapeText(row.homeTeamCn || row.homeTeam)}</td><td>${row.homeScore ?? "—"} : ${row.awayScore ?? "—"}</td><td>${escapeText(row.awayTeamCn || row.awayTeam)}</td><td>${escapeText(row.stadiumCn || row.stadium || "暂无")}</td><td><strong>${row.attendance === null ? "暂无" : formatInteger(row.attendance)}</strong></td><td>${row.capacity === null ? "暂无" : formatInteger(row.capacity)}</td><td style="min-width:140px;"><strong>${formatPercent(rate)}</strong> <span class="badge ${heat.cls}">${heat.label}</span>${rate === null ? '<div class="muted">缺少人数或容量</div>' : `<div class="progress"><i style="width:${Math.min(100,rate*100)}%"></i></div>`}</td><td><details class="row-source"><summary>查看依据${rowStale ? " · 过期" : ""}</summary><p>${validUrl ? `<a href="${escapeText(row.sourceUrl)}" target="_blank" rel="noopener noreferrer">单场报告 ↗</a>` : "暂无来源"}<br>${capacityLink}<br>人数抓取：${formatFullDateTime(row.fetchedAt)}<br>容量抓取：${formatFullDateTime(row.capacityFetchedAt)}<br>本场开放容量：未核验${row.qualityNote ? `<br>${escapeText(row.qualityNote)}` : ""}</p></details></td></tr>`;
       }).join("") || '<tr><td colspan="9">没有符合筛选条件的比赛。</td></tr>';
+    }
+
+    function updateMatchPagination(count) {
+      const pages = Math.max(1, Math.ceil(count / MATCH_PAGE_SIZE));
+      matchPage = Math.max(1, Math.min(matchPage, pages));
+      document.getElementById("matchPageInfo").textContent = count ? `${(matchPage - 1) * MATCH_PAGE_SIZE + 1}–${Math.min(matchPage * MATCH_PAGE_SIZE,count)} / ${count} 场 · 第 ${matchPage} / ${pages} 页` : "无比赛记录";
+      document.getElementById("matchPrevious").disabled = matchPage <= 1;
+      document.getElementById("matchNext").disabled = matchPage >= pages;
     }
 
     function annotateMatchRows() {
       const elements = document.getElementById("matchAttendanceBody").rows;
-      selectedMatchRows().forEach((row, index) => {
+      selectedMatchRows().slice((matchPage - 1) * MATCH_PAGE_SIZE, matchPage * MATCH_PAGE_SIZE).forEach((row, index) => {
         const element = elements[index];
         if (!element || element.cells.length < 9) return;
         element.cells[6].title = `容量来源：${row.capacitySourceUrl || "暂无"}；抓取：${formatFullDateTime(row.capacityFetchedAt)}`;
@@ -2344,11 +2483,11 @@ if (location.protocol === 'file:') {
         ...base, grid: {left:54,right:24,top:26,bottom:70},
         tooltip: { ...base.tooltip, trigger:"axis", formatter: params => {
           const point = params[0]; const row = rows[point.dataIndex];
-          return `${escapeText(row.date)} ${escapeText(row.homeTeamCn || row.homeTeam)} vs ${escapeText(row.awayTeamCn || row.awayTeam)}<br>实际观众：${row.attendance === null ? "暂无" : formatInteger(row.attendance)}<br>上座率：${formatPercent(row.occupancyRate)}`;
+          return `${escapeText(row.date)} ${escapeText(row.homeTeamCn || row.homeTeam)} vs ${escapeText(row.awayTeamCn || row.awayTeam)}<br>实际观众：${row.attendance === null ? "暂无" : formatInteger(row.attendance)}<br>标称容量占比：${formatPercent(row.occupancyRate)}${row.qualityNote ? "<br>容量口径待核对" : ""}`;
         }},
         xAxis: {...base.xAxis,type:"category",data:rows.map(row=>`${row.date.slice(5)}\n${row.homeTeamCn || row.homeTeam}`),axisLabel:{color:"#9eb0c4",interval:"auto",fontSize:10}},
         yAxis: {...base.yAxis,type:"value",axisLabel:{color:"#9eb0c4",formatter:value=>`${value}%`}},
-        series:[{type:"bar",name:"单场上座率",data:rows.map(row=>row.occupancyRate === null ? null : Math.round(row.occupancyRate*1000)/10),itemStyle:{color:params=>params.value>=90?"#facc15":"#22c55e"}}]
+        series:[{type:"bar",name:"标称容量占比",data:rows.map(row=>row.occupancyRate === null ? null : Math.round(row.occupancyRate*1000)/10),itemStyle:{color:params=>rows[params.dataIndex].qualityNote?"#fb923c":"#75d89b"}}]
       }));
     }
 
@@ -2393,6 +2532,7 @@ if (location.protocol === 'file:') {
       const container = document.getElementById(containerId);
       const fallback = container?.nextElementSibling;
       if (!container || !fallback) return;
+      if (container.closest(".workspace-view")?.hidden) return;
       if (!Array.isArray(data) || !data.length) {
         container.dataset.state = "empty";
         container.style.display = "none";
@@ -2594,8 +2734,19 @@ if (location.protocol === 'file:') {
     }, 12000);
 
     // 7. Event Listeners
+    document.getElementById("resetMatchFilters").addEventListener("click", () => {
+      ["matchHomeFilter", "matchRoundFilter", "matchCoverageFilter"].forEach(id => { document.getElementById(id).value = "all"; });
+      document.getElementById("matchSort").value = "date";
+      matchPage = 1;
+      renderMatchAttendance(); renderMatchOccupancyChart();
+    });
+    [["matchPrevious", -1], ["matchNext", 1]].forEach(([id, delta]) => document.getElementById(id).addEventListener("click", () => {
+      matchPage += delta;
+      renderMatchAttendance(); annotateMatchRows();
+      document.querySelector("#matchPanel .table-wrap").scrollTop = 0;
+    }));
     ["matchHomeFilter", "matchRoundFilter", "matchCoverageFilter", "matchSort"].forEach(id => {
-      document.getElementById(id).addEventListener("change", () => { renderMatchAttendance(); renderMatchOccupancyChart(); });
+      document.getElementById(id).addEventListener("change", () => { matchPage = 1; renderMatchAttendance(); renderMatchOccupancyChart(); });
     });
     document.querySelectorAll(".tab-button").forEach(button => {
       button.addEventListener("click", () => {
@@ -2654,6 +2805,7 @@ if (location.protocol === 'file:') {
     });
 
     document.addEventListener("DOMContentLoaded", async () => {
+      initializeWorkspace();
       try {
         await loadDashboardData();
       } catch (error) {
