@@ -25,6 +25,7 @@ function seasonEndYear(season) {
 
 async function getHtml(url) {
   const response = await fetch(url, {
+    signal: AbortSignal.timeout(20000),
     headers: {
       "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/125 Safari/537.36",
       "accept-language": "en-US,en;q=0.9,zh-CN;q=0.8"

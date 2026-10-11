@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: football-data-publish
+  cancel-in-progress: false
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
@@ -26,12 +30,17 @@ jobs:
       - name: Fetch football and derived data
         run: npm run fetch:all
 
+      - name: Rebuild offline snapshot
+        if: always()
+        run: npm run build:standalone
+
       - name: Commit data updates
+        if: always()
         run: |
-          if [[ -n "$(git status --porcelain data)" ]]; then
+          if [[ -n "$(git status --porcelain data standalone.html)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data
+            git add data standalone.html
             git commit -m "Update football data"
             git push
           else

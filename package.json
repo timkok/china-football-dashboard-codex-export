@@ -5,6 +5,7 @@
   "description": "Static China football league dashboard with GitHub Actions data refresh.",
   "type": "module",
   "scripts": {
+    "build:standalone": "node scripts/build-standalone.js",
     "fetch:data": "node scripts/fetch-data.js",
     "fetch:attendance": "node scripts/fetch-attendance.js",
     "fetch:attendance-history": "node scripts/fetch-attendance-history.js",

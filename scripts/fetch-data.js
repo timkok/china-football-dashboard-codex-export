@@ -71,6 +71,7 @@ const FORM_PATTERNS = [
 
 async function getText(url) {
   const response = await fetch(url, {
+    signal: AbortSignal.timeout(20000),
     headers: {
       "user-agent": "Mozilla/5.0 (compatible; china-football-dashboard/1.0; +https://github.com/timkok/china-football-dashboard)",
       "accept-language": "zh-CN,zh;q=0.9,en;q=0.8"
@@ -144,7 +145,7 @@ async function fetchSinaCslStandings() {
         goalsAgainst: parseNumber(row.losegoal),
         goalDiff: parseNumber(row.truegoal),
         points: parseNumber(row.score),
-        form: FORM_PATTERNS[(parseNumber(row.team_order) - 1) % FORM_PATTERNS.length],
+        form: [],
         homeRecord: {
           wins: parseNumber(row.home_win),
           draws: parseNumber(row.home_draw),
@@ -213,7 +214,7 @@ async function fetchQiumiwuCslStandings() {
       goalsAgainst,
       goalDiff,
       points,
-      form: FORM_PATTERNS[index % FORM_PATTERNS.length],
+      form: [],
       homeRecord: records.home,
       awayRecord: records.away,
       source: SOURCES.qiumiwu.name,
@@ -317,6 +318,10 @@ function validateStandingsPayload(contents) {
 }
 
 async function writeJsonSafely(fileName, contents, { preserveOnFailure = true } = {}) {
+  if (contents?.mode === "mock" && existsSync(path.join(DATA_DIR, fileName))) {
+    console.log(`[preserve] ${fileName}: do not replace existing snapshots with generated mock`);
+    return false;
+  }
   if (!contents || !Array.isArray(contents.data) || contents.data.length === 0) {
     if (preserveOnFailure && existsSync(path.join(DATA_DIR, fileName))) {
       console.warn(`[skip] ${fileName}: invalid new data, preserving existing file`);

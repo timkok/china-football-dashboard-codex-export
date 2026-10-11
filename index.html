@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>中国足球职业联赛监测 Dashboard</title>
-  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+  <script async id="chartLibrary" src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
 
   <!-- 2. Styles -->
   <style>
@@ -82,7 +82,7 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(24px, 3vw, 40px);
+      font-size: 32px;
       line-height: 1.12;
       letter-spacing: 0;
     }
@@ -555,6 +555,9 @@
     }
 
     .chart { width: 100%; height: 310px; }
+    .top-grid > *, .layout > *, .panel, .panel-header > * { min-width: 0; }
+    .source-item, .health-item, .panel-subtitle, .status-row { overflow-wrap: anywhere; }
+    .metric::after { display: none; }
     .chart.small { height: 270px; }
 
     .chart-fallback {
@@ -594,6 +597,7 @@
     @media (max-width: 760px) {
       .shell { width: min(100% - 18px, 1500px); padding-top: 10px; }
       .hero { grid-template-columns: 1fr; padding: 15px; }
+      h1 { font-size: 24px; }
       .hero-side { min-width: 0; }
       .metrics, .health-grid, .team-grid, .chart-grid { grid-template-columns: 1fr; }
       .mini-kpis { grid-template-columns: 1fr; }
@@ -614,8 +618,8 @@
       <div>
         <div class="eyebrow"><span class="status-dot"></span>CFL Monitor · JSON-first Static Dashboard</div>
         <h1>中国足球职业联赛监测 Dashboard</h1>
-        <p class="subtitle">中超 / 中甲 / 中乙赛程、积分榜、球队状态、观众人数、数据健康与自动告警监测。静态 GitHub Pages 版本优先读取本仓库 JSON，失败后回退到示例数据。</p>
-        <p id="dataNotice" class="notice">正在检查本仓库静态 JSON 数据；如果不可用将回退到示例数据。</p>
+        <p class="subtitle">中超 / 中甲 / 中乙 · 积分榜、球市观众与数据质量监测 · 实验版</p>
+        <p id="dataNotice" class="notice">正在检查真实 JSON 数据；缺失数据不会替换为示例数据。</p>
       </div>
       <div class="hero-side">
         <div class="status-box">
@@ -700,8 +704,8 @@
       <div>
         <nav class="tabs" aria-label="联赛切换">
           <button class="tab-button active" data-league="csl" type="button">中超 CSL</button>
-          <button class="tab-button" data-league="cl1" type="button">中甲 · 示例</button>
-          <button class="tab-button" data-league="cl2" type="button">中乙 · 示例</button>
+          <button class="tab-button" data-league="cl1" type="button">中甲</button>
+          <button class="tab-button" data-league="cl2" type="button">中乙</button>
         </nav>
         <section class="panel">
           <div class="panel-header">
@@ -1138,9 +1142,9 @@
       const data = league();
       return {
         name: data.source || state.currentSource || "暂无真实数据",
-        url: data.sourceUrl || state.currentSourceUrl || "",
-        isOfficial: Boolean(data.isOfficial || state.isOfficial),
-        fetchedAt: data.fetchedAt || state.lastRefreshAt,
+        url: data.sourceUrl || "",
+        isOfficial: Boolean(data.isOfficial),
+        fetchedAt: data.fetchedAt,
         mode: data.dataMode || state.dataMode
       };
     }
@@ -1150,17 +1154,17 @@
     }
 
     function formatDateTime(value) {
-      if (!value) return "暂无";
+      if (!value || !Number.isFinite(Date.parse(value))) return "暂无";
       return new Intl.DateTimeFormat("zh-CN", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" }).format(new Date(value));
     }
 
     function formatFullDateTime(value) {
-      if (!value) return "暂无真实数据";
+      if (!value || !Number.isFinite(Date.parse(value))) return "暂无真实数据";
       return new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" }).format(new Date(value));
     }
 
     function formatAge(value) {
-      if (!value) return "暂无";
+      if (!value || !Number.isFinite(Date.parse(value))) return "暂无";
       const diff = Math.max(0, Date.now() - new Date(value).getTime());
       const minutes = Math.floor(diff / 60000);
       if (minutes < 1) return "刚刚";
@@ -1171,12 +1175,13 @@
     }
 
     function dataAgeHours() {
-      if (!activeSource().fetchedAt && !state.lastRefreshAt) return 0;
-      return (Date.now() - new Date(activeSource().fetchedAt || state.lastRefreshAt).getTime()) / 36e5;
+      if (!activeSource().fetchedAt) return 0;
+      return (Date.now() - new Date(activeSource().fetchedAt).getTime()) / 36e5;
     }
 
     function effectiveMode() {
       if (state.transientStatus) return state.transientStatus;
+      if (activeSource().mode === "missing") return "Missing";
       if (dataAgeHours() > 12) return "Stale";
       return activeSource().mode || state.dataMode;
     }
@@ -1224,8 +1229,10 @@
 
     async function safeFetchJson(path) {
       if (!path) return { ok: false, data: null, error: "No JSON path configured", status: 0, path: "not-configured" };
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 10000);
       try {
-        const response = await fetch(`${path}?v=${Date.now()}`, { cache: "no-store" });
+        const response = await fetch(`${path}?v=${Date.now()}`, { cache: "no-store", signal: controller.signal });
         if (!response.ok) {
           return { ok: false, data: null, error: response.status === 404 ? "JSON file missing" : `HTTP ${response.status}`, status: response.status, path };
         }
@@ -1237,6 +1244,8 @@
         }
       } catch (error) {
         return { ok: false, data: null, error: `Network error: ${error.message}`, status: 0, path };
+      } finally {
+        clearTimeout(timeout);
       }
     }
 
@@ -1284,11 +1293,11 @@
         goalsAgainst,
         goalDiff,
         points,
-        deductions: Number(item.deductions || 0),
+        deductions: item.deductions ?? null,
         deductionReason: item.deductionReason || "",
         pointsBeforeDeductions: Number(item.pointsBeforeDeductions ?? points),
         pointsOfficial: Number(item.pointsOfficial ?? points),
-        form: Array.isArray(item.form) && item.form.length ? item.form : ["D", "D", "D", "D", "D"],
+        form: item.formVerified === true && Array.isArray(item.form) ? item.form : [],
         homeRecord,
         awayRecord,
         source: item.source || payload.source || "json",
@@ -1337,8 +1346,8 @@
         sourceUrl: sourcePayload?.sourceUrl || current.sourceUrl || "",
         isOfficial: Boolean(sourcePayload?.isOfficial),
         fetchedAt: sourcePayload?.fetchedAt || payloadFreshness(payloads) || null,
-        usingMockStandings: !standingsPayload,
-        usingMockFixtures: !fixturesPayload
+        usingMockStandings: standingsPayload?.mode === "mock",
+        usingMockFixtures: fixturesPayload?.mode === "mock"
       };
     }
 
@@ -1355,13 +1364,28 @@
         ["source-comparison.json", DATA_FILES.sourceComparison]
       ];
       const results = {};
-      for (const [key, path] of fileEntries) {
+      await Promise.all(fileEntries.map(async ([key, path]) => {
         results[key] = await safeFetchJson(path);
         if (results[key].ok && results[key].data?.mode === "mock" && !IS_DEMO_MODE) {
           results[key].ok = false;
           results[key].error = "JSON is marked mock; real-data-only mode refuses demo data";
         }
-      }
+        if (results[key].ok) {
+          try {
+            const payload = results[key].data;
+            if (!payload || typeof payload !== "object") throw new Error("Invalid JSON object");
+            if (key === "csl-standings.json") validateLoadedData(payload);
+            if (key === "csl-attendance.json") validateAttendanceData(payload);
+            if (["csl-fixtures.json", "csl-attendance-history.json"].includes(key) && !Array.isArray(payload.data)) throw new Error("Missing data array");
+            if (key === "csl-attendance-history.json" && payload.data.some(row => !row || !Number.isFinite(row.averageAttendance))) throw new Error("Invalid history row");
+            if (key === "csl-fixtures.json" && payload.data.some(row => !row || !row.homeTeam || !row.awayTeam || !["scheduled", "live", "finished", "postponed"].includes(row.status))) throw new Error("Invalid fixture row");
+            if (key.startsWith("csl-") && !Number.isFinite(Date.parse(payload.fetchedAt))) throw new Error("Invalid fetchedAt");
+          } catch (error) {
+            results[key].ok = false;
+            results[key].error = `Validation error: ${error.message}`;
+          }
+        }
+      }));
       state.fileResults = results;
       state.missingFiles = Object.entries(results).filter(([, result]) => !result.ok).map(([key, result]) => `${key} (${result.error})`);
 
@@ -1416,8 +1440,8 @@
       }
       payload.data.forEach((team, index) => {
         if (!team.team && !team.name) throw new Error(`Loaded team row ${index + 1} is missing team`);
-        for (const field of ["played", "points"]) {
-          if (typeof team[field] !== "number") throw new Error(`Loaded team row ${index + 1} has invalid ${field}`);
+        for (const field of ["played", "points", "wins", "draws", "losses", "goalsFor", "goalsAgainst"]) {
+          if (!Number.isFinite(team[field])) throw new Error(`Loaded team row ${index + 1} has invalid ${field}`);
         }
       });
       return true;
@@ -1428,7 +1452,7 @@
         throw new Error("Attendance JSON is missing or has fewer than 8 teams");
       }
       payload.teams.forEach((team, index) => {
-        if (typeof team.capacity !== "number" || typeof team.averageAttendance !== "number") {
+        if (!team || !Number.isFinite(team.capacity) || !Number.isFinite(team.averageAttendance) || !Number.isFinite(team.totalAttendance) || !Number.isFinite(team.occupancyRate) || team.occupancyRate < 0 || team.occupancyRate > 1.2) {
           throw new Error(`Attendance row ${index + 1} has invalid numeric fields`);
         }
       });
@@ -1464,6 +1488,7 @@
     }
 
     function recordToText(record) {
+      if (!IS_DEMO_MODE && !record?.verified) return "暂无已核验数据";
       return `${record.wins}-${record.draws}-${record.losses}`;
     }
 
@@ -1540,7 +1565,7 @@
     function latestYoYGrowth() {
       const rows = state.attendanceHistory?.data || state.attendance.trend || [];
       const latest = rows[rows.length - 1] || rows[0];
-      return latest?.yoyGrowth ?? 0;
+      return latest?.yoyGrowth ?? null;
     }
 
     function leagueHeatIndex() {
@@ -1555,6 +1580,7 @@
     }
 
     function predictionScores(team) {
+      if (!IS_DEMO_MODE && team.form.length < 5) return { titleRaceScore: "暂无", continentalQualificationScore: "暂无", relegationRiskScore: "暂无", promotionScore: "暂无" };
       const remaining = Math.max(0, 30 - team.played);
       const formScore = team.form.reduce((sum, item) => sum + (item === "W" ? 3 : item === "D" ? 1 : 0), 0);
       const maxPoints = team.points + remaining * 3;
@@ -1602,10 +1628,9 @@
 
     function fixtureAttendance(match) {
       return (state.attendance.matches || []).find(item =>
-        item.homeTeamCn === match.homeTeam ||
-        item.homeTeam === match.homeTeam ||
-        item.awayTeamCn === match.awayTeam ||
-        item.awayTeam === match.awayTeam
+        (item.homeTeamCn === match.homeTeam || item.homeTeam === match.homeTeam) &&
+        (item.awayTeamCn === match.awayTeam || item.awayTeam === match.awayTeam) &&
+        item.date?.slice(0, 10) === match.date?.slice(0, 10)
       ) || null;
     }
 
@@ -1623,6 +1648,7 @@
     }
 
     function formHtml(form) {
+      if (!form.length) return '<span class="muted">暂无</span>';
       return `<span class="form-row">${form.map(item => `<span class="form-pill form-${item}">${item}</span>`).join("")}</span>`;
     }
 
@@ -1680,8 +1706,8 @@
       const source = activeSource();
       return {
         mode: effectiveMode(),
-        lastRefreshAt: source.fetchedAt || state.lastRefreshAt,
-        age: formatAge(source.fetchedAt || state.lastRefreshAt),
+        lastRefreshAt: source.fetchedAt,
+        age: formatAge(source.fetchedAt),
         sourceCount: DATA_SOURCES.length,
         lastRefreshSuccess: state.lastRefreshSuccess,
         sourceName: source.name,
@@ -1710,7 +1736,6 @@
 
       if (!data.standings.length) {
         alerts.push({ level: "critical", type: "Data Missing", target: data.name, message: "当前联赛没有真实积分榜数据。", action: "生成并提交对应 standings JSON，或使用 ?demo=1 查看演示。" });
-        return alerts;
       }
 
       const avgGaPerMatch = data.standings.reduce((sum, team) => sum + team.goalsAgainst / Math.max(1, team.played), 0) / data.standings.length;
@@ -1742,7 +1767,7 @@
         alerts.push({ level: "critical", type: "Data Completeness Alert", target: data.name, message: `球队完整度 ${validation.teamCount}/${data.targetTeams}，赛程完整度 ${validation.fixtureCount}/${data.targetFixtures}。`, action: "检查数据源映射、字段标准化和 fallback 数据。" });
       }
 
-      const schedule = state.dataQuality?.leagues?.[state.activeLeague]?.scheduleCompleteness;
+      const schedule = league().fixtures.length ? state.dataQuality?.leagues?.[state.activeLeague]?.scheduleCompleteness : null;
       if (schedule?.anomalyCount) {
         alerts.push({ level: "warning", type: "Schedule Quality Alert", target: data.name, message: `赛程存在 ${schedule.anomalyCount} 个异常。`, action: "检查空时间、完赛比分缺失或重复比赛。" });
       }
@@ -1787,16 +1812,17 @@
         return;
       }
       if (!league().standings.some(team => team.id === state.selectedTeamId)) {
-        state.selectedTeamId = league().standings[0].id;
+        state.selectedTeamId = league().standings[0]?.id || "";
       }
     }
 
     // 5. Rendering Functions
     function renderStatus() {
       const source = activeSource();
+      document.getElementById("mockGeneratedAt").parentElement.style.display = IS_DEMO_MODE ? "" : "none";
       document.getElementById("mockGeneratedAt").textContent = formatFullDateTime(state.mockGeneratedAt);
-      document.getElementById("lastRefreshAt").textContent = formatFullDateTime(source.fetchedAt || state.lastRefreshAt);
-      document.getElementById("dataAge").textContent = formatAge(source.fetchedAt || state.lastRefreshAt);
+      document.getElementById("lastRefreshAt").textContent = formatFullDateTime(source.fetchedAt);
+      document.getElementById("dataAge").textContent = formatAge(source.fetchedAt);
       document.getElementById("currentLeagueName").textContent = league().name;
       document.getElementById("currentSource").textContent = source.name || "内置示例数据";
       document.getElementById("currentSourceUrl").textContent = source.url || "无";
@@ -1808,11 +1834,11 @@
     }
 
     function renderMetrics() {
-      document.getElementById("metrics").innerHTML = calculateMetrics().map(metric => `
+      document.getElementById("metrics").innerHTML = calculateMetrics().map((metric, index) => `
         <article class="metric">
           <div class="metric-top"><span class="metric-icon" style="background:${metric.color}"></span>${metric.label}</div>
-          <div class="metric-value">${metric.value}</div>
-          <div class="metric-foot">${metric.foot}</div>
+          <div class="metric-value">${index < 4 && !league().fixtures.length ? "暂无" : metric.value}</div>
+          <div class="metric-foot">${index < 4 && !league().fixtures.length ? "暂无真实赛程数据" : metric.foot}</div>
         </article>
       `).join("");
     }
@@ -1913,7 +1939,7 @@
             <td>${team.goalsAgainst}</td>
             <td class="${team.goalDiff >= 0 ? "positive" : "negative"}">${team.goalDiff > 0 ? "+" : ""}${team.goalDiff}</td>
             <td><strong>${team.points}</strong></td>
-            <td>${team.deductions ? `<span class="badge warning">-${team.deductions}</span><br><span class="muted">${team.deductionReason || "原因待官方确认"}</span>` : `<span class="muted">无</span>`}<br><span class="muted">官方 ${team.pointsOfficial}</span></td>
+            <td>${team.deductions ? `<span class="badge warning">-${team.deductions}</span><br><span class="muted">${team.deductionReason || "原因待官方确认"}</span>` : `<span class="muted">${team.deductions === null ? "未核验" : "无"}</span>`}</td>
             <td>${recordToText(team.homeRecord)}</td>
             <td>${recordToText(team.awayRecord)}</td>
             <td>${formHtml(team.form)}</td>
@@ -1958,24 +1984,24 @@
           <td>${match.source}</td>
         </tr>
       `);
-      document.getElementById("fixturesBody").innerHTML = rows.length ? rows.join("") : `<tr><td colspan="10" class="muted">没有符合当前筛选条件的比赛。</td></tr>`;
+      document.getElementById("fixturesBody").innerHTML = rows.length ? rows.join("") : `<tr><td colspan="10" class="muted">${league().fixtures.length ? "没有符合当前筛选条件的比赛。" : "暂无真实赛程数据。"}</td></tr>`;
     }
 
     function renderDataHealth() {
       const health = updateDataHealth(league());
       const required = ["meta.json", "csl-standings.json", "csl-fixtures.json", "csl-attendance.json", "csl-attendance-history.json"];
       const fileValues = Object.values(state.fileResults || {});
-      const mockCount = fileValues.filter(result => result.data?.mode === "mock").length;
+      const mockCount = IS_DEMO_MODE ? 3 : 0;
       const staleCount = fileValues.filter(result => {
         const at = result.data?.fetchedAt || result.data?.updatedAt;
-        return result.ok && at && (Date.now() - new Date(at).getTime()) / 36e5 > 12;
+        return result.ok && at && (Date.now() - new Date(at).getTime()) / 36e5 > (result.path.includes("attendance") ? 168 : 12);
       }).length;
       const fileCards = required.map(name => {
         const result = state.fileResults?.[name];
         const payload = result?.data || {};
         const timestamp = payload.fetchedAt || payload.updatedAt;
         const ageHours = timestamp ? (Date.now() - new Date(timestamp).getTime()) / 36e5 : 0;
-        const status = !result ? "loading" : !result.ok ? "missing" : ageHours > 12 ? "stale" : "ok";
+        const status = !result ? (IS_DEMO_MODE ? "demo" : "missing") : !result.ok ? (result.status === 404 ? "missing" : "error") : ageHours > (name.includes("attendance") ? 168 : 12) ? "stale" : "ok";
         return `
           <div class="health-item">
             <span>${name}</span>
@@ -2013,7 +2039,7 @@
     }
 
     function renderQualityPanels() {
-      const schedule = state.dataQuality?.leagues?.[state.activeLeague]?.scheduleCompleteness;
+      const schedule = league().fixtures.length ? state.dataQuality?.leagues?.[state.activeLeague]?.scheduleCompleteness : null;
       const missingPreview = schedule?.missingRounds?.slice(0, 10).join("、") || "无";
       document.getElementById("scheduleQuality").innerHTML = schedule ? `
         <div class="compact-list">
@@ -2033,7 +2059,7 @@
           <div class="muted">缺失轮次：${missingPreview}${schedule.missingRounds.length > 10 ? " ..." : ""}</div>
           ${(schedule.anomalies || []).slice(0, 4).map(item => `<div class="compact-row"><span>${item.type}</span><span class="muted">${item.match}</span></div>`).join("")}
         </div>
-      ` : `<div class="muted">暂无 data-quality.json，页面已保留表格与 mock fallback。</div>`;
+      ` : `<div class="muted">暂无真实赛程，无法评估赛程完整度。</div>`;
 
       const focus = focusMatches();
       document.getElementById("focusMatches").innerHTML = focus.length ? `
@@ -2107,7 +2133,7 @@
           <div class="team-kpi"><span>进球</span><strong>${team.goalsFor}</strong></div>
           <div class="team-kpi"><span>失球</span><strong>${team.goalsAgainst}</strong></div>
           <div class="team-kpi"><span>净胜球</span><strong class="${team.goalDiff >= 0 ? "positive" : "negative"}">${team.goalDiff > 0 ? "+" : ""}${team.goalDiff}</strong></div>
-          <div class="team-kpi"><span>主 / 客积分</span><strong>${team.homeRecord.points} / ${team.awayRecord.points}</strong></div>
+          <div class="team-kpi"><span>主 / 客积分</span><strong>${IS_DEMO_MODE || team.homeRecord.verified ? `${team.homeRecord.points} / ${team.awayRecord.points}` : "暂无已核验数据"}</strong></div>
           <div class="team-kpi"><span>争冠 / 亚冠</span><strong>${scores.titleRaceScore} / ${scores.continentalQualificationScore}</strong></div>
           <div class="team-kpi"><span>降级风险 / 升级</span><strong>${scores.relegationRiskScore} / ${scores.promotionScore || "不适用"}</strong></div>
           <div class="team-kpi"><span>主场球场</span><strong style="font-size:15px;">${attendance ? attendance.stadiumCn : "暂无"}</strong></div>
@@ -2209,23 +2235,27 @@
       const container = document.getElementById(containerId);
       const fallback = container?.nextElementSibling;
       if (!container || !fallback) return;
-      if (!window.echarts) {
+      if (!Array.isArray(data) || !data.length) {
+        container.dataset.state = "empty";
         container.style.display = "none";
         fallback.style.display = "flex";
-        fallback.textContent = "图表库未加载；表格数据仍可用。";
+        fallback.textContent = "暂无真实数据，无法绘制此图表。";
         return;
       }
-      if (!Array.isArray(data) || !data.length) {
+      if (!window.echarts) {
+        container.dataset.state = chartLibraryFailed ? "error" : "loading";
         container.style.display = "none";
         fallback.style.display = "flex";
-        fallback.textContent = "暂无真实数据，图表等待 JSON 数据。";
+        fallback.textContent = chartLibraryFailed ? "图表库加载失败，已保留表格数据。" : "图表库加载中，表格数据已可用。";
         return;
       }
       try {
         container.style.display = "block";
         fallback.style.display = "none";
         chart(containerId).setOption(renderFn(), true);
+        container.dataset.state = "ready";
       } catch (error) {
+        container.dataset.state = "error";
         console.error(`Chart ${containerId} failed`, error);
         container.style.display = "none";
         fallback.style.display = "flex";
@@ -2252,36 +2282,26 @@
     }
 
     function renderCharts() {
-      if (!window.echarts) {
-        showChartFallback("图表库未加载；表格数据仍可用。");
-        return;
-      }
-      if (!league().standings.length) {
-        showChartFallback("暂无真实数据，图表等待 JSON 数据。");
-        return;
-      }
-      try {
-        hideChartFallback();
         const data = league().standings;
         const top8 = data.slice(0, 8).reverse();
         const names = data.map(team => team.shortName);
         const base = chartBase();
         const attendanceRows = [...state.attendance.teams].sort((a, b) => b.averageAttendance - a.averageAttendance);
         const occupancyRows = [...state.attendance.teams].sort((a, b) => b.occupancyRate - a.occupancyRate);
-        const historyRows = [...(state.attendanceHistory?.data || state.attendance.trend || [])].sort((a, b) => (a.seasonEndYear || 0) - (b.seasonEndYear || 0));
+        const historyRows = [...(state.attendanceHistory?.data || (IS_DEMO_MODE ? state.attendance.trend : []) || [])].sort((a, b) => (a.seasonEndYear || 0) - (b.seasonEndYear || 0));
         const scatterRows = attendancePointsRows();
         const scatterPanel = document.getElementById("attendancePointsPanel");
         scatterPanel.style.display = scatterRows.length ? "block" : "none";
 
-        chart("pointsChart").setOption({
+        renderChartSafely("pointsChart", top8, () => ({
           ...base,
           grid: { left: 92, right: 38, top: 18, bottom: 28 },
           xAxis: { ...base.xAxis, type: "value" },
           yAxis: { ...base.yAxis, type: "category", data: top8.map(team => team.shortName) },
           series: [{ name: "积分", type: "bar", data: top8.map(team => team.points), label: { show: true, position: "right", color: "#e6eef8" }, itemStyle: { color: "#facc15", borderRadius: [0, 6, 6, 0] } }]
-        }, true);
+        }));
 
-        chart("goalsChart").setOption({
+        renderChartSafely("goalsChart", data, () => ({
           ...base,
           legend: { top: 0, textStyle: { color: "#e6eef8" } },
           xAxis: { ...base.xAxis, type: "category", data: names, axisLabel: { color: "#9eb0c4", rotate: 32, interval: 0 } },
@@ -2290,17 +2310,17 @@
             { name: "进球", type: "bar", data: data.map(team => team.goalsFor), itemStyle: { color: "#22c55e", borderRadius: [5, 5, 0, 0] } },
             { name: "失球", type: "bar", data: data.map(team => team.goalsAgainst), itemStyle: { color: "#fb7185", borderRadius: [5, 5, 0, 0] } }
           ]
-        }, true);
+        }));
 
-        chart("goalDiffChart").setOption({
+        renderChartSafely("goalDiffChart", data, () => ({
           ...base,
           xAxis: { ...base.xAxis, type: "category", data: names, axisLabel: { color: "#9eb0c4", rotate: 32, interval: 0 } },
           yAxis: { ...base.yAxis, type: "value" },
           series: [{ name: "净胜球", type: "bar", data: data.map(team => team.goalDiff), itemStyle: { borderRadius: [5, 5, 0, 0], color: p => p.value >= 0 ? "#38bdf8" : "#fb7185" } }]
-        }, true);
+        }));
 
         const counts = formCounts();
-        chart("formChart").setOption({
+        renderChartSafely("formChart", data.filter(team => team.form.length), () => ({
           backgroundColor: "transparent",
           tooltip: { trigger: "item", backgroundColor: "rgba(15,23,42,.96)", textStyle: { color: "#e6eef8" } },
           legend: { bottom: 0, textStyle: { color: "#e6eef8" } },
@@ -2309,10 +2329,10 @@
             { name: "平 D", value: counts.D, itemStyle: { color: "#facc15" } },
             { name: "负 L", value: counts.L, itemStyle: { color: "#fb7185" } }
           ] }]
-        }, true);
+        }));
 
         const selected = teamById(state.selectedTeamId);
-        chart("homeAwayChart").setOption({
+        renderChartSafely("homeAwayChart", selected?.homeRecord && selected?.awayRecord && (IS_DEMO_MODE || selected.homeRecord.verified) ? [selected] : [], () => ({
           ...base,
           legend: { top: 0, textStyle: { color: "#e6eef8" } },
           grid: { left: 44, right: 18, top: 44, bottom: 36 },
@@ -2323,9 +2343,9 @@
             { name: "平", type: "bar", data: [selected.homeRecord.draws, selected.awayRecord.draws], itemStyle: { color: "#facc15" } },
             { name: "负", type: "bar", data: [selected.homeRecord.losses, selected.awayRecord.losses], itemStyle: { color: "#fb7185" } }
           ]
-        }, true);
+        }));
 
-        chart("attendanceAverageChart").setOption({
+        renderChartSafely("attendanceAverageChart", attendanceRows, () => ({
           ...base,
           grid: { left: 108, right: 42, top: 18, bottom: 28 },
           xAxis: { ...base.xAxis, type: "value" },
@@ -2337,9 +2357,9 @@
             label: { show: true, position: "right", color: "#e6eef8", formatter: item => formatInteger(item.value) },
             itemStyle: { color: "#38bdf8", borderRadius: [0, 6, 6, 0] }
           }]
-        }, true);
+        }));
 
-        chart("occupancyChart").setOption({
+        renderChartSafely("occupancyChart", occupancyRows, () => ({
           ...base,
           grid: { left: 108, right: 42, top: 18, bottom: 28 },
           xAxis: { ...base.xAxis, type: "value", axisLabel: { color: "#9eb0c4", formatter: value => `${Math.round(value * 100)}%` } },
@@ -2351,9 +2371,9 @@
             label: { show: true, position: "right", color: "#e6eef8", formatter: item => formatPercent(item.value) },
             itemStyle: { color: params => params.value >= 0.9 ? "#fb7185" : params.value >= 0.7 ? "#facc15" : "#22c55e", borderRadius: [0, 6, 6, 0] }
           }]
-        }, true);
+        }));
 
-        chart("attendanceHistoryChart").setOption({
+        renderChartSafely("attendanceHistoryChart", historyRows, () => ({
           ...base,
           grid: { left: 52, right: 36, top: 28, bottom: 42 },
           tooltip: {
@@ -2379,10 +2399,10 @@
             itemStyle: { color: "#facc15" },
             areaStyle: { color: "rgba(56,189,248,.14)" }
           }]
-        }, true);
+        }));
 
         if (scatterRows.length) {
-          chart("attendancePointsChart").setOption({
+          renderChartSafely("attendancePointsChart", scatterRows, () => ({
             ...base,
             grid: { left: 72, right: 28, top: 28, bottom: 44 },
             tooltip: {
@@ -2402,13 +2422,17 @@
               label: { show: true, formatter: item => item.data[3], color: "#e6eef8", position: "right" },
               itemStyle: { color: "#38bdf8", opacity: 0.82 }
             }]
-          }, true);
+          }));
         }
-      } catch (error) {
-        console.error("Chart rendering failed:", error);
-        showChartFallback();
-      }
     }
+
+    let chartLibraryFailed = false;
+    const chartScript = document.getElementById("chartLibrary");
+    chartScript.addEventListener("load", () => renderCharts());
+    chartScript.addEventListener("error", () => { chartLibraryFailed = true; renderCharts(); });
+    setTimeout(() => {
+      if (!window.echarts) { chartLibraryFailed = true; renderCharts(); }
+    }, 12000);
 
     // 7. Event Listeners
     document.querySelectorAll(".tab-button").forEach(button => {
@@ -2416,7 +2440,7 @@
         state.activeLeague = button.dataset.league;
         state.fixtureTeam = "all";
         state.fixtureStatus = "all";
-        state.selectedTeamId = league().standings[0].id;
+        state.selectedTeamId = league().standings[0]?.id || "";
         document.querySelectorAll(".tab-button").forEach(tab => tab.classList.toggle("active", tab === button));
         renderAll();
       });
@@ -2443,11 +2467,19 @@
       button.disabled = true;
       button.textContent = "读取中...";
       state.transientStatus = "Refreshing";
-      state.lastRefreshAt = new Date().toISOString();
       renderStatus();
       renderDataHealth();
       await new Promise(resolve => setTimeout(resolve, 1000));
-      await loadDashboardData();
+      try {
+        await loadDashboardData();
+      } catch (error) {
+        state.logs.unshift({ time: new Date().toISOString(), type: "error", message: error.message });
+        state.lastRefreshSuccess = false;
+      } finally {
+        state.transientStatus = "";
+        button.disabled = false;
+        button.textContent = "重新读取本地 JSON";
+      }
       state.transientStatus = "";
       state.logs.unshift({ time: new Date().toISOString(), type: "manual", message: `${league().name} 手动刷新完成，当前模式：${effectiveMode()}。` });
       button.disabled = false;
@@ -2460,8 +2492,14 @@
     });
 
     document.addEventListener("DOMContentLoaded", async () => {
-      await loadDashboardData();
-      renderAll();
+      try {
+        await loadDashboardData();
+      } catch (error) {
+        state.dataMode = "Missing";
+        state.logs.unshift({ time: new Date().toISOString(), type: "error", message: error.message });
+      } finally {
+        renderAll();
+      }
     });
 
     // 8. Future Live Data Integration

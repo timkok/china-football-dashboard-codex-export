@@ -38,6 +38,10 @@ data/attendance-history-csl.json
 
 ## 当前真实数据状态
 
+2026-10-11 本地执行完整抓取成功：中超积分榜 16 队、观众表 16 队、历史观众数据 3 季。是否仍新鲜以各 JSON 的 `fetchedAt` 为准，不以页面读取时间代替抓取时间。
+
+竞技数据超过 12 小时标记 Stale，观众模块健康检查阈值为 7 天。旧快照仍可查看，不自动替换为 mock。旧版生成的近五场示例战绩不再作为真实数据展示；未核验的主客场拆分显示缺失。
+
 - 中超积分榜：`data/csl-standings.json`，来源为新浪体育中超积分榜 fallback，非官方。
 - 中超观众人数：`data/csl-attendance.json`，来源为 Transfermarkt，第三方非官方。
 - 中超观众历史：`data/csl-attendance-history.json`，来源为 Transfermarkt attendance development。
@@ -88,6 +92,7 @@ npm run fetch:attendance-history
 
 ```bash
 npm run fetch:all
+npm run build:standalone
 ```
 
 ## GitHub Actions
@@ -125,6 +130,10 @@ Update attendance data
 
 ## 本地预览
 
+JSON 请求 10 秒超时，各文件独立验证。图表 CDN 异步加载，单张图表分别显示 `loading / empty / error / ready`；图表失败不阻断表格或其他图表。
+
+`standalone.html` 由 `npm run build:standalone` 生成，不手动维护第二套页面。双击本地文件时读取内嵌快照并保留原时间戳；通过 HTTP / GitHub Pages 打开时读取最新仓库 JSON。两个定时工作流均更新此文件，并使用同一发布并发锁。
+
 ```bash
 python3 -m http.server 8000
 ```
@@ -137,6 +146,16 @@ http://localhost:8000/?demo=1
 ```
 
 ## 免责声明
+
+## 本次验证
+
+- `npm install`、`npm run fetch:all`、`npm run build:standalone` 成功；`npm audit` 无已知漏洞。
+- Playwright 检查默认 16 队积分榜与 16 队观众表、中甲/中乙空状态、刷新日志、`?demo=1`。
+- 模拟全部 JSON 404、历史 JSON 解析失败、CDN 失败和单张图表抛错，其余可用模块仍正常展示。
+- 390px 手机视口无页面横向溢出；宽表格在自身容器内滚动。
+- 观众表的场次按总观众 / 场均观众估算，历史页场次为来源报告口径，可能因缺报场次和四舍五入不同。2026 为赛季进行中快照，与完整赛季的同比不可直接当作全年增长。
+
+## 数据声明
 
 - 默认页面不展示 mock 数据。
 - `?demo=1` 仅用于视觉和交互演示。

@@ -8,7 +8,7 @@
   "source": "新浪体育中超积分榜",
   "sourceUrl": "https://sports.sina.com.cn/csl/table/",
   "isOfficial": false,
-  "fetchedAt": "2026-07-14T19:19:38.266Z",
+  "fetchedAt": "2026-10-11T14:54:09.257Z",
   "schemaVersion": 1,
   "data": [
     {
@@ -17,113 +17,95 @@
       "name": "成都蓉城",
       "shortName": "蓉城",
       "city": "成都",
-      "played": 18,
-      "wins": 13,
-      "draws": 3,
-      "losses": 2,
-      "goalsFor": 38,
-      "goalsAgainst": 17,
-      "goalDiff": 21,
-      "points": 42,
-      "form": [
-        "W",
-        "W",
-        "D",
-        "W",
-        "W"
-      ],
+      "played": 27,
+      "wins": 15,
+      "draws": 7,
+      "losses": 5,
+      "goalsFor": 51,
+      "goalsAgainst": 31,
+      "goalDiff": 20,
+      "points": 52,
+      "form": [],
       "homeRecord": {
-        "wins": 7,
-        "draws": 1,
-        "losses": 1,
-        "points": 22
+        "wins": 8,
+        "draws": 3,
+        "losses": 3,
+        "points": 27
       },
       "awayRecord": {
-        "wins": 6,
-        "draws": 2,
-        "losses": 1,
-        "points": 20
+        "wins": 7,
+        "draws": 4,
+        "losses": 2,
+        "points": 25
       },
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-07-14T19:19:38.266Z"
+      "updatedAt": "2026-10-11T14:54:09.257Z"
     },
     {
       "rank": 2,
-      "team": "重庆铜梁龙",
-      "name": "重庆铜梁龙",
-      "shortName": "铜梁龙",
-      "city": "重庆",
-      "played": 18,
-      "wins": 7,
-      "draws": 7,
-      "losses": 4,
-      "goalsFor": 22,
-      "goalsAgainst": 20,
-      "goalDiff": 2,
-      "points": 28,
-      "form": [
-        "W",
-        "D",
-        "W",
-        "W",
-        "D"
-      ],
-      "homeRecord": {
-        "wins": 4,
-        "draws": 4,
-        "losses": 1,
-        "points": 16
-      },
-      "awayRecord": {
-        "wins": 3,
-        "draws": 3,
-        "losses": 3,
-        "points": 12
-      },
-      "source": "新浪体育中超积分榜",
-      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
-      "isOfficial": false,
-      "updatedAt": "2026-07-14T19:19:38.266Z"
-    },
-    {
-      "rank": 3,
       "team": "大连英博",
       "name": "大连英博",
       "shortName": "英博",
       "city": "大连",
-      "played": 17,
-      "wins": 8,
-      "draws": 1,
-      "losses": 8,
-      "goalsFor": 25,
-      "goalsAgainst": 31,
-      "goalDiff": -6,
-      "points": 25,
-      "form": [
-        "L",
-        "W",
-        "W",
-        "D",
-        "W"
-      ],
+      "played": 27,
+      "wins": 13,
+      "draws": 4,
+      "losses": 10,
+      "goalsFor": 42,
+      "goalsAgainst": 42,
+      "goalDiff": 0,
+      "points": 43,
+      "form": [],
       "homeRecord": {
-        "wins": 6,
-        "draws": 0,
+        "wins": 9,
+        "draws": 1,
         "losses": 3,
-        "points": 18
+        "points": 28
       },
       "awayRecord": {
-        "wins": 2,
-        "draws": 1,
-        "losses": 5,
-        "points": 7
+        "wins": 4,
+        "draws": 3,
+        "losses": 7,
+        "points": 15
       },
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-07-14T19:19:38.266Z"
+      "updatedAt": "2026-10-11T14:54:09.257Z"
+    },
+    {
+      "rank": 3,
+      "team": "北京国安",
+      "name": "北京国安",
+      "shortName": "国安",
+      "city": "北京",
+      "played": 27,
+      "wins": 12,
+      "draws": 10,
+      "losses": 5,
+      "goalsFor": 52,
+      "goalsAgainst": 33,
+      "goalDiff": 19,
+      "points": 41,
+      "form": [],
+      "homeRecord": {
+        "wins": 6,
+        "draws": 4,
+        "losses": 3,
+        "points": 22
+      },
+      "awayRecord": {
+        "wins": 6,
+        "draws": 6,
+        "losses": 2,
+        "points": 24
+      },
+      "source": "新浪体育中超积分榜",
+      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
+      "isOfficial": false,
+      "updatedAt": "2026-10-11T14:54:09.257Z"
     },
     {
       "rank": 4,
@@ -131,37 +113,31 @@
       "name": "山东泰山",
       "shortName": "泰山",
       "city": "济南",
-      "played": 18,
-      "wins": 9,
-      "draws": 3,
-      "losses": 6,
-      "goalsFor": 34,
-      "goalsAgainst": 31,
+      "played": 27,
+      "wins": 13,
+      "draws": 5,
+      "losses": 9,
+      "goalsFor": 47,
+      "goalsAgainst": 44,
       "goalDiff": 3,
-      "points": 24,
-      "form": [
-        "D",
-        "W",
-        "D",
-        "W",
-        "L"
-      ],
+      "points": 38,
+      "form": [],
       "homeRecord": {
-        "wins": 5,
-        "draws": 3,
-        "losses": 1,
-        "points": 18
+        "wins": 7,
+        "draws": 4,
+        "losses": 2,
+        "points": 25
       },
       "awayRecord": {
-        "wins": 4,
-        "draws": 0,
-        "losses": 5,
-        "points": 12
+        "wins": 6,
+        "draws": 1,
+        "losses": 7,
+        "points": 19
       },
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-07-14T19:19:38.266Z"
+      "updatedAt": "2026-10-11T14:54:09.257Z"
     },
     {
       "rank": 5,
@@ -169,37 +145,31 @@
       "name": "云南玉昆",
       "shortName": "玉昆",
       "city": "玉溪",
-      "played": 18,
-      "wins": 7,
-      "draws": 3,
-      "losses": 8,
-      "goalsFor": 34,
-      "goalsAgainst": 33,
-      "goalDiff": 1,
-      "points": 24,
-      "form": [
-        "W",
-        "L",
-        "W",
-        "D",
-        "W"
-      ],
+      "played": 27,
+      "wins": 11,
+      "draws": 5,
+      "losses": 11,
+      "goalsFor": 55,
+      "goalsAgainst": 58,
+      "goalDiff": -3,
+      "points": 38,
+      "form": [],
       "homeRecord": {
-        "wins": 4,
-        "draws": 1,
+        "wins": 8,
+        "draws": 2,
         "losses": 3,
-        "points": 13
+        "points": 26
       },
       "awayRecord": {
         "wins": 3,
-        "draws": 2,
-        "losses": 5,
-        "points": 11
+        "draws": 3,
+        "losses": 8,
+        "points": 12
       },
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-07-14T19:19:38.266Z"
+      "updatedAt": "2026-10-11T14:54:09.257Z"
     },
     {
       "rank": 6,
@@ -207,265 +177,223 @@
       "name": "青岛西海岸",
       "shortName": "西海岸",
       "city": "青岛",
-      "played": 18,
-      "wins": 5,
-      "draws": 9,
-      "losses": 4,
-      "goalsFor": 22,
-      "goalsAgainst": 28,
-      "goalDiff": -6,
-      "points": 24,
-      "form": [
-        "D",
-        "D",
-        "L",
-        "W",
-        "D"
-      ],
+      "played": 27,
+      "wins": 8,
+      "draws": 14,
+      "losses": 5,
+      "goalsFor": 31,
+      "goalsAgainst": 36,
+      "goalDiff": -5,
+      "points": 38,
+      "form": [],
       "homeRecord": {
-        "wins": 3,
-        "draws": 6,
-        "losses": 0,
-        "points": 15
+        "wins": 5,
+        "draws": 8,
+        "losses": 1,
+        "points": 23
       },
       "awayRecord": {
-        "wins": 2,
-        "draws": 3,
+        "wins": 3,
+        "draws": 6,
         "losses": 4,
-        "points": 9
+        "points": 15
       },
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-07-14T19:19:38.266Z"
+      "updatedAt": "2026-10-11T14:54:09.257Z"
     },
     {
       "rank": 7,
-      "team": "北京国安",
-      "name": "北京国安",
-      "shortName": "国安",
-      "city": "北京",
-      "played": 17,
-      "wins": 7,
-      "draws": 5,
-      "losses": 5,
-      "goalsFor": 29,
-      "goalsAgainst": 23,
-      "goalDiff": 6,
-      "points": 21,
-      "form": [
-        "L",
-        "D",
-        "L",
-        "D",
-        "L"
-      ],
-      "homeRecord": {
-        "wins": 4,
-        "draws": 2,
-        "losses": 3,
-        "points": 14
-      },
-      "awayRecord": {
-        "wins": 3,
-        "draws": 3,
-        "losses": 2,
-        "points": 12
-      },
-      "source": "新浪体育中超积分榜",
-      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
-      "isOfficial": false,
-      "updatedAt": "2026-07-14T19:19:38.266Z"
-    },
-    {
-      "rank": 8,
-      "team": "浙江队",
-      "name": "浙江队",
-      "shortName": "浙江",
-      "city": "杭州",
-      "played": 18,
-      "wins": 7,
-      "draws": 4,
-      "losses": 7,
-      "goalsFor": 26,
-      "goalsAgainst": 31,
-      "goalDiff": -5,
-      "points": 20,
-      "form": [
-        "L",
-        "L",
-        "D",
-        "L",
-        "D"
-      ],
-      "homeRecord": {
-        "wins": 4,
-        "draws": 3,
-        "losses": 2,
-        "points": 15
-      },
-      "awayRecord": {
-        "wins": 3,
-        "draws": 1,
-        "losses": 5,
-        "points": 10
-      },
-      "source": "新浪体育中超积分榜",
-      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
-      "isOfficial": false,
-      "updatedAt": "2026-07-14T19:19:38.266Z"
-    },
-    {
-      "rank": 9,
-      "team": "辽宁铁人",
-      "name": "辽宁铁人",
-      "shortName": "铁人",
-      "city": "沈阳",
-      "played": 17,
-      "wins": 6,
-      "draws": 2,
-      "losses": 9,
-      "goalsFor": 24,
-      "goalsAgainst": 29,
-      "goalDiff": -5,
-      "points": 20,
-      "form": [
-        "W",
-        "W",
-        "D",
-        "W",
-        "W"
-      ],
-      "homeRecord": {
-        "wins": 5,
-        "draws": 0,
-        "losses": 4,
-        "points": 15
-      },
-      "awayRecord": {
-        "wins": 1,
-        "draws": 2,
-        "losses": 5,
-        "points": 5
-      },
-      "source": "新浪体育中超积分榜",
-      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
-      "isOfficial": false,
-      "updatedAt": "2026-07-14T19:19:38.266Z"
-    },
-    {
-      "rank": 10,
-      "team": "深圳新鵬城",
-      "name": "深圳新鵬城",
-      "shortName": "深圳新",
-      "city": "未标注",
-      "played": 18,
-      "wins": 6,
-      "draws": 2,
-      "losses": 10,
-      "goalsFor": 25,
-      "goalsAgainst": 31,
-      "goalDiff": -6,
-      "points": 20,
-      "form": [
-        "W",
-        "D",
-        "W",
-        "W",
-        "D"
-      ],
-      "homeRecord": {
-        "wins": 5,
-        "draws": 1,
-        "losses": 4,
-        "points": 16
-      },
-      "awayRecord": {
-        "wins": 1,
-        "draws": 1,
-        "losses": 6,
-        "points": 4
-      },
-      "source": "新浪体育中超积分榜",
-      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
-      "isOfficial": false,
-      "updatedAt": "2026-07-14T19:19:38.266Z"
-    },
-    {
-      "rank": 11,
-      "team": "上海申花",
-      "name": "上海申花",
-      "shortName": "申花",
-      "city": "上海",
-      "played": 17,
-      "wins": 8,
-      "draws": 5,
-      "losses": 4,
-      "goalsFor": 36,
-      "goalsAgainst": 27,
-      "goalDiff": 9,
-      "points": 19,
-      "form": [
-        "L",
-        "W",
-        "W",
-        "D",
-        "W"
-      ],
-      "homeRecord": {
-        "wins": 5,
-        "draws": 2,
-        "losses": 2,
-        "points": 17
-      },
-      "awayRecord": {
-        "wins": 3,
-        "draws": 3,
-        "losses": 2,
-        "points": 12
-      },
-      "source": "新浪体育中超积分榜",
-      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
-      "isOfficial": false,
-      "updatedAt": "2026-07-14T19:19:38.266Z"
-    },
-    {
-      "rank": 12,
       "team": "上海海港",
       "name": "上海海港",
       "shortName": "海港",
       "city": "上海",
-      "played": 17,
-      "wins": 5,
-      "draws": 5,
-      "losses": 7,
-      "goalsFor": 26,
-      "goalsAgainst": 24,
-      "goalDiff": 2,
-      "points": 15,
-      "form": [
-        "D",
-        "W",
-        "D",
-        "W",
-        "L"
-      ],
+      "played": 27,
+      "wins": 11,
+      "draws": 8,
+      "losses": 8,
+      "goalsFor": 44,
+      "goalsAgainst": 35,
+      "goalDiff": 9,
+      "points": 36,
+      "form": [],
       "homeRecord": {
+        "wins": 5,
+        "draws": 5,
+        "losses": 3,
+        "points": 20
+      },
+      "awayRecord": {
+        "wins": 6,
+        "draws": 3,
+        "losses": 5,
+        "points": 21
+      },
+      "source": "新浪体育中超积分榜",
+      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
+      "isOfficial": false,
+      "updatedAt": "2026-10-11T14:54:09.257Z"
+    },
+    {
+      "rank": 8,
+      "team": "上海申花",
+      "name": "上海申花",
+      "shortName": "申花",
+      "city": "上海",
+      "played": 27,
+      "wins": 13,
+      "draws": 5,
+      "losses": 9,
+      "goalsFor": 59,
+      "goalsAgainst": 47,
+      "goalDiff": 12,
+      "points": 34,
+      "form": [],
+      "homeRecord": {
+        "wins": 7,
+        "draws": 2,
+        "losses": 5,
+        "points": 23
+      },
+      "awayRecord": {
+        "wins": 6,
+        "draws": 3,
+        "losses": 4,
+        "points": 21
+      },
+      "source": "新浪体育中超积分榜",
+      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
+      "isOfficial": false,
+      "updatedAt": "2026-10-11T14:54:09.257Z"
+    },
+    {
+      "rank": 9,
+      "team": "重庆铜梁龙",
+      "name": "重庆铜梁龙",
+      "shortName": "铜梁龙",
+      "city": "重庆",
+      "played": 27,
+      "wins": 7,
+      "draws": 11,
+      "losses": 9,
+      "goalsFor": 28,
+      "goalsAgainst": 33,
+      "goalDiff": -5,
+      "points": 32,
+      "form": [],
+      "homeRecord": {
+        "wins": 4,
+        "draws": 6,
+        "losses": 4,
+        "points": 18
+      },
+      "awayRecord": {
+        "wins": 3,
+        "draws": 5,
+        "losses": 5,
+        "points": 14
+      },
+      "source": "新浪体育中超积分榜",
+      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
+      "isOfficial": false,
+      "updatedAt": "2026-10-11T14:54:09.257Z"
+    },
+    {
+      "rank": 10,
+      "team": "浙江队",
+      "name": "浙江队",
+      "shortName": "浙江",
+      "city": "杭州",
+      "played": 27,
+      "wins": 10,
+      "draws": 6,
+      "losses": 11,
+      "goalsFor": 47,
+      "goalsAgainst": 47,
+      "goalDiff": 0,
+      "points": 31,
+      "form": [],
+      "homeRecord": {
+        "wins": 7,
+        "draws": 3,
+        "losses": 4,
+        "points": 24
+      },
+      "awayRecord": {
         "wins": 3,
         "draws": 3,
-        "losses": 2,
+        "losses": 7,
         "points": 12
+      },
+      "source": "新浪体育中超积分榜",
+      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
+      "isOfficial": false,
+      "updatedAt": "2026-10-11T14:54:09.257Z"
+    },
+    {
+      "rank": 11,
+      "team": "深圳新鵬城",
+      "name": "深圳新鵬城",
+      "shortName": "深圳新",
+      "city": "未标注",
+      "played": 27,
+      "wins": 8,
+      "draws": 5,
+      "losses": 14,
+      "goalsFor": 36,
+      "goalsAgainst": 47,
+      "goalDiff": -11,
+      "points": 29,
+      "form": [],
+      "homeRecord": {
+        "wins": 6,
+        "draws": 3,
+        "losses": 5,
+        "points": 21
       },
       "awayRecord": {
         "wins": 2,
         "draws": 2,
-        "losses": 5,
+        "losses": 9,
         "points": 8
       },
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-07-14T19:19:38.266Z"
+      "updatedAt": "2026-10-11T14:54:09.257Z"
+    },
+    {
+      "rank": 12,
+      "team": "天津津门虎",
+      "name": "天津津门虎",
+      "shortName": "津门虎",
+      "city": "天津",
+      "played": 27,
+      "wins": 10,
+      "draws": 8,
+      "losses": 9,
+      "goalsFor": 37,
+      "goalsAgainst": 32,
+      "goalDiff": 5,
+      "points": 28,
+      "form": [],
+      "homeRecord": {
+        "wins": 5,
+        "draws": 4,
+        "losses": 5,
+        "points": 19
+      },
+      "awayRecord": {
+        "wins": 5,
+        "draws": 4,
+        "losses": 4,
+        "points": 19
+      },
+      "source": "新浪体育中超积分榜",
+      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
+      "isOfficial": false,
+      "updatedAt": "2026-10-11T14:54:09.257Z"
     },
     {
       "rank": 13,
@@ -473,151 +401,127 @@
       "name": "河南队",
       "shortName": "河南",
       "city": "郑州",
-      "played": 17,
-      "wins": 6,
-      "draws": 3,
-      "losses": 8,
-      "goalsFor": 18,
-      "goalsAgainst": 22,
-      "goalDiff": -4,
-      "points": 15,
-      "form": [
-        "W",
-        "L",
-        "W",
-        "D",
-        "W"
-      ],
+      "played": 27,
+      "wins": 8,
+      "draws": 10,
+      "losses": 9,
+      "goalsFor": 35,
+      "goalsAgainst": 37,
+      "goalDiff": -2,
+      "points": 28,
+      "form": [],
       "homeRecord": {
-        "wins": 3,
-        "draws": 1,
+        "wins": 4,
+        "draws": 5,
         "losses": 4,
-        "points": 10
+        "points": 17
       },
       "awayRecord": {
-        "wins": 3,
-        "draws": 2,
-        "losses": 4,
-        "points": 11
+        "wins": 4,
+        "draws": 5,
+        "losses": 5,
+        "points": 17
       },
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-07-14T19:19:38.266Z"
+      "updatedAt": "2026-10-11T14:54:09.257Z"
     },
     {
       "rank": 14,
+      "team": "辽宁铁人",
+      "name": "辽宁铁人",
+      "shortName": "铁人",
+      "city": "沈阳",
+      "played": 27,
+      "wins": 7,
+      "draws": 5,
+      "losses": 15,
+      "goalsFor": 35,
+      "goalsAgainst": 48,
+      "goalDiff": -13,
+      "points": 26,
+      "form": [],
+      "homeRecord": {
+        "wins": 6,
+        "draws": 2,
+        "losses": 6,
+        "points": 20
+      },
+      "awayRecord": {
+        "wins": 1,
+        "draws": 3,
+        "losses": 9,
+        "points": 6
+      },
+      "source": "新浪体育中超积分榜",
+      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
+      "isOfficial": false,
+      "updatedAt": "2026-10-11T14:54:09.257Z"
+    },
+    {
+      "rank": 15,
+      "team": "武汉三镇",
+      "name": "武汉三镇",
+      "shortName": "三镇",
+      "city": "武汉",
+      "played": 27,
+      "wins": 5,
+      "draws": 12,
+      "losses": 10,
+      "goalsFor": 40,
+      "goalsAgainst": 47,
+      "goalDiff": -7,
+      "points": 22,
+      "form": [],
+      "homeRecord": {
+        "wins": 4,
+        "draws": 5,
+        "losses": 4,
+        "points": 17
+      },
+      "awayRecord": {
+        "wins": 1,
+        "draws": 7,
+        "losses": 6,
+        "points": 10
+      },
+      "source": "新浪体育中超积分榜",
+      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
+      "isOfficial": false,
+      "updatedAt": "2026-10-11T14:54:09.257Z"
+    },
+    {
+      "rank": 16,
       "team": "青岛海牛",
       "name": "青岛海牛",
       "shortName": "海牛",
       "city": "青岛",
-      "played": 18,
+      "played": 27,
       "wins": 6,
       "draws": 3,
-      "losses": 9,
-      "goalsFor": 29,
-      "goalsAgainst": 31,
-      "goalDiff": -2,
+      "losses": 18,
+      "goalsFor": 34,
+      "goalsAgainst": 56,
+      "goalDiff": -22,
       "points": 14,
-      "form": [
-        "D",
-        "D",
-        "L",
-        "W",
-        "D"
-      ],
+      "form": [],
       "homeRecord": {
         "wins": 5,
         "draws": 2,
-        "losses": 2,
+        "losses": 6,
         "points": 17
       },
       "awayRecord": {
         "wins": 1,
         "draws": 1,
-        "losses": 7,
+        "losses": 12,
         "points": 4
       },
       "source": "新浪体育中超积分榜",
       "sourceUrl": "https://sports.sina.com.cn/csl/table/",
       "isOfficial": false,
-      "updatedAt": "2026-07-14T19:19:38.266Z"
-    },
-    {
-      "rank": 15,
-      "team": "天津津门虎",
-      "name": "天津津门虎",
-      "shortName": "津门虎",
-      "city": "天津",
-      "played": 17,
-      "wins": 4,
-      "draws": 6,
-      "losses": 7,
-      "goalsFor": 22,
-      "goalsAgainst": 22,
-      "goalDiff": 0,
-      "points": 8,
-      "form": [
-        "L",
-        "D",
-        "L",
-        "D",
-        "L"
-      ],
-      "homeRecord": {
-        "wins": 2,
-        "draws": 3,
-        "losses": 4,
-        "points": 9
-      },
-      "awayRecord": {
-        "wins": 2,
-        "draws": 3,
-        "losses": 3,
-        "points": 9
-      },
-      "source": "新浪体育中超积分榜",
-      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
-      "isOfficial": false,
-      "updatedAt": "2026-07-14T19:19:38.266Z"
-    },
-    {
-      "rank": 16,
-      "team": "武汉三镇",
-      "name": "武汉三镇",
-      "shortName": "三镇",
-      "city": "武汉",
-      "played": 17,
-      "wins": 2,
-      "draws": 7,
-      "losses": 8,
-      "goalsFor": 24,
-      "goalsAgainst": 34,
-      "goalDiff": -10,
-      "points": 8,
-      "form": [
-        "L",
-        "L",
-        "D",
-        "L",
-        "D"
-      ],
-      "homeRecord": {
-        "wins": 2,
-        "draws": 2,
-        "losses": 3,
-        "points": 8
-      },
-      "awayRecord": {
-        "wins": 0,
-        "draws": 5,
-        "losses": 5,
-        "points": 5
-      },
-      "source": "新浪体育中超积分榜",
-      "sourceUrl": "https://sports.sina.com.cn/csl/table/",
-      "isOfficial": false,
-      "updatedAt": "2026-07-14T19:19:38.266Z"
+      "updatedAt": "2026-10-11T14:54:09.257Z"
     }
   ]
 }
