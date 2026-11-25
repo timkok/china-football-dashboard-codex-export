@@ -1,8 +1,6 @@
 {
-  "status": "ok",
-  "attemptedAt": "2026-11-25T16:52:03.889Z",
-  "requested": 0,
-  "fetched": 0,
-  "errors": [],
-  "lastSuccessAt": "2026-11-22T14:11:40.517Z"
+  "status": "error",
+  "attemptedAt": "2026-11-25T21:55:48.852Z",
+  "lastSuccessAt": "2026-11-22T14:11:40.517Z",
+  "error": "Unexpected season label"
 }
